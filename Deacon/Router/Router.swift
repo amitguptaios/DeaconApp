@@ -1,0 +1,29 @@
+//
+//  Router.swift
+//  Deacon
+//
+//  Created by Apple on 03/07/21.
+//
+
+import UIKit
+import  Foundation
+class Router{
+    
+    class func goToHomePageVC(target:UIViewController){
+        if  let homePage  = DependencyVC.makeHomePageVC()  {
+            target.navigationController?.pushViewController(homePage, animated: true)
+        }
+    }
+    
+    class func goToSearchDetailsVC(target:UIViewController){
+        if  let searchDetails  = DependencyVC.makeSearchDetailsVC()  {
+            target.navigationController?.pushViewController(searchDetails, animated: true)
+        }
+    }
+    
+    class func goTosearchVC(target:UIViewController){
+        if  let searchDetails  = DependencyVC.makeSearchBarVC()  {
+            target.navigationController?.pushViewController(searchDetails, animated: false)
+        }
+    }
+}

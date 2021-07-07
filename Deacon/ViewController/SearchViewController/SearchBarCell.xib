@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchBarCell" id="KGk-i7-Jjw" customClass="SearchBarCell" customModule="Deacon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z35-t0-r5j">
+                        <rect key="frame" x="10" y="10" width="275" height="24"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="jVX-1n-ZVl">
+                        <rect key="frame" x="295" y="10" width="15" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="EAi-bY-CCL"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="z35-t0-r5j" secondAttribute="bottom" constant="10" id="Bte-WL-ORB"/>
+                    <constraint firstItem="jVX-1n-ZVl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Rok-wX-Pe2"/>
+                    <constraint firstAttribute="bottom" secondItem="jVX-1n-ZVl" secondAttribute="bottom" constant="14" id="T1u-GZ-ono"/>
+                    <constraint firstItem="z35-t0-r5j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b2e-2w-ucT"/>
+                    <constraint firstItem="jVX-1n-ZVl" firstAttribute="leading" secondItem="z35-t0-r5j" secondAttribute="trailing" constant="10" id="bX0-8m-6uS"/>
+                    <constraint firstAttribute="trailing" secondItem="jVX-1n-ZVl" secondAttribute="trailing" constant="10" id="eUX-m1-H46"/>
+                    <constraint firstItem="z35-t0-r5j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fmQ-sJ-aYL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgStatus" destination="jVX-1n-ZVl" id="PKt-JI-bfd"/>
+                <outlet property="lblTitle" destination="z35-t0-r5j" id="taS-4v-PuU"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="right" width="12" height="12"/>
+    </resources>
+</document>
