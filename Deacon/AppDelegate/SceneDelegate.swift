@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                self.window?.rootViewController = objMainViewController
 //
 //                self.window?.makeKeyAndVisible()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window = self.window
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

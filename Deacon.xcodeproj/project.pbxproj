@@ -11,7 +11,13 @@
 		184F6FA4269384AC00F5769E /* SearchBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F6FA2269384AC00F5769E /* SearchBarController.xib */; };
 		184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6FA62693852400F5769E /* SearchBarCell.swift */; };
 		184F6FA92693852400F5769E /* SearchBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F6FA72693852400F5769E /* SearchBarCell.xib */; };
+		18585D922696BD250066B464 /* SearchDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18585D902696BD250066B464 /* SearchDetailsCell.swift */; };
+		18585D932696BD250066B464 /* SearchDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18585D912696BD250066B464 /* SearchDetailsCell.xib */; };
+		18585D9D2696C3C50066B464 /* SearchDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18585D9C2696C3C50066B464 /* SearchDetailsModal.swift */; };
+		18585DA22696CC590066B464 /* SearchDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18585DA12696CC590066B464 /* SearchDetailsController.swift */; };
 		1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868806B26917FB6007A07BC /* ViewExtension.swift */; };
+		1885EDF92695F7B0008C82EB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDF82695F7B0008C82EB /* Utility.swift */; };
+		1885EE00269603D0008C82EB /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDFF269603D0008C82EB /* Modal.swift */; };
 		189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA7FA26909F0D0050BDA7 /* AppDelegate.swift */; };
 		189EA7FD26909F0D0050BDA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA7FC26909F0D0050BDA7 /* SceneDelegate.swift */; };
 		189EA80226909F0D0050BDA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189EA80026909F0D0050BDA7 /* Main.storyboard */; };
@@ -24,7 +30,6 @@
 		189EA8482690AE9B0050BDA7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8472690AE9B0050BDA7 /* ButtonExtension.swift */; };
 		189EA8502690AF900050BDA7 /* OtherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA84F2690AF900050BDA7 /* OtherExtension.swift */; };
 		189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8522690B0890050BDA7 /* DependencyVC.swift */; };
-		189EA8592690B3320050BDA7 /* SearchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8582690B3320050BDA7 /* SearchDetailsVC.swift */; };
 		18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7CB26940C55003B6C95 /* Apimanager.swift */; };
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
 		8B60350738CA860B0176AFF9 /* Pods_Deacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18C1A8313A460030B5097D6 /* Pods_Deacon.framework */; };
@@ -35,8 +40,14 @@
 		184F6FA2269384AC00F5769E /* SearchBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarController.xib; sourceTree = "<group>"; };
 		184F6FA62693852400F5769E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		184F6FA72693852400F5769E /* SearchBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarCell.xib; sourceTree = "<group>"; };
+		18585D902696BD250066B464 /* SearchDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsCell.swift; sourceTree = "<group>"; };
+		18585D912696BD250066B464 /* SearchDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailsCell.xib; sourceTree = "<group>"; };
+		18585D9C2696C3C50066B464 /* SearchDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsModal.swift; sourceTree = "<group>"; };
+		18585DA12696CC590066B464 /* SearchDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsController.swift; sourceTree = "<group>"; };
 		1868806B26917FB6007A07BC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		18827E504A7CED593A03F9A7 /* Pods-Deacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.debug.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.debug.xcconfig"; sourceTree = "<group>"; };
+		1885EDF82695F7B0008C82EB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		1885EDFF269603D0008C82EB /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		189EA7F726909F0D0050BDA7 /* Deacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189EA7FA26909F0D0050BDA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		189EA7FC26909F0D0050BDA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +62,6 @@
 		189EA8472690AE9B0050BDA7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		189EA84F2690AF900050BDA7 /* OtherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherExtension.swift; sourceTree = "<group>"; };
 		189EA8522690B0890050BDA7 /* DependencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyVC.swift; sourceTree = "<group>"; };
-		189EA8582690B3320050BDA7 /* SearchDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsVC.swift; sourceTree = "<group>"; };
 		18C9C7CB26940C55003B6C95 /* Apimanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apimanager.swift; sourceTree = "<group>"; };
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
 		5A99797A10A9B02318E8A44B /* Pods-Deacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.release.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,12 +91,92 @@
 		184F6F9C2693835700F5769E /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
-				184F6FA1269384AC00F5769E /* SearchBarController.swift */,
-				184F6FA2269384AC00F5769E /* SearchBarController.xib */,
-				184F6FA62693852400F5769E /* SearchBarCell.swift */,
-				184F6FA72693852400F5769E /* SearchBarCell.xib */,
+				1885EDFC26960388008C82EB /* Xib */,
+				1885EDFB2696037B008C82EB /* Modal */,
+				18585D9A2696C37D0066B464 /* View */,
+				1885EDFD2696039F008C82EB /* Controller */,
 			);
 			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		18585D952696C2CB0066B464 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18585DA12696CC590066B464 /* SearchDetailsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18585D962696C3210066B464 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18585D902696BD250066B464 /* SearchDetailsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18585D982696C3300066B464 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				18585D912696BD250066B464 /* SearchDetailsCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		18585D992696C33D0066B464 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				18585D9C2696C3C50066B464 /* SearchDetailsModal.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		18585D9A2696C37D0066B464 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				184F6FA62693852400F5769E /* SearchBarCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1885EDF62695F78E008C82EB /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		1885EDF72695F799008C82EB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1885EDF82695F7B0008C82EB /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		1885EDFB2696037B008C82EB /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				1885EDFF269603D0008C82EB /* Modal.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		1885EDFC26960388008C82EB /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				184F6FA72693852400F5769E /* SearchBarCell.xib */,
+				184F6FA2269384AC00F5769E /* SearchBarController.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		1885EDFD2696039F008C82EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				184F6FA1269384AC00F5769E /* SearchBarController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		189EA7EE26909F0D0050BDA7 = {
@@ -110,6 +200,8 @@
 		189EA7F926909F0D0050BDA7 /* Deacon */ = {
 			isa = PBXGroup;
 			children = (
+				1885EDF72695F799008C82EB /* Utility */,
+				1885EDF62695F78E008C82EB /* Constant */,
 				18C9C7CA26940C3B003B6C95 /* Manager */,
 				189EA8222690A3770050BDA7 /* Router */,
 				189EA81C2690A2CE0050BDA7 /* Factory */,
@@ -190,7 +282,10 @@
 		189EA8572690B2EB0050BDA7 /* SearchDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
-				189EA8582690B3320050BDA7 /* SearchDetailsVC.swift */,
+				18585D992696C33D0066B464 /* Modal */,
+				18585D952696C2CB0066B464 /* Controller */,
+				18585D962696C3210066B464 /* View */,
+				18585D982696C3300066B464 /* Xib */,
 			);
 			path = SearchDetailsVC;
 			sourceTree = "<group>";
@@ -274,6 +369,7 @@
 			files = (
 				189EA80A26909F0E0050BDA7 /* LaunchScreen.storyboard in Resources */,
 				189EA80726909F0E0050BDA7 /* Assets.xcassets in Resources */,
+				18585D932696BD250066B464 /* SearchDetailsCell.xib in Resources */,
 				189EA80226909F0D0050BDA7 /* Main.storyboard in Resources */,
 				184F6FA92693852400F5769E /* SearchBarCell.xib in Resources */,
 				184F6FA4269384AC00F5769E /* SearchBarController.xib in Resources */,
@@ -332,15 +428,19 @@
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
 				189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */,
+				18585D9D2696C3C50066B464 /* SearchDetailsModal.swift in Sources */,
+				18585DA22696CC590066B464 /* SearchDetailsController.swift in Sources */,
 				18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */,
-				189EA8592690B3320050BDA7 /* SearchDetailsVC.swift in Sources */,
 				189EA8482690AE9B0050BDA7 /* ButtonExtension.swift in Sources */,
+				18585D922696BD250066B464 /* SearchDetailsCell.swift in Sources */,
 				189EA81426909F890050BDA7 /* HomePageVC.swift in Sources */,
 				189EA81F2690A30E0050BDA7 /* ViewControllerFactory.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
+				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,
 				189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */,
+				1885EDF92695F7B0008C82EB /* Utility.swift in Sources */,
 				189EA8242690A38C0050BDA7 /* Router.swift in Sources */,
 				189EA8502690AF900050BDA7 /* OtherExtension.swift in Sources */,
 				189EA7FD26909F0D0050BDA7 /* SceneDelegate.swift in Sources */,

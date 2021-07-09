@@ -14,8 +14,8 @@ class DependencyVC:ViewControllerFactory{
 
     }
     
-    static func makeSearchDetailsVC() -> SearchDetailsVC? {
-        guard let searchDetailsController = UIStoryboard(.main).instantiateViewController(withIdentifier: SearchDetailsVC.className) as? SearchDetailsVC else {
+    static func makeSearchDetailsVC() -> SearchDetailsController? {
+        guard let searchDetailsController = UIStoryboard(.main).instantiateViewController(withIdentifier: SearchDetailsController.className) as? SearchDetailsController else {
             return nil
         }
         return searchDetailsController

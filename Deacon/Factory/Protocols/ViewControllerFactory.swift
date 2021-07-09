@@ -8,7 +8,7 @@
 import Foundation
 protocol ViewControllerFactory {
     static func makeHomePageVC()->HomePageVC?
-    static func makeSearchDetailsVC()->SearchDetailsVC?
+    static func makeSearchDetailsVC()->SearchDetailsController?
     static func makeSearchBarVC()->SearchBarController?
 
 }

@@ -15,8 +15,9 @@ class Router{
         }
     }
     
-    class func goToSearchDetailsVC(target:UIViewController){
+    class func goToSearchDetailsVC(target:UIViewController,getserachData:SearchModal){
         if  let searchDetails  = DependencyVC.makeSearchDetailsVC()  {
+            searchDetails.setSearchModal = getserachData
             target.navigationController?.pushViewController(searchDetails, animated: true)
         }
     }

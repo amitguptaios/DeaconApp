@@ -13,8 +13,8 @@ class SearchBarController: UIViewController ,NibLoaded, UISearchBarDelegate{
     var searchActive : Bool = false
     var data:[String] = []
     var filtered:[String] = []
-    var resultdata:[NSDictionary]  = []
-
+    var getSearchModal:[SearchModal] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -27,18 +27,18 @@ class SearchBarController: UIViewController ,NibLoaded, UISearchBarDelegate{
     func callSearchData(searchText:String){
         
         let url = WebServiceNames.baseUrl.rawValue + WebServiceNames.searchApi.rawValue + searchText
-        WebServices.requestApiWithDictParam(url: url, params:[:]) {(result, message, status )in
+        WebServices.requestApiWithDictParam(url: url, params:[:], modalType:SearchModal.self) {(result, message, status )in
         if status {
-            let loginDetails = result as? WebServices
-            self.resultdata = loginDetails?.responceDataArray ?? []
-         if self.resultdata.count > 0{
-        for getdata in self.resultdata{
-            if let Work_Address = getdata["Work_Address"] as? String
-            {
-                self.filtered.append(Work_Address)
+            self.filtered.removeAll()
+            guard let getresult  = result  else {return}
+            self.getSearchModal = getresult
+            if self.getSearchModal.count > 0{
+                self.getSearchModal.forEach({ data in
+                    self.filtered.append(data.workAddress ?? "")
+                })
+            }else{
+                self.filtered = []
             }
-            
-        }
         
         if(self.filtered.count == 0){
             self.searchActive = false;
@@ -55,13 +55,11 @@ class SearchBarController: UIViewController ,NibLoaded, UISearchBarDelegate{
         
     }
         }
-    }
    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             searchActive = false;
         }
     
-
    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
@@ -97,5 +95,10 @@ extension SearchBarController:UITableViewDataSource, UITableViewDelegate{
         }
         
         return cell;
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        Router.goToSearchDetailsVC(target: self, getserachData: getSearchModal[indexPath.row])
+        
     }
 }
