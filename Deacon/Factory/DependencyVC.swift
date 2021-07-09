@@ -8,6 +8,13 @@
 import Foundation
 import  UIKit
 class DependencyVC:ViewControllerFactory{
+    static func makeTopSoilFeed() -> TopSoilSeed? {
+        guard let topSoilSeedController = UIStoryboard(.main).instantiateViewController(withIdentifier: TopSoilSeed.className) as? TopSoilSeed  else {
+            return nil
+        }
+        return topSoilSeedController
+    }
+    
     
     static func makeSearchBarVC() -> SearchBarController? {
         SearchBarController.instantiate()

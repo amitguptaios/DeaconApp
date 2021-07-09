@@ -29,7 +29,7 @@ class HomePageVC: UIViewController {
         
     }
     @IBAction func didPressedSearchButton(){
-        Router.goTosearchVC(target: self)
+        Router.goToTopSoilSeed(target: self)
         
     }
 

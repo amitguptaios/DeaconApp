@@ -27,4 +27,10 @@ class Router{
             target.navigationController?.pushViewController(searchDetails, animated: false)
         }
     }
+    
+    class func goToTopSoilSeed(target:UIViewController){
+        if  let topSilSeed  = DependencyVC.makeTopSoilFeed()  {
+            target.navigationController?.pushViewController(topSilSeed, animated: true)
+        }
+    }
 }
