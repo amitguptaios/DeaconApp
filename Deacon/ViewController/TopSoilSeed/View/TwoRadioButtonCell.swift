@@ -9,6 +9,7 @@ import UIKit
 
 class TwoRadioButtonCell: UITableViewCell {
     @IBOutlet weak var twoRadioView:UIView!
+    @IBOutlet weak var titleLabel:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

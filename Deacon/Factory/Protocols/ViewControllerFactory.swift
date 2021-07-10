@@ -10,6 +10,7 @@ protocol ViewControllerFactory {
     static func makeHomePageVC()->HomePageVC?
     static func makeSearchDetailsVC()->SearchDetailsController?
     static func makeSearchBarVC()->SearchBarController?
-    static func makeTopSoilFeed()->TopSoilSeed?
+    static func makeTopSoilFeed()->TopSoilSeedVC?
+    static func makePoliceBackupVC()->PoliceBackupVC?
 
 }

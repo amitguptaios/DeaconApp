@@ -58,6 +58,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleLabel" destination="eVj-yD-Ode" id="fEi-3a-Fkx"/>
+                <outlet property="twoRadioView" destination="bSU-0M-50M" id="l6Q-Xg-5Lh"/>
+            </connections>
             <point key="canvasLocation" x="123.91304347826087" y="101.11607142857143"/>
         </tableViewCell>
     </objects>

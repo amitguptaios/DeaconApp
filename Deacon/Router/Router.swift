@@ -33,4 +33,9 @@ class Router{
             target.navigationController?.pushViewController(topSilSeed, animated: true)
         }
     }
+    class func goToPoilceBackup(target:UIViewController){
+        if  let topSilSeed  = DependencyVC.makePoliceBackupVC() {
+            target.navigationController?.pushViewController(topSilSeed, animated: true)
+        }
+    }
 }

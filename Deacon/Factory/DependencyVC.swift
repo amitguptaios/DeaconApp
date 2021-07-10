@@ -8,8 +8,16 @@
 import Foundation
 import  UIKit
 class DependencyVC:ViewControllerFactory{
-    static func makeTopSoilFeed() -> TopSoilSeed? {
-        guard let topSoilSeedController = UIStoryboard(.main).instantiateViewController(withIdentifier: TopSoilSeed.className) as? TopSoilSeed  else {
+    
+    static func makePoliceBackupVC() -> PoliceBackupVC? {
+        guard let policeBAckupVCController = UIStoryboard(.main).instantiateViewController(withIdentifier: PoliceBackupVC.className) as? PoliceBackupVC  else {
+            return nil
+        }
+        return policeBAckupVCController
+    }
+    
+    static func makeTopSoilFeed() -> TopSoilSeedVC? {
+        guard let topSoilSeedController = UIStoryboard(.main).instantiateViewController(withIdentifier: TopSoilSeedVC.className) as? TopSoilSeedVC  else {
             return nil
         }
         return topSoilSeedController

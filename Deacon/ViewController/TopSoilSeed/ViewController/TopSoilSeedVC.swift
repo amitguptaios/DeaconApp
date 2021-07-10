@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopSoilSeed: UIViewController {
+class TopSoilSeedVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class TopSoilSeed: UIViewController {
     }
 
 }
-extension TopSoilSeed:UITableViewDelegate,UITableViewDataSource{
+extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         11
     }
