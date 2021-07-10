@@ -34,6 +34,8 @@
 		186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF62026989BC6000729A4 /* CheckBoxCell.swift */; };
 		186BF62326989BC6000729A4 /* CheckBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186BF62126989BC6000729A4 /* CheckBoxCell.xib */; };
 		186BF6292699E4D7000729A4 /* PoliceBackupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF6282699E4D7000729A4 /* PoliceBackupVC.swift */; };
+		186BF62F2699FBD0000729A4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF62E2699FBD0000729A4 /* Constant.swift */; };
+		186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF6312699FBFE000729A4 /* TopSoilSeedModal.swift */; };
 		1885EDF92695F7B0008C82EB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDF82695F7B0008C82EB /* Utility.swift */; };
 		1885EE00269603D0008C82EB /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDFF269603D0008C82EB /* Modal.swift */; };
 		189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA7FA26909F0D0050BDA7 /* AppDelegate.swift */; };
@@ -81,6 +83,8 @@
 		186BF62026989BC6000729A4 /* CheckBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCell.swift; sourceTree = "<group>"; };
 		186BF62126989BC6000729A4 /* CheckBoxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxCell.xib; sourceTree = "<group>"; };
 		186BF6282699E4D7000729A4 /* PoliceBackupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceBackupVC.swift; sourceTree = "<group>"; };
+		186BF62E2699FBD0000729A4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		186BF6312699FBFE000729A4 /* TopSoilSeedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSoilSeedModal.swift; sourceTree = "<group>"; };
 		18827E504A7CED593A03F9A7 /* Pods-Deacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.debug.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.debug.xcconfig"; sourceTree = "<group>"; };
 		1885EDF82695F7B0008C82EB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		1885EDFF269603D0008C82EB /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		186BF6022698696F000729A4 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				186BF6312699FBFE000729A4 /* TopSoilSeedModal.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 		1885EDF62695F78E008C82EB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				186BF62E2699FBD0000729A4 /* Constant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -536,8 +542,10 @@
 				186BF5F4269867DB000729A4 /* CommonCell.swift in Sources */,
 				189EA81426909F890050BDA7 /* HomePageVC.swift in Sources */,
 				189EA81F2690A30E0050BDA7 /* ViewControllerFactory.swift in Sources */,
+				186BF62F2699FBD0000729A4 /* Constant.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
 				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
+				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,
 				189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */,
