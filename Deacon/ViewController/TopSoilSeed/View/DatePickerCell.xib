@@ -27,7 +27,7 @@
                         <rect key="frame" x="20" y="2" width="280" height="40"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AJ2-6h-7Df">
-                                <rect key="frame" x="10" y="2" width="260" height="36"/>
+                                <rect key="frame" x="10" y="2" width="226" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -39,13 +39,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date" translatesAutoresizingMaskIntoConstraints="NO" id="CWA-1o-3HV">
+                                <rect key="frame" x="255" y="5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="vbH-mS-i6v"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AJ2-6h-7Df" secondAttribute="trailing" constant="10" id="LyL-8W-xnE"/>
+                            <constraint firstItem="CWA-1o-3HV" firstAttribute="leading" secondItem="AJ2-6h-7Df" secondAttribute="trailing" constant="19" id="IOW-es-fuv"/>
                             <constraint firstItem="AJ2-6h-7Df" firstAttribute="top" secondItem="iYb-Nx-U8H" secondAttribute="top" constant="2" id="P9U-nt-Fgh"/>
                             <constraint firstAttribute="bottom" secondItem="AJ2-6h-7Df" secondAttribute="bottom" constant="2" id="UDu-ja-eBB"/>
+                            <constraint firstItem="CWA-1o-3HV" firstAttribute="top" secondItem="iYb-Nx-U8H" secondAttribute="top" constant="5" id="c4o-aE-s9M"/>
+                            <constraint firstAttribute="bottom" secondItem="CWA-1o-3HV" secondAttribute="bottom" constant="10" id="is5-1Z-K2n"/>
                             <constraint firstItem="AJ2-6h-7Df" firstAttribute="leading" secondItem="iYb-Nx-U8H" secondAttribute="leading" constant="10" id="kvJ-Ho-nuq"/>
+                            <constraint firstAttribute="trailing" secondItem="CWA-1o-3HV" secondAttribute="trailing" id="neH-Qu-4Af"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="ViewCornerRadius">
@@ -74,10 +83,11 @@
             <connections>
                 <outlet property="dateTextfield" destination="AJ2-6h-7Df" id="bez-IR-37M"/>
             </connections>
-            <point key="canvasLocation" x="86" y="87"/>
+            <point key="canvasLocation" x="85.507246376811594" y="86.383928571428569"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="date" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
