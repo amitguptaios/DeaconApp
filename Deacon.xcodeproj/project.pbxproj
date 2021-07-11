@@ -53,6 +53,7 @@
 		18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7CB26940C55003B6C95 /* Apimanager.swift */; };
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
 		2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A459269B00A20013B4A9 /* AppColor.swift */; };
+		2807A45E269B0A170013B4A9 /* TwwValveContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A45D269B0A170013B4A9 /* TwwValveContractViewController.swift */; };
 		28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */; };
 		28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */; };
 		28F035F4269AF0160014C600 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035F3269AF0160014C600 /* HomeModel.swift */; };
@@ -109,6 +110,7 @@
 		18C9C7CB26940C55003B6C95 /* Apimanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apimanager.swift; sourceTree = "<group>"; };
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
 		2807A459269B00A20013B4A9 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		2807A45D269B0A170013B4A9 /* TwwValveContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwwValveContractViewController.swift; sourceTree = "<group>"; };
 		28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleCollectionViewCell.xib; sourceTree = "<group>"; };
 		28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F035F3269AF0160014C600 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 		189EA81226909F2F0050BDA7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2807A45B269B09FE0013B4A9 /* TwwValveContract */,
 				186BF6262699E420000729A4 /* PoliceBackup */,
 				186BF5F0269866E2000729A4 /* TopSoilSeed */,
 				184F6F9C2693835700F5769E /* SearchViewController */,
@@ -408,6 +411,22 @@
 				2807A459269B00A20013B4A9 /* AppColor.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		2807A45B269B09FE0013B4A9 /* TwwValveContract */ = {
+			isa = PBXGroup;
+			children = (
+				2807A45C269B0A0A0013B4A9 /* Controller */,
+			);
+			path = TwwValveContract;
+			sourceTree = "<group>";
+		};
+		2807A45C269B0A0A0013B4A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2807A45D269B0A170013B4A9 /* TwwValveContractViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		28F035ED269AEEF90014C600 /* View */ = {
@@ -573,6 +592,7 @@
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
 				28F035F4269AF0160014C600 /* HomeModel.swift in Sources */,
+				2807A45E269B0A170013B4A9 /* TwwValveContractViewController.swift in Sources */,
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
 				186BF60526986A3B000729A4 /* TopSoilSeedVC.swift in Sources */,

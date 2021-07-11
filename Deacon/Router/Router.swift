@@ -38,4 +38,11 @@ class Router{
             target.navigationController?.pushViewController(topSilSeed, animated: true)
         }
     }
+    class func goToTWWValveContract(target:UIViewController){
+        if  let topSilSeed  = DependencyVC.makeTwwValveContractVC() {
+            target.navigationController?.pushViewController(topSilSeed, animated: true)
+        }
+    }
+    
+    
 }

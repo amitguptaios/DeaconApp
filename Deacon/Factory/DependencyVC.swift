@@ -43,4 +43,10 @@ class DependencyVC:ViewControllerFactory{
         return homePageController
     }
     
+    static func makeTwwValveContractVC() -> TwwValveContractViewController? {
+        guard let TwwValveContractVC = UIStoryboard(.main).instantiateViewController(withIdentifier: TwwValveContractViewController.className) as? TwwValveContractViewController else {
+            return nil
+        }
+        return TwwValveContractVC
+    }
 }

@@ -71,7 +71,7 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
         debugPrint("did select index:\(indexPath.row),title:\(arrModules[indexPath.row] as? String)")
         if indexPath.row == 0{
             //Tww valve contract
-           // Router.goToTopSoilSeed(target: <#T##UIViewController#>)
+            Router.goToTopSoilSeed(target: self)
         }else if indexPath.row == 1 {
             //Service line report
         }else if indexPath.row == 2 {

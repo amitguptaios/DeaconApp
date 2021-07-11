@@ -20,7 +20,9 @@ class SearchDetailsController: UIViewController {
         configureViews()
         SetUpdataforCell()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        appNavigationWithBackButton(navigationTitle: "Search Detail")
+    }
     func SetUpdataforCell(){
         self.title = "Search Result"
         guard  let setSearchModalData = setSearchModal else {

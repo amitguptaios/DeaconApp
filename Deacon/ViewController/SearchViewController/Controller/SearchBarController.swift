@@ -23,7 +23,9 @@ class SearchBarController: UIViewController ,NibLoaded, UISearchBarDelegate{
         tableview.dataSource = self
         tableview.delegate = self
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        appNavigationWithBackButton(navigationTitle: "Search Result")
+    }
     func callSearchData(searchText:String){
         
         let url = WebServiceNames.baseUrl.rawValue + WebServiceNames.searchApi.rawValue + searchText

@@ -419,6 +419,36 @@
             </objects>
             <point key="canvasLocation" x="1623.1884057971015" y="75.669642857142847"/>
         </scene>
+        <!--Tww Valve Contract View Controller-->
+        <scene sceneID="pXd-UW-nmP">
+            <objects>
+                <viewController storyboardIdentifier="TwwValveContractViewController" id="34j-Ep-BNV" customClass="TwwValveContractViewController" customModule="Deacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lwa-G1-h7N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aem-GZ-lwv">
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="shx-t0-qOK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="shx-t0-qOK" firstAttribute="bottom" secondItem="Aem-GZ-lwv" secondAttribute="bottom" id="E0G-Hs-oE2"/>
+                            <constraint firstItem="shx-t0-qOK" firstAttribute="trailing" secondItem="Aem-GZ-lwv" secondAttribute="trailing" id="GVc-ps-vyd"/>
+                            <constraint firstItem="Aem-GZ-lwv" firstAttribute="leading" secondItem="shx-t0-qOK" secondAttribute="leading" id="Jxg-oW-CDQ"/>
+                            <constraint firstItem="Aem-GZ-lwv" firstAttribute="top" secondItem="shx-t0-qOK" secondAttribute="top" constant="20" id="zTW-bf-zDj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="Aem-GZ-lwv" id="Pr6-4a-IeN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhH-7i-xrk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4468" y="74"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Group 13" width="122" height="43"/>
