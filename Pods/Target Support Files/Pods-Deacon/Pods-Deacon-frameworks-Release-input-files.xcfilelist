@@ -1,3 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Deacon/Pods-Deacon-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/MBRadioCheckboxButton/MBRadioCheckboxButton.framework
 ${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework

@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (5.4.1)
+  - IQKeyboardManagerSwift (6.5.6)
+  - MBRadioCheckboxButton (2.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - IQKeyboardManagerSwift
+  - MBRadioCheckboxButton
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManagerSwift
+    - MBRadioCheckboxButton
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  MBRadioCheckboxButton: 6e2a2cdc441e292e45b64c4e65eb8fc1fc05eef2
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cb38ac1ff52976656ee9bceed6ae7b974d0d1ecf
+PODFILE CHECKSUM: c8030a842b7ed4c279cc0c5257fa072459de2254
 
 COCOAPODS: 1.10.1
