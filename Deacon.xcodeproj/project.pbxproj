@@ -52,6 +52,9 @@
 		189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8522690B0890050BDA7 /* DependencyVC.swift */; };
 		18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7CB26940C55003B6C95 /* Apimanager.swift */; };
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
+		28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */; };
+		28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */; };
+		28F035F4269AF0160014C600 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035F3269AF0160014C600 /* HomeModel.swift */; };
 		8B60350738CA860B0176AFF9 /* Pods_Deacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18C1A8313A460030B5097D6 /* Pods_Deacon.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +107,9 @@
 		189EA8522690B0890050BDA7 /* DependencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyVC.swift; sourceTree = "<group>"; };
 		18C9C7CB26940C55003B6C95 /* Apimanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apimanager.swift; sourceTree = "<group>"; };
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
+		28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleCollectionViewCell.xib; sourceTree = "<group>"; };
+		28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
+		28F035F3269AF0160014C600 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		5A99797A10A9B02318E8A44B /* Pods-Deacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.release.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.release.xcconfig"; sourceTree = "<group>"; };
 		C18C1A8313A460030B5097D6 /* Pods_Deacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -367,7 +373,9 @@
 		189EA8562690B2D30050BDA7 /* HomePageVC */ = {
 			isa = PBXGroup;
 			children = (
-				189EA81326909F890050BDA7 /* HomePageVC.swift */,
+				28F035F2269AEFCD0014C600 /* Model */,
+				28F035ED269AEEF90014C600 /* View */,
+				28F035F5269AF02B0014C600 /* Controller */,
 			);
 			path = HomePageVC;
 			sourceTree = "<group>";
@@ -389,6 +397,31 @@
 				18C9C7D52694168C003B6C95 /* ApiName.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		28F035ED269AEEF90014C600 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */,
+				28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28F035F2269AEFCD0014C600 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28F035F3269AF0160014C600 /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28F035F5269AF02B0014C600 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				189EA81326909F890050BDA7 /* HomePageVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		834CCF89AAB9BE10140F787B /* Pods */ = {
@@ -466,6 +499,7 @@
 				189EA80226909F0D0050BDA7 /* Main.storyboard in Resources */,
 				184F6FA92693852400F5769E /* SearchBarCell.xib in Resources */,
 				186BF5F5269867DB000729A4 /* CommonCell.xib in Resources */,
+				28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */,
 				186BF61E26989A01000729A4 /* SubmitCell.xib in Resources */,
 				186BF6142698913A000729A4 /* ThreeRadioButtonCell.xib in Resources */,
 				186BF61926989460000729A4 /* AttachmentCell.xib in Resources */,
@@ -527,10 +561,12 @@
 			files = (
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
+				28F035F4269AF0160014C600 /* HomeModel.swift in Sources */,
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
 				186BF60526986A3B000729A4 /* TopSoilSeedVC.swift in Sources */,
 				189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */,
+				28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */,
 				18585D9D2696C3C50066B464 /* SearchDetailsModal.swift in Sources */,
 				18585DA22696CC590066B464 /* SearchDetailsController.swift in Sources */,
 				18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */,

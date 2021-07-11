@@ -8,5 +8,7 @@ target 'Deacon' do
   # Pods for Deacon
   pod 'Alamofire', '~> 5.4'
   pod 'SVProgressHUD'
-
+  pod 'IQKeyboardManagerSwift'
+  pod 'SDWebImage', '~>3.8'
+  
   end
