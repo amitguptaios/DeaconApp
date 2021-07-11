@@ -13,7 +13,9 @@ class TopSoilSeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        self.title = "Top Soil Feed"
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        appNavigationWithBackButton(navigationTitle: "Top Soil seed")
     }
     
     func configureViews(){

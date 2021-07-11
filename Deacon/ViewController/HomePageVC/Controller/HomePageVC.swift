@@ -69,6 +69,36 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         debugPrint("did select index:\(indexPath.row),title:\(arrModules[indexPath.row] as? String)")
+        if indexPath.row == 0{
+            //Tww valve contract
+           // Router.goToTopSoilSeed(target: <#T##UIViewController#>)
+        }else if indexPath.row == 1 {
+            //Service line report
+        }else if indexPath.row == 2 {
+            //Top soil seed
+            Router.goToTopSoilSeed(target: self)
+        }else if indexPath.row == 3 {
+            //Meter report
+        }else if indexPath.row == 4 {
+            //Infra red burn report
+        }else if indexPath.row == 5 {
+            //Cleaning report
+        }else if indexPath.row == 6 {
+            //Hours Input
+        }else if indexPath.row == 7 {
+            //Concrete Road
+        }else if indexPath.row == 8 {
+            //Saw Cut
+        }else if indexPath.row == 9 {
+            //Sidewalk/Curb Install
+        }else if indexPath.row == 10 {
+            //Police Backup
+            Router.goToPoilceBackup(target: self)
+        }else if indexPath.row == 11 {
+            //Bypass Install
+        } else {
+            
+        }
     }
 }
 extension HomePageVC: UICollectionViewDelegateFlowLayout {
@@ -81,5 +111,4 @@ extension HomePageVC: UICollectionViewDelegateFlowLayout {
     }
     
 }
-
 

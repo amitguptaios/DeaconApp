@@ -32,7 +32,7 @@ extension UIStoryboard {
     
     enum Storyboard: String {
         case main = "Main"
-      
+        
         var filename: String {
             return rawValue
         }
@@ -71,5 +71,22 @@ extension NibLoaded where Self: UIViewController {
         let fullName = NSStringFromClass(self)
         let className = fullName.components(separatedBy: ".")[1]
         return Self(nibName: className, bundle: Bundle.main)
+    }
+}
+extension UIViewController {
+    func appNavigationWithBackButton(navigationTitle:String)  {
+      //  self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back_button")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back_button")
+        self.navigationController?.navigationBar.backgroundColor = AppColor.appNavigationSkyBlueColor
+        navigationController?.navigationBar.tintColor = .white
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: ScreenSize.SCREEN_WIDTH, height: 50))
+        titleLabel.text = navigationTitle
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.textAlignment = .left
+        titleLabel.backgroundColor = UIColor.clear
+        navigationItem.titleView = titleLabel
     }
 }

@@ -13,9 +13,10 @@ class PoliceBackupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        self.title = "Police Backup"
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        appNavigationWithBackButton(navigationTitle: "Police Backup")
+    }
     func configureViews(){
         let nib = UINib(nibName: "CommonCell", bundle: nil)
         tableview.register(nib, forCellReuseIdentifier: "CommonCell")

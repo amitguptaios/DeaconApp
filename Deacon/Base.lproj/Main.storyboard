@@ -139,7 +139,7 @@
         <!--Top Soil SeedVC-->
         <scene sceneID="vcf-dm-cza">
             <objects>
-                <viewController storyboardIdentifier="TopSoilSeed" id="kkg-fb-wK0" customClass="TopSoilSeedVC" customModule="Deacon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopSoilSeedVC" id="kkg-fb-wK0" customClass="TopSoilSeedVC" customModule="Deacon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6c-4S-aUJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,10 +199,12 @@
         <!--Navigation Controller-->
         <scene sceneID="Fni-3V-oUH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Yxo-na-jAE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yxo-na-jAE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="paR-r7-MS2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.69411764705882351" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -249,6 +251,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="2Ou-kN-fEV"/>
                                                     <constraint firstItem="MVC-sK-hkx" firstAttribute="leading" secondItem="TEp-Cb-OVO" secondAttribute="leadingMargin" id="XM0-MC-gzT"/>
@@ -272,6 +275,7 @@
                                                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nuy-mG-9wv">
                                                                 <rect key="frame" x="5" y="10" width="351" height="25"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </searchBar>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuH-tL-ekd">
