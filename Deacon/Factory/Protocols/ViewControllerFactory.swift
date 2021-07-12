@@ -12,5 +12,8 @@ protocol ViewControllerFactory {
     static func makeSearchBarVC()->SearchBarController?
     static func makeTopSoilFeed()->TopSoilSeedVC?
     static func makePoliceBackupVC()->PoliceBackupVC?
-
+    static func makeTwwValveContractVC()->TwwValveContractVC?
+    static func makeServiceLineReportVC()->ServiceLineReportVC?
+    static func makeThankYouVC()->ThankYouVC?
 }
+

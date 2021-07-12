@@ -52,6 +52,21 @@
 		189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8522690B0890050BDA7 /* DependencyVC.swift */; };
 		18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7CB26940C55003B6C95 /* Apimanager.swift */; };
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
+		2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A459269B00A20013B4A9 /* AppColor.swift */; };
+		2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */; };
+		282407BC269B212F0066AEED /* PVRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407B8269B212F0066AEED /* PVRadioButtonView.swift */; };
+		282407BD269B212F0066AEED /* PVRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407BA269B212F0066AEED /* PVRadioButton.swift */; };
+		282407BE269B212F0066AEED /* PVRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407BB269B212F0066AEED /* PVRadioButtonGroup.swift */; };
+		282407C2269B256D0066AEED /* ServiceLineReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407C1269B256D0066AEED /* ServiceLineReportVC.swift */; };
+		282407C6269B25930066AEED /* ServiceLineReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407C5269B25930066AEED /* ServiceLineReportModel.swift */; };
+		282407CA269B25C10066AEED /* TwwValveContractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407C9269B25C10066AEED /* TwwValveContractModel.swift */; };
+		282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407CE269B3BCB0066AEED /* SixRadioButtonCell.swift */; };
+		282407D1269B3BCB0066AEED /* SixRadioButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282407CF269B3BCB0066AEED /* SixRadioButtonCell.xib */; };
+		28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0831C269C26A100EF63BF /* ThankYouVC.swift */; };
+		28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A08320269C275200EF63BF /* ThankYouModel.swift */; };
+		28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */; };
+		28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */; };
+		28F035F4269AF0160014C600 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035F3269AF0160014C600 /* HomeModel.swift */; };
 		8B60350738CA860B0176AFF9 /* Pods_Deacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18C1A8313A460030B5097D6 /* Pods_Deacon.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +119,21 @@
 		189EA8522690B0890050BDA7 /* DependencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyVC.swift; sourceTree = "<group>"; };
 		18C9C7CB26940C55003B6C95 /* Apimanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apimanager.swift; sourceTree = "<group>"; };
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
+		2807A459269B00A20013B4A9 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwwValveContractVC.swift; sourceTree = "<group>"; };
+		282407B8269B212F0066AEED /* PVRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonView.swift; sourceTree = "<group>"; };
+		282407BA269B212F0066AEED /* PVRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButton.swift; sourceTree = "<group>"; };
+		282407BB269B212F0066AEED /* PVRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonGroup.swift; sourceTree = "<group>"; };
+		282407C1269B256D0066AEED /* ServiceLineReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLineReportVC.swift; sourceTree = "<group>"; };
+		282407C5269B25930066AEED /* ServiceLineReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLineReportModel.swift; sourceTree = "<group>"; };
+		282407C9269B25C10066AEED /* TwwValveContractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwwValveContractModel.swift; sourceTree = "<group>"; };
+		282407CE269B3BCB0066AEED /* SixRadioButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixRadioButtonCell.swift; sourceTree = "<group>"; };
+		282407CF269B3BCB0066AEED /* SixRadioButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SixRadioButtonCell.xib; sourceTree = "<group>"; };
+		28A0831C269C26A100EF63BF /* ThankYouVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouVC.swift; sourceTree = "<group>"; };
+		28A08320269C275200EF63BF /* ThankYouModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouModel.swift; sourceTree = "<group>"; };
+		28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleCollectionViewCell.xib; sourceTree = "<group>"; };
+		28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
+		28F035F3269AF0160014C600 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		5A99797A10A9B02318E8A44B /* Pods-Deacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.release.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.release.xcconfig"; sourceTree = "<group>"; };
 		C18C1A8313A460030B5097D6 /* Pods_Deacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,6 +222,8 @@
 				186BF61C26989A01000729A4 /* SubmitCell.xib */,
 				186BF62026989BC6000729A4 /* CheckBoxCell.swift */,
 				186BF62126989BC6000729A4 /* CheckBoxCell.xib */,
+				282407CE269B3BCB0066AEED /* SixRadioButtonCell.swift */,
+				282407CF269B3BCB0066AEED /* SixRadioButtonCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +323,7 @@
 		189EA7F926909F0D0050BDA7 /* Deacon */ = {
 			isa = PBXGroup;
 			children = (
+				2807A458269B008B0013B4A9 /* Colors */,
 				1885EDF72695F799008C82EB /* Utility */,
 				1885EDF62695F78E008C82EB /* Constant */,
 				18C9C7CA26940C3B003B6C95 /* Manager */,
@@ -299,6 +332,7 @@
 				189EA81B2690A0970050BDA7 /* Extensions */,
 				189EA81226909F2F0050BDA7 /* ViewController */,
 				189EA81726909FAA0050BDA7 /* AppDelegate */,
+				282407B5269B211F0066AEED /* SupportingClasses */,
 				189EA80026909F0D0050BDA7 /* Main.storyboard */,
 				189EA80626909F0E0050BDA7 /* Assets.xcassets */,
 				189EA80826909F0E0050BDA7 /* LaunchScreen.storyboard */,
@@ -311,6 +345,11 @@
 		189EA81226909F2F0050BDA7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				28A0831F269C273900EF63BF /* Model */,
+				28A0831E269C273500EF63BF /* View */,
+				28A0831B269C268500EF63BF /* Controller */,
+				282407BF269B25540066AEED /* ServiceLineReport */,
+				2807A45B269B09FE0013B4A9 /* TwwValveContract */,
 				186BF6262699E420000729A4 /* PoliceBackup */,
 				186BF5F0269866E2000729A4 /* TopSoilSeed */,
 				184F6F9C2693835700F5769E /* SearchViewController */,
@@ -367,7 +406,9 @@
 		189EA8562690B2D30050BDA7 /* HomePageVC */ = {
 			isa = PBXGroup;
 			children = (
-				189EA81326909F890050BDA7 /* HomePageVC.swift */,
+				28F035F2269AEFCD0014C600 /* Model */,
+				28F035ED269AEEF90014C600 /* View */,
+				28F035F5269AF02B0014C600 /* Controller */,
 			);
 			path = HomePageVC;
 			sourceTree = "<group>";
@@ -389,6 +430,162 @@
 				18C9C7D52694168C003B6C95 /* ApiName.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		2807A458269B008B0013B4A9 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				2807A459269B00A20013B4A9 /* AppColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		2807A45B269B09FE0013B4A9 /* TwwValveContract */ = {
+			isa = PBXGroup;
+			children = (
+				282407C8269B25A30066AEED /* View */,
+				282407C3269B25740066AEED /* Model */,
+				2807A45C269B0A0A0013B4A9 /* Controller */,
+			);
+			path = TwwValveContract;
+			sourceTree = "<group>";
+		};
+		2807A45C269B0A0A0013B4A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		282407B5269B211F0066AEED /* SupportingClasses */ = {
+			isa = PBXGroup;
+			children = (
+				282407B6269B212F0066AEED /* PVRadioButton */,
+			);
+			path = SupportingClasses;
+			sourceTree = "<group>";
+		};
+		282407B6269B212F0066AEED /* PVRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				282407B7269B212F0066AEED /* RadioButtonWithScroll */,
+				282407B9269B212F0066AEED /* RadioButtonWithGroup */,
+			);
+			path = PVRadioButton;
+			sourceTree = "<group>";
+		};
+		282407B7269B212F0066AEED /* RadioButtonWithScroll */ = {
+			isa = PBXGroup;
+			children = (
+				282407B8269B212F0066AEED /* PVRadioButtonView.swift */,
+			);
+			path = RadioButtonWithScroll;
+			sourceTree = "<group>";
+		};
+		282407B9269B212F0066AEED /* RadioButtonWithGroup */ = {
+			isa = PBXGroup;
+			children = (
+				282407BA269B212F0066AEED /* PVRadioButton.swift */,
+				282407BB269B212F0066AEED /* PVRadioButtonGroup.swift */,
+			);
+			path = RadioButtonWithGroup;
+			sourceTree = "<group>";
+		};
+		282407BF269B25540066AEED /* ServiceLineReport */ = {
+			isa = PBXGroup;
+			children = (
+				282407C7269B25980066AEED /* View */,
+				282407C4269B257F0066AEED /* Model */,
+				282407C0269B255A0066AEED /* Controller */,
+			);
+			path = ServiceLineReport;
+			sourceTree = "<group>";
+		};
+		282407C0269B255A0066AEED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				282407C1269B256D0066AEED /* ServiceLineReportVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		282407C3269B25740066AEED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				282407C9269B25C10066AEED /* TwwValveContractModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		282407C4269B257F0066AEED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				282407C5269B25930066AEED /* ServiceLineReportModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		282407C7269B25980066AEED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		282407C8269B25A30066AEED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28A0831B269C268500EF63BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28A0831C269C26A100EF63BF /* ThankYouVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		28A0831E269C273500EF63BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28A0831F269C273900EF63BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28A08320269C275200EF63BF /* ThankYouModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28F035ED269AEEF90014C600 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */,
+				28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28F035F2269AEFCD0014C600 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28F035F3269AF0160014C600 /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28F035F5269AF02B0014C600 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				189EA81326909F890050BDA7 /* HomePageVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		834CCF89AAB9BE10140F787B /* Pods */ = {
@@ -465,7 +662,9 @@
 				18585D932696BD250066B464 /* SearchDetailsCell.xib in Resources */,
 				189EA80226909F0D0050BDA7 /* Main.storyboard in Resources */,
 				184F6FA92693852400F5769E /* SearchBarCell.xib in Resources */,
+				282407D1269B3BCB0066AEED /* SixRadioButtonCell.xib in Resources */,
 				186BF5F5269867DB000729A4 /* CommonCell.xib in Resources */,
+				28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */,
 				186BF61E26989A01000729A4 /* SubmitCell.xib in Resources */,
 				186BF6142698913A000729A4 /* ThreeRadioButtonCell.xib in Resources */,
 				186BF61926989460000729A4 /* AttachmentCell.xib in Resources */,
@@ -527,33 +726,46 @@
 			files = (
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
+				282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */,
+				28F035F4269AF0160014C600 /* HomeModel.swift in Sources */,
+				2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */,
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
 				186BF60526986A3B000729A4 /* TopSoilSeedVC.swift in Sources */,
 				189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */,
+				28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */,
 				18585D9D2696C3C50066B464 /* SearchDetailsModal.swift in Sources */,
 				18585DA22696CC590066B464 /* SearchDetailsController.swift in Sources */,
 				18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */,
 				186BF6132698913A000729A4 /* ThreeRadioButtonCell.swift in Sources */,
+				282407C6269B25930066AEED /* ServiceLineReportModel.swift in Sources */,
 				186BF6292699E4D7000729A4 /* PoliceBackupVC.swift in Sources */,
 				189EA8482690AE9B0050BDA7 /* ButtonExtension.swift in Sources */,
 				186BF60E26988D70000729A4 /* TwoRadioButtonCell.swift in Sources */,
 				18585D922696BD250066B464 /* SearchDetailsCell.swift in Sources */,
+				282407BD269B212F0066AEED /* PVRadioButton.swift in Sources */,
 				186BF5F4269867DB000729A4 /* CommonCell.swift in Sources */,
+				282407BC269B212F0066AEED /* PVRadioButtonView.swift in Sources */,
+				28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */,
 				189EA81426909F890050BDA7 /* HomePageVC.swift in Sources */,
 				189EA81F2690A30E0050BDA7 /* ViewControllerFactory.swift in Sources */,
 				186BF62F2699FBD0000729A4 /* Constant.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
+				282407C2269B256D0066AEED /* ServiceLineReportVC.swift in Sources */,
 				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
+				28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */,
+				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,
+				282407CA269B25C10066AEED /* TwwValveContractModel.swift in Sources */,
 				189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */,
 				1885EDF92695F7B0008C82EB /* Utility.swift in Sources */,
 				189EA8242690A38C0050BDA7 /* Router.swift in Sources */,
 				189EA8502690AF900050BDA7 /* OtherExtension.swift in Sources */,
 				186BF61826989460000729A4 /* AttachmentCell.swift in Sources */,
 				189EA7FD26909F0D0050BDA7 /* SceneDelegate.swift in Sources */,
+				282407BE269B212F0066AEED /* PVRadioButtonGroup.swift in Sources */,
 				186BF5FE26986813000729A4 /* TimePickerCell.swift in Sources */,
 				186BF5F9269867FC000729A4 /* DatePickerCell.swift in Sources */,
 			);

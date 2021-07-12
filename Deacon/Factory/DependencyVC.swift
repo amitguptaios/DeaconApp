@@ -43,4 +43,22 @@ class DependencyVC:ViewControllerFactory{
         return homePageController
     }
     
+    static func makeTwwValveContractVC() -> TwwValveContractVC? {
+        guard let TwwValveContractVC = UIStoryboard(.main).instantiateViewController(withIdentifier: TwwValveContractVC.className) as? TwwValveContractVC else {
+            return nil
+        }
+        return TwwValveContractVC
+    }
+    static func makeServiceLineReportVC() -> ServiceLineReportVC? {
+        guard let ServiceLineReportVC = UIStoryboard(.main).instantiateViewController(withIdentifier: ServiceLineReportVC.className) as? ServiceLineReportVC else {
+            return nil
+        }
+        return ServiceLineReportVC
+    }
+    static func makeThankYouVC() -> ThankYouVC? {
+        guard let ThankYouVC = UIStoryboard(.main).instantiateViewController(withIdentifier: ThankYouVC.className) as? ThankYouVC else {
+            return nil
+        }
+        return ThankYouVC
+    }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +31,59 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSU-0M-50M">
                         <rect key="frame" x="20" y="31" width="333" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rR-ze-pzQ" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                                <rect key="frame" x="5" y="5" width="159" height="30"/>
+                                <state key="normal" title="North B">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="North B"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="radioButtoncolor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTitleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ViewBorderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonTitleSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy5-fY-VPJ" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                                <rect key="frame" x="169" y="5" width="159" height="30"/>
+                                <state key="normal" title="Rutherford">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Rutherford"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="radioButtoncolor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTitleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonTitleSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0rR-ze-pzQ" firstAttribute="leading" secondItem="bSU-0M-50M" secondAttribute="leading" constant="5" id="1qK-fC-vnb"/>
+                            <constraint firstItem="Yy5-fY-VPJ" firstAttribute="top" secondItem="bSU-0M-50M" secondAttribute="top" constant="5" id="Cjl-5y-YIw"/>
+                            <constraint firstItem="Yy5-fY-VPJ" firstAttribute="height" secondItem="0rR-ze-pzQ" secondAttribute="height" id="Cvn-9L-ecf"/>
+                            <constraint firstAttribute="trailing" secondItem="Yy5-fY-VPJ" secondAttribute="trailing" constant="5" id="Mb8-xo-rkk"/>
+                            <constraint firstItem="Yy5-fY-VPJ" firstAttribute="leading" secondItem="0rR-ze-pzQ" secondAttribute="trailing" constant="5" id="WTJ-a5-yp2"/>
+                            <constraint firstAttribute="bottom" secondItem="0rR-ze-pzQ" secondAttribute="bottom" constant="5" id="beI-T6-Fc5"/>
+                            <constraint firstAttribute="bottom" secondItem="Yy5-fY-VPJ" secondAttribute="bottom" constant="5" id="c1i-VN-LD0"/>
+                            <constraint firstItem="Yy5-fY-VPJ" firstAttribute="width" secondItem="0rR-ze-pzQ" secondAttribute="width" id="mgN-Ec-ogk"/>
+                            <constraint firstItem="0rR-ze-pzQ" firstAttribute="top" secondItem="bSU-0M-50M" secondAttribute="top" constant="5" id="vCL-xd-1NP"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="ViewCornerRadius">
                                 <real key="value" value="5"/>
@@ -59,12 +111,22 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="optionA" destination="0rR-ze-pzQ" id="yIg-SQ-LkI"/>
+                <outlet property="optionB" destination="Yy5-fY-VPJ" id="uUx-IR-9pS"/>
                 <outlet property="titleLabel" destination="eVj-yD-Ode" id="fEi-3a-Fkx"/>
-                <outlet property="twoRadioView" destination="bSU-0M-50M" id="l6Q-Xg-5Lh"/>
+                <outlet property="twoRadioView" destination="bSU-0M-50M" id="TWJ-nV-BY5"/>
             </connections>
             <point key="canvasLocation" x="123.91304347826087" y="101.11607142857143"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="0rR-ze-pzQ">
+            <size key="intrinsicContentSize" width="53" height="30"/>
+        </designable>
+        <designable name="Yy5-fY-VPJ">
+            <size key="intrinsicContentSize" width="74" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

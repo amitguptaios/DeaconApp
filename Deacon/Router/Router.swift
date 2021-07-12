@@ -38,4 +38,19 @@ class Router{
             target.navigationController?.pushViewController(topSilSeed, animated: true)
         }
     }
+    class func goToTWWValveContract(target:UIViewController){
+        if  let TWWValveContract  = DependencyVC.makeTwwValveContractVC() {
+            target.navigationController?.pushViewController(TWWValveContract, animated: true)
+        }
+    }
+    class func goToServiceLineReportVC(target:UIViewController){
+        if  let ServiceLineReportVC  = DependencyVC.makeServiceLineReportVC() {
+            target.navigationController?.pushViewController(ServiceLineReportVC, animated: true)
+        }
+    }
+    class func goToThankYouVC(target:UIViewController){
+        if  let ThankYouVC  = DependencyVC.makeThankYouVC() {
+            target.navigationController?.pushViewController(ThankYouVC, animated: true)
+        }
+    }
 }

@@ -28,7 +28,7 @@ class SearchDetailsModal{
         prepareModal()
         comple(totalData)
     }
-    
+ 
     func prepareModal(){
         cellData.forEach{ data in
             getcellData.append(SetCellData(title: data))
