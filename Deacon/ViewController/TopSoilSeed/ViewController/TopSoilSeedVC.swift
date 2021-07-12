@@ -81,6 +81,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             
             cell.attachmentTitleLabel.text = "Photo 1*"
+           
             return cell
         case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
@@ -131,4 +132,14 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
            return 20.0
        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 6, 7, 8:
+            let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
+            cell?.getImageFromImagePicker(VC: self)
+        default:
+        break
+        }
+    }
 }

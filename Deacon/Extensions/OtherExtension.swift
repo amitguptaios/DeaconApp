@@ -90,3 +90,7 @@ extension UIViewController {
         navigationItem.titleView = titleLabel
     }
 }
+enum PickerStyle {
+    case Date
+    case Time
+}

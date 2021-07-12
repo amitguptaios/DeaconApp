@@ -52,6 +52,8 @@
 		189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8522690B0890050BDA7 /* DependencyVC.swift */; };
 		18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7CB26940C55003B6C95 /* Apimanager.swift */; };
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
+		18CB7614269C55B500DB5E33 /* UItextFeildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */; };
+		18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7616269C657700DB5E33 /* ImagePickerManager.swift */; };
 		2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A459269B00A20013B4A9 /* AppColor.swift */; };
 		2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */; };
 		282407BC269B212F0066AEED /* PVRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407B8269B212F0066AEED /* PVRadioButtonView.swift */; };
@@ -119,6 +121,8 @@
 		189EA8522690B0890050BDA7 /* DependencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyVC.swift; sourceTree = "<group>"; };
 		18C9C7CB26940C55003B6C95 /* Apimanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apimanager.swift; sourceTree = "<group>"; };
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
+		18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItextFeildExtension.swift; sourceTree = "<group>"; };
+		18CB7616269C657700DB5E33 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		2807A459269B00A20013B4A9 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwwValveContractVC.swift; sourceTree = "<group>"; };
 		282407B8269B212F0066AEED /* PVRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonView.swift; sourceTree = "<group>"; };
@@ -374,6 +378,7 @@
 				189EA8472690AE9B0050BDA7 /* ButtonExtension.swift */,
 				189EA84F2690AF900050BDA7 /* OtherExtension.swift */,
 				1868806B26917FB6007A07BC /* ViewExtension.swift */,
+				18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 			children = (
 				18C9C7CB26940C55003B6C95 /* Apimanager.swift */,
 				18C9C7D52694168C003B6C95 /* ApiName.swift */,
+				18CB7616269C657700DB5E33 /* ImagePickerManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -724,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CB7614269C55B500DB5E33 /* UItextFeildExtension.swift in Sources */,
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
 				282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */,
@@ -756,6 +763,7 @@
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
 				28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */,
 				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
+				18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,
 				282407CA269B25C10066AEED /* TwwValveContractModel.swift in Sources */,

@@ -14,6 +14,7 @@ class AttachmentCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -23,4 +24,10 @@ class AttachmentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func getImageFromImagePicker(VC:UIViewController){
+        ImagePickerManager().pickImage(VC){ image in
+            //here is the image
+            print("image",image)
+        }
+    }
 }
