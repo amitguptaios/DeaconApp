@@ -25,6 +25,7 @@ class SearchBarController: UIViewController ,NibLoaded, UISearchBarDelegate{
     }
     override func viewWillAppear(_ animated: Bool) {
         appNavigationWithBackButton(navigationTitle: "Search Result")
+        searchBar.becomeFirstResponder()
     }
     func callSearchData(searchText:String){
         

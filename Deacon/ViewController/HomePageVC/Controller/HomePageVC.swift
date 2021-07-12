@@ -9,8 +9,9 @@ import UIKit
 
 class HomePageVC: UIViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var moduleCollectionView: UICollectionView!
+    @IBOutlet weak var scrlView: UIScrollView!
     
     var arrModules = NSMutableArray()
     var arrModuleImages = NSMutableArray()
@@ -30,6 +31,7 @@ class HomePageVC: UIViewController {
     // MARK: Setup Display
     func setupDisplay()  {
         registerNib()
+        scrlView.scrollsToTop = true
         moduleCollectionView.delegate = self
         moduleCollectionView.dataSource = self
         arrModules = ["Tww valve contract","Service line report","Top soil seed","Meter report","Infra red burn report","Cleaning report","Hours Input","Concrete Road","Saw Cut","Sidewalk/Curb Install","Police Backup","Bypass Install"]
@@ -44,7 +46,6 @@ class HomePageVC: UIViewController {
     }
     @IBAction func didPressedSearchButton(){
         Router.goTosearchVC(target: self)
-        
     }
 }
 
@@ -74,11 +75,13 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
             Router.goToTopSoilSeed(target: self)
         }else if indexPath.row == 1 {
             //Service line report
+            Router.goToServiceLineReportVC(target: self)
         }else if indexPath.row == 2 {
             //Top soil seed
             Router.goToTopSoilSeed(target: self)
         }else if indexPath.row == 3 {
-            //Meter report
+            //Meter report//Thank You
+            Router.goToThankYouVC(target: self)
         }else if indexPath.row == 4 {
             //Infra red burn report
         }else if indexPath.row == 5 {

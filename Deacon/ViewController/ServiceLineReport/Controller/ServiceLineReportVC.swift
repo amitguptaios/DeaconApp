@@ -1,5 +1,5 @@
 //
-//  TwwValveContractViewController.swift
+//  ServiceLineReportVC.swift
 //  Deacon
 //
 //  Created by ABC on 11/07/21.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class TwwValveContractViewController: UIViewController {
+class ServiceLineReportVC: UIViewController {
+
     @IBOutlet weak var tableview:UITableView!
 
     override func viewDidLoad() {
@@ -15,7 +16,7 @@ class TwwValveContractViewController: UIViewController {
         configureViews()
     }
     override func viewWillAppear(_ animated: Bool) {
-        appNavigationWithBackButton(navigationTitle: "Tww Valve Contract")
+        appNavigationWithBackButton(navigationTitle: "Service Line Report")
     }
     
     func configureViews(){
@@ -42,7 +43,7 @@ class TwwValveContractViewController: UIViewController {
     }
 
 }
-extension TwwValveContractViewController:UITableViewDelegate,UITableViewDataSource{
+extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         11
     }

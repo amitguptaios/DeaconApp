@@ -10,16 +10,24 @@ import UIKit
 class TwoRadioButtonCell: UITableViewCell {
     @IBOutlet weak var twoRadioView:UIView!
     @IBOutlet weak var titleLabel:UILabel!
-
+    @IBOutlet weak var optionA: PVRadioButton!
+    @IBOutlet weak var optionB: PVRadioButton!
+    
+    var radioButtonGroup: PVRadioButtonGroup!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setRadioButtonTownJob()
     }
-
+ 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
+    func setRadioButtonTownJob() {
+        radioButtonGroup = PVRadioButtonGroup()
+        radioButtonGroup.appendToRadioGroup(radioButtons: [optionA,optionB])
+    }
+   
 }
