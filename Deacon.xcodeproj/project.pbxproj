@@ -64,6 +64,12 @@
 		282407CA269B25C10066AEED /* TwwValveContractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407C9269B25C10066AEED /* TwwValveContractModel.swift */; };
 		282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407CE269B3BCB0066AEED /* SixRadioButtonCell.swift */; };
 		282407D1269B3BCB0066AEED /* SixRadioButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282407CF269B3BCB0066AEED /* SixRadioButtonCell.xib */; };
+		286F86D6269D9C9D0079C7C9 /* FourRadioButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F86D4269D9C9D0079C7C9 /* FourRadioButtonCell.swift */; };
+		286F86D7269D9C9D0079C7C9 /* FourRadioButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86D5269D9C9D0079C7C9 /* FourRadioButtonCell.xib */; };
+		286F86DA269D9CEB0079C7C9 /* FiveRadioButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F86D8269D9CEB0079C7C9 /* FiveRadioButtonCell.swift */; };
+		286F86DB269D9CEB0079C7C9 /* FiveRadioButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86D9269D9CEB0079C7C9 /* FiveRadioButtonCell.xib */; };
+		286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F86DC269D9DD80079C7C9 /* NextCell.swift */; };
+		286F86DF269D9DD80079C7C9 /* NextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86DD269D9DD80079C7C9 /* NextCell.xib */; };
 		28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0831C269C26A100EF63BF /* ThankYouVC.swift */; };
 		28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A08320269C275200EF63BF /* ThankYouModel.swift */; };
 		28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */; };
@@ -133,6 +139,12 @@
 		282407C9269B25C10066AEED /* TwwValveContractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwwValveContractModel.swift; sourceTree = "<group>"; };
 		282407CE269B3BCB0066AEED /* SixRadioButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixRadioButtonCell.swift; sourceTree = "<group>"; };
 		282407CF269B3BCB0066AEED /* SixRadioButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SixRadioButtonCell.xib; sourceTree = "<group>"; };
+		286F86D4269D9C9D0079C7C9 /* FourRadioButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourRadioButtonCell.swift; sourceTree = "<group>"; };
+		286F86D5269D9C9D0079C7C9 /* FourRadioButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourRadioButtonCell.xib; sourceTree = "<group>"; };
+		286F86D8269D9CEB0079C7C9 /* FiveRadioButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveRadioButtonCell.swift; sourceTree = "<group>"; };
+		286F86D9269D9CEB0079C7C9 /* FiveRadioButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiveRadioButtonCell.xib; sourceTree = "<group>"; };
+		286F86DC269D9DD80079C7C9 /* NextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
+		286F86DD269D9DD80079C7C9 /* NextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextCell.xib; sourceTree = "<group>"; };
 		28A0831C269C26A100EF63BF /* ThankYouVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouVC.swift; sourceTree = "<group>"; };
 		28A08320269C275200EF63BF /* ThankYouModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouModel.swift; sourceTree = "<group>"; };
 		28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -228,6 +240,12 @@
 				186BF62126989BC6000729A4 /* CheckBoxCell.xib */,
 				282407CE269B3BCB0066AEED /* SixRadioButtonCell.swift */,
 				282407CF269B3BCB0066AEED /* SixRadioButtonCell.xib */,
+				286F86D4269D9C9D0079C7C9 /* FourRadioButtonCell.swift */,
+				286F86D5269D9C9D0079C7C9 /* FourRadioButtonCell.xib */,
+				286F86D8269D9CEB0079C7C9 /* FiveRadioButtonCell.swift */,
+				286F86D9269D9CEB0079C7C9 /* FiveRadioButtonCell.xib */,
+				286F86DC269D9DD80079C7C9 /* NextCell.swift */,
+				286F86DD269D9DD80079C7C9 /* NextCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -663,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186BF5FF26986813000729A4 /* TimePickerCell.xib in Resources */,
+				286F86D7269D9C9D0079C7C9 /* FourRadioButtonCell.xib in Resources */,
 				189EA80A26909F0E0050BDA7 /* LaunchScreen.storyboard in Resources */,
 				189EA80726909F0E0050BDA7 /* Assets.xcassets in Resources */,
 				18585D932696BD250066B464 /* SearchDetailsCell.xib in Resources */,
@@ -676,6 +695,8 @@
 				186BF61926989460000729A4 /* AttachmentCell.xib in Resources */,
 				186BF62326989BC6000729A4 /* CheckBoxCell.xib in Resources */,
 				184F6FA4269384AC00F5769E /* SearchBarController.xib in Resources */,
+				286F86DF269D9DD80079C7C9 /* NextCell.xib in Resources */,
+				286F86DB269D9CEB0079C7C9 /* FiveRadioButtonCell.xib in Resources */,
 				186BF60F26988D70000729A4 /* TwoRadioButtonCell.xib in Resources */,
 				186BF5FA269867FC000729A4 /* DatePickerCell.xib in Resources */,
 			);
@@ -739,6 +760,8 @@
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
 				186BF60526986A3B000729A4 /* TopSoilSeedVC.swift in Sources */,
+				286F86DA269D9CEB0079C7C9 /* FiveRadioButtonCell.swift in Sources */,
+				286F86D6269D9C9D0079C7C9 /* FourRadioButtonCell.swift in Sources */,
 				189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */,
 				28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */,
 				18585D9D2696C3C50066B464 /* SearchDetailsModal.swift in Sources */,
@@ -763,6 +786,7 @@
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
 				28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */,
 				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
+				286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */,
 				18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,

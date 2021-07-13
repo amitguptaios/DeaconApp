@@ -38,6 +38,12 @@ class ServiceLineReportVC: UIViewController {
         tableview.register(nib8, forCellReuseIdentifier: "SubmitCell")
         let nib9 = UINib(nibName: "CheckBoxCell", bundle: nil)
         tableview.register(nib9, forCellReuseIdentifier: "CheckBoxCell")
+        let nib10 = UINib(nibName: "FourRadioButtonCell", bundle: nil)
+        tableview.register(nib10, forCellReuseIdentifier: "FourRadioButtonCell")
+        let nib11 = UINib(nibName: "FiveRadioButtonCell", bundle: nil)
+        tableview.register(nib11, forCellReuseIdentifier: "FiveRadioButtonCell")
+        let nib12 = UINib(nibName: "NextCell", bundle: nil)
+        tableview.register(nib12, forCellReuseIdentifier: "NextCell")
         tableview.dataSource = self
         tableview.delegate = self
     }
@@ -45,7 +51,7 @@ class ServiceLineReportVC: UIViewController {
 }
 extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        11
+        10
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -67,42 +73,32 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             return cell
             
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TwoRadioButtonCell") as? TwoRadioButtonCell  else { return UITableViewCell()}
-            return cell
-            
-        case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckBoxCell") as? CheckBoxCell  else { return UITableViewCell()}
-           
-            return cell
-        case 5:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
-            
-            return cell
-        case 6:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
-            
-            cell.attachmentTitleLabel.text = "Photo 1*"
-            return cell
-        case 7:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
-            
-            cell.attachmentTitleLabel.text = "Photo 2"
-            return cell
-
-        case 8:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
-            
-            cell.attachmentTitleLabel.text = "Photo 3"
-            return cell
-
-        case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-            cell.crewLeaderTextfield?.placeholder = "Notes / Comments"
-
+                cell.crewLeaderTextfield?.placeholder = "Work Order Number*"
+            return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
+                cell.crewLeaderTextfield?.placeholder = "Work Order Number*"
             return cell
             
-        case 10:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
+        case 5:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourRadioButtonCell") as? FourRadioButtonCell  else { return UITableViewCell()}
+            return cell
+            
+        case 6:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
+                cell.crewLeaderTextfield?.placeholder = "Others*"
+            return cell
+            
+        case 7:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourRadioButtonCell") as? FourRadioButtonCell  else { return UITableViewCell()}
+            return cell
+        case 8:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FiveRadioButtonCell") as? FiveRadioButtonCell  else { return UITableViewCell()}
+            return cell
+ 
+        case 9:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "NextCell") as? NextCell  else { return UITableViewCell()}
 
             return cell
         default:
@@ -112,14 +108,11 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 3 || indexPath.section == 4{
-            return 100
+        if indexPath.section == 5 || indexPath.section == 7{
+            return 130
         }
-        else if indexPath.section == 5{
-            return 120
-        }
-        else if indexPath.section == 6 ||  indexPath.section == 7 || indexPath.section == 8{
-            return 40
+        else if indexPath.section == 8{
+            return 150
         }
         
         return 70
