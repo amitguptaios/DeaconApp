@@ -55,6 +55,18 @@ class DependencyVC:ViewControllerFactory{
         }
         return ServiceLineReportVC
     }
+    static func makeServiceLineReportVC2() -> ServiceLineReportVC2? {
+        guard let ServiceLineReportVC2 = UIStoryboard(.main).instantiateViewController(withIdentifier: ServiceLineReportVC2.className) as? ServiceLineReportVC2 else {
+            return nil
+        }
+        return ServiceLineReportVC2
+    }
+    static func makeServiceLineReportVC3() -> ServiceLineReportVC3? {
+        guard let ServiceLineReportVC3 = UIStoryboard(.main).instantiateViewController(withIdentifier: ServiceLineReportVC3.className) as? ServiceLineReportVC3 else {
+            return nil
+        }
+        return ServiceLineReportVC3
+    }
     static func makeThankYouVC() -> ThankYouVC? {
         guard let ThankYouVC = UIStoryboard(.main).instantiateViewController(withIdentifier: ThankYouVC.className) as? ThankYouVC else {
             return nil

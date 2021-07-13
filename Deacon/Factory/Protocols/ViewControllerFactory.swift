@@ -14,6 +14,8 @@ protocol ViewControllerFactory {
     static func makePoliceBackupVC()->PoliceBackupVC?
     static func makeTwwValveContractVC()->TwwValveContractVC?
     static func makeServiceLineReportVC()->ServiceLineReportVC?
+    static func makeServiceLineReportVC2()->ServiceLineReportVC2?
+    static func makeServiceLineReportVC3()->ServiceLineReportVC3?
     static func makeThankYouVC()->ThankYouVC?
 }
 

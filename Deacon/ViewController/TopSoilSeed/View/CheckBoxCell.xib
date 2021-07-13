@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,18 +24,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmt-nq-m1b">
-                        <rect key="frame" x="20" y="26" width="293" height="40"/>
+                        <rect key="frame" x="20" y="25" width="293" height="41"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjE-hC-6qG">
-                                <rect key="frame" x="10" y="7.5" width="25" height="25"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck_box" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-52-5AZ">
+                                <rect key="frame" x="10" y="8" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="UH8-a1-KQd"/>
-                                    <constraint firstAttribute="width" constant="25" id="pRn-Qa-zcz"/>
+                                    <constraint firstAttribute="width" constant="25" id="1fV-Vq-y8O"/>
+                                    <constraint firstAttribute="height" constant="25" id="7Uh-io-t9Z"/>
                                 </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjE-hC-6qG">
+                                <rect key="frame" x="0.0" y="0.0" width="293" height="41"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36N-43-135">
-                                <rect key="frame" x="52" y="11" width="220" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Soil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36N-43-135">
+                                <rect key="frame" x="52" y="8" width="58" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="5r1-uA-5ux"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,8 +48,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FjE-hC-6qG" firstAttribute="leading" secondItem="fmt-nq-m1b" secondAttribute="leading" constant="10" id="gOB-zb-W5o"/>
-                            <constraint firstItem="FjE-hC-6qG" firstAttribute="centerY" secondItem="fmt-nq-m1b" secondAttribute="centerY" id="ogb-Uk-bQN"/>
+                            <constraint firstItem="36N-43-135" firstAttribute="leading" secondItem="mcW-52-5AZ" secondAttribute="trailing" constant="17" id="0oF-ZW-wwq"/>
+                            <constraint firstAttribute="trailing" secondItem="FjE-hC-6qG" secondAttribute="trailing" id="DZh-i5-7pZ"/>
+                            <constraint firstItem="36N-43-135" firstAttribute="centerY" secondItem="fmt-nq-m1b" secondAttribute="centerY" id="Dhs-oV-F1P"/>
+                            <constraint firstItem="FjE-hC-6qG" firstAttribute="top" secondItem="fmt-nq-m1b" secondAttribute="top" id="EST-gh-WCg"/>
+                            <constraint firstAttribute="bottom" secondItem="FjE-hC-6qG" secondAttribute="bottom" id="Lgu-PH-Mp8"/>
+                            <constraint firstItem="mcW-52-5AZ" firstAttribute="centerY" secondItem="fmt-nq-m1b" secondAttribute="centerY" id="SFt-nH-Cwd"/>
+                            <constraint firstItem="36N-43-135" firstAttribute="top" secondItem="fmt-nq-m1b" secondAttribute="top" constant="8" id="gnT-Sm-WSb"/>
+                            <constraint firstItem="mcW-52-5AZ" firstAttribute="leading" secondItem="fmt-nq-m1b" secondAttribute="leading" constant="10" id="k9g-Zu-iqR"/>
+                            <constraint firstItem="FjE-hC-6qG" firstAttribute="leading" secondItem="fmt-nq-m1b" secondAttribute="leading" id="urx-fu-vc7"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="ViewCornerRadius">
@@ -62,7 +74,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Performed ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-iu-8K4">
-                        <rect key="frame" x="20" y="5" width="130" height="19"/>
+                        <rect key="frame" x="20" y="5" width="130" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -82,6 +94,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="uncheck_box" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

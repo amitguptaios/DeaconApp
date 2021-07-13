@@ -89,4 +89,34 @@ extension UIViewController {
         titleLabel.backgroundColor = UIColor.clear
         navigationItem.titleView = titleLabel
     }
+    func appNavigationNocolorWithBackButton1()  {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.white
+        navigationItem.titleView = UIView()
+    }
+    func appNavigationNocolorWithBackButton()  {
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back_button")
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        navigationController?.navigationBar.tintColor = .white
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: ScreenSize.SCREEN_WIDTH, height: 50))
+        titleLabel.text = ""
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.textAlignment = .left
+        titleLabel.backgroundColor = UIColor.clear
+        navigationItem.titleView = titleLabel
+    }
+}
+extension UINavigationController {
+    func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+        if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+            popToViewController(vc, animated: animated)
+        }
+    }
 }

@@ -6,9 +6,14 @@
 //
 
 import UIKit
-
+protocol NextCellDelegate {
+    func didNextButton(_ indexPath: IndexPath)
+}
 class NextCell: UITableViewCell {
-
+    // MARK: Variable
+    var didEndEditAction : (()->())?
+    var indexPath = IndexPath()
+    var delegateNextCell: NextCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +23,11 @@ class NextCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func clickOnNextButton(_ sender:Any){
+        print("clickOnNextButton")
+        didEndEditAction?()
+        delegateNextCell?.didNextButton(indexPath)
     }
     
 }

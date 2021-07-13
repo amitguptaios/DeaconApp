@@ -48,6 +48,16 @@ class Router{
             target.navigationController?.pushViewController(ServiceLineReportVC, animated: true)
         }
     }
+    class func goToServiceLineReportVC2(target:UIViewController){
+        if  let ServiceLineReportVC2  = DependencyVC.makeServiceLineReportVC2() {
+            target.navigationController?.pushViewController(ServiceLineReportVC2, animated: true)
+        }
+    }
+    class func goToServiceLineReportVC3(target:UIViewController){
+        if  let ServiceLineReportVC3  = DependencyVC.makeServiceLineReportVC3() {
+            target.navigationController?.pushViewController(ServiceLineReportVC3, animated: true)
+        }
+    }
     class func goToThankYouVC(target:UIViewController){
         if  let ThankYouVC  = DependencyVC.makeThankYouVC() {
             target.navigationController?.pushViewController(ThankYouVC, animated: true)

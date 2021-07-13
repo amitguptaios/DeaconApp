@@ -80,14 +80,14 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {
             //Top soil seed
             Router.goToTopSoilSeed(target: self)
         }else if indexPath.row == 3 {
-            //Meter report//Thank You
-            Router.goToThankYouVC(target: self)
+            //Meter report
         }else if indexPath.row == 4 {
             //Infra red burn report
         }else if indexPath.row == 5 {
             //Cleaning report
         }else if indexPath.row == 6 {
             //Hours Input
+            
         }else if indexPath.row == 7 {
             //Concrete Road
         }else if indexPath.row == 8 {

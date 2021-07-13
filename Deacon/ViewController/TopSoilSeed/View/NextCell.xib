@@ -29,6 +29,9 @@
                                 <real key="value" value="15"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="clickOnNextButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pgn-JB-YOz"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,24 +16,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="101" id="KGk-i7-Jjw" customClass="ThreeRadioButtonCell" customModule="Deacon" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="354" height="101"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="l8n-uG-yxu" customClass="ThreeRadioButtonCell" customModule="Deacon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="354" height="101"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l8n-uG-yxu" id="PiK-lc-kLp">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Work Complete ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIJ-MG-A6f">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Work Complete ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUV-AW-yMy">
                         <rect key="frame" x="20" y="10" width="141" height="19"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPN-SO-BSU">
-                        <rect key="frame" x="20" y="34" width="209.5" height="65"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ps-SM-I1p">
+                        <rect key="frame" x="20" y="34" width="217" height="65"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1r2-9n-gm5" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="103" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4X-57-WZr" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
                                 <state key="normal" title="Yes">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -53,8 +53,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfn-dw-AYA" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="108" y="0.0" width="103" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-KE-8WS" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                                <rect key="frame" x="108.5" y="0.0" width="103.5" height="30"/>
                                 <state key="normal" title="No">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -71,8 +71,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR1-4w-Q5b" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="35" width="106" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-ED-7n6" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="35" width="106.5" height="30"/>
+                                <state key="normal" title="Need to Retake">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Need to Retake"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="radioButtoncolor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTitleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonTitleSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRe-ZA-5No" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                                <rect key="frame" x="112" y="35" width="106" height="30"/>
                                 <state key="normal" title="Need to Retake">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -92,18 +110,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aR1-4w-Q5b" firstAttribute="leading" secondItem="OPN-SO-BSU" secondAttribute="leading" id="4qd-eM-S2f"/>
-                            <constraint firstItem="kfn-dw-AYA" firstAttribute="leading" secondItem="1r2-9n-gm5" secondAttribute="trailing" constant="5" id="70u-pC-CAp"/>
-                            <constraint firstItem="kfn-dw-AYA" firstAttribute="height" secondItem="1r2-9n-gm5" secondAttribute="height" id="Bsd-4b-f1O"/>
-                            <constraint firstItem="aR1-4w-Q5b" firstAttribute="top" secondItem="1r2-9n-gm5" secondAttribute="bottom" constant="5" id="Fvb-Pf-kTI"/>
-                            <constraint firstItem="aR1-4w-Q5b" firstAttribute="width" secondItem="1r2-9n-gm5" secondAttribute="width" multiplier="1.02913" id="IMS-CH-KfX"/>
-                            <constraint firstItem="kfn-dw-AYA" firstAttribute="top" secondItem="OPN-SO-BSU" secondAttribute="top" id="RLu-Yj-JnZ"/>
-                            <constraint firstAttribute="bottom" secondItem="aR1-4w-Q5b" secondAttribute="bottom" id="Zt8-Ki-1Es"/>
-                            <constraint firstItem="kfn-dw-AYA" firstAttribute="width" secondItem="1r2-9n-gm5" secondAttribute="width" id="a8T-Hn-5eI"/>
-                            <constraint firstItem="1r2-9n-gm5" firstAttribute="leading" secondItem="OPN-SO-BSU" secondAttribute="leading" id="dlg-Qt-ltr"/>
-                            <constraint firstAttribute="trailing" secondItem="kfn-dw-AYA" secondAttribute="trailing" id="jut-Ht-z2F"/>
-                            <constraint firstItem="1r2-9n-gm5" firstAttribute="top" secondItem="OPN-SO-BSU" secondAttribute="top" id="tO0-kv-6Dm"/>
-                            <constraint firstAttribute="width" secondItem="1r2-9n-gm5" secondAttribute="width" multiplier="2.03236" id="yqr-EU-gRU"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="height" secondItem="Q4X-57-WZr" secondAttribute="height" id="1Qk-WI-N9g"/>
+                            <constraint firstItem="Q4X-57-WZr" firstAttribute="leading" secondItem="9ps-SM-I1p" secondAttribute="leading" id="64Y-pd-VMq"/>
+                            <constraint firstItem="6S6-ED-7n6" firstAttribute="top" secondItem="Q4X-57-WZr" secondAttribute="bottom" constant="5" id="DqJ-6o-Z07"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="top" secondItem="9ps-SM-I1p" secondAttribute="top" id="GOc-RJ-9q8"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="top" secondItem="eAj-KE-8WS" secondAttribute="bottom" constant="5" id="GOs-eX-H5c"/>
+                            <constraint firstItem="6S6-ED-7n6" firstAttribute="leading" secondItem="9ps-SM-I1p" secondAttribute="leading" id="Ir8-fa-N3L"/>
+                            <constraint firstAttribute="height" constant="65" id="KGd-3P-mXV"/>
+                            <constraint firstItem="6S6-ED-7n6" firstAttribute="height" secondItem="Q4X-57-WZr" secondAttribute="height" id="Of2-Nl-SLZ"/>
+                            <constraint firstItem="6S6-ED-7n6" firstAttribute="width" secondItem="Q4X-57-WZr" secondAttribute="width" multiplier="0.951456" constant="8" id="QbE-oo-TZy"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="width" secondItem="6S6-ED-7n6" secondAttribute="width" constant="-0.5" id="R3U-Zf-XQ1"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="height" secondItem="6S6-ED-7n6" secondAttribute="height" id="Rtg-d7-s6R"/>
+                            <constraint firstAttribute="bottom" secondItem="aRe-ZA-5No" secondAttribute="bottom" id="X0j-Nc-8Sc"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="width" secondItem="Q4X-57-WZr" secondAttribute="width" id="fWz-qh-SqB"/>
+                            <constraint firstItem="Q4X-57-WZr" firstAttribute="top" secondItem="9ps-SM-I1p" secondAttribute="top" id="fvU-f7-aR7"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="leading" secondItem="Q4X-57-WZr" secondAttribute="trailing" constant="5" id="iFb-cJ-Oz8"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="leading" secondItem="6S6-ED-7n6" secondAttribute="trailing" constant="5.5" id="kVi-ve-V7L"/>
+                            <constraint firstAttribute="trailing" secondItem="aRe-ZA-5No" secondAttribute="trailing" constant="-1" id="qMg-KK-9Xb"/>
+                            <constraint firstAttribute="bottom" secondItem="6S6-ED-7n6" secondAttribute="bottom" id="wAl-vb-TWj"/>
+                            <constraint firstAttribute="trailing" secondItem="eAj-KE-8WS" secondAttribute="trailing" id="zHa-FW-XFn"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="ViewCornerRadius">
@@ -122,32 +147,35 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="OPN-SO-BSU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="0ec-9z-HZc"/>
-                    <constraint firstAttribute="trailing" secondItem="OPN-SO-BSU" secondAttribute="trailing" constant="20" id="2kq-ve-wjC"/>
-                    <constraint firstItem="XIJ-MG-A6f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="J7N-LB-dXN"/>
-                    <constraint firstItem="XIJ-MG-A6f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Pnt-26-Krd"/>
-                    <constraint firstItem="OPN-SO-BSU" firstAttribute="top" secondItem="XIJ-MG-A6f" secondAttribute="bottom" constant="5" id="Q7C-eN-CiR"/>
-                    <constraint firstAttribute="bottom" secondItem="OPN-SO-BSU" secondAttribute="bottom" constant="2" id="v0o-js-q4Y"/>
+                    <constraint firstItem="qUV-AW-yMy" firstAttribute="leading" secondItem="PiK-lc-kLp" secondAttribute="leading" constant="20" id="3HW-1s-hCc"/>
+                    <constraint firstItem="9ps-SM-I1p" firstAttribute="leading" secondItem="PiK-lc-kLp" secondAttribute="leading" constant="20" symbolic="YES" id="DEm-Vy-eD7"/>
+                    <constraint firstItem="9ps-SM-I1p" firstAttribute="top" secondItem="qUV-AW-yMy" secondAttribute="bottom" constant="5" id="UiA-Tz-d2s"/>
+                    <constraint firstAttribute="trailing" secondItem="9ps-SM-I1p" secondAttribute="trailing" constant="20" symbolic="YES" id="e97-19-g2k"/>
+                    <constraint firstAttribute="bottom" secondItem="9ps-SM-I1p" secondAttribute="bottom" constant="11" id="keu-C2-s9O"/>
+                    <constraint firstItem="qUV-AW-yMy" firstAttribute="top" secondItem="PiK-lc-kLp" secondAttribute="top" constant="10" id="zIL-s3-Knh"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <viewLayoutGuide key="safeArea" id="AR0-6K-l0E"/>
             <connections>
-                <outlet property="optionA" destination="1r2-9n-gm5" id="p4h-Pq-gfP"/>
-                <outlet property="optionB" destination="kfn-dw-AYA" id="3K6-jG-Eo5"/>
-                <outlet property="optionC" destination="aR1-4w-Q5b" id="2dz-oL-4Tp"/>
-                <outlet property="threeRadioView" destination="OPN-SO-BSU" id="Oob-Px-QcV"/>
+                <outlet property="optionA" destination="Q4X-57-WZr" id="UyJ-jF-IFl"/>
+                <outlet property="optionB" destination="eAj-KE-8WS" id="rQY-uZ-EJX"/>
+                <outlet property="optionC" destination="6S6-ED-7n6" id="W1J-SH-swe"/>
+                <outlet property="threeRadioView" destination="9ps-SM-I1p" id="rUY-0J-km6"/>
             </connections>
-            <point key="canvasLocation" x="110.14492753623189" y="105.46875"/>
+            <point key="canvasLocation" x="110.14492753623189" y="105.13392857142857"/>
         </tableViewCell>
     </objects>
     <designables>
-        <designable name="1r2-9n-gm5">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="aR1-4w-Q5b">
+        <designable name="6S6-ED-7n6">
             <size key="intrinsicContentSize" width="106" height="30"/>
         </designable>
-        <designable name="kfn-dw-AYA">
+        <designable name="Q4X-57-WZr">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="aRe-ZA-5No">
+            <size key="intrinsicContentSize" width="106" height="30"/>
+        </designable>
+        <designable name="eAj-KE-8WS">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>

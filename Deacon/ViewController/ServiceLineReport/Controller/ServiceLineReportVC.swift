@@ -99,7 +99,8 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
  
         case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NextCell") as? NextCell  else { return UITableViewCell()}
-
+            cell.delegateNextCell = self
+            cell.indexPath = indexPath
             return cell
         default:
             return UITableViewCell()
@@ -125,4 +126,10 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
            return 20.0
        }
+}
+extension ServiceLineReportVC:NextCellDelegate{
+    func didNextButton(_ indexPath: IndexPath) {
+        print("didNextButton")
+        Router.goToServiceLineReportVC2(target: self)
+    }
 }

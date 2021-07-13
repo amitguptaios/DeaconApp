@@ -6,10 +6,15 @@
 //
 
 import UIKit
-
+protocol SubmitCellDelegate {
+    func didSubmitButton(_ indexPath: IndexPath)
+}
 class SubmitCell: UITableViewCell {
+    
+    // MARK: Variable
     var didEndEditAction : (()->())?
-
+    var indexPath = IndexPath()
+    var delegateSubmitCell: SubmitCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +27,8 @@ class SubmitCell: UITableViewCell {
     }
     @IBAction func clickOnSubmitButton(_ sender:Any){
         didEndEditAction?()
+        print("clickOnSubmitButton")
+        delegateSubmitCell?.didSubmitButton(indexPath)
     }
     
 }

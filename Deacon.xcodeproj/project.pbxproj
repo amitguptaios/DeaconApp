@@ -72,6 +72,10 @@
 		286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F86DC269D9DD80079C7C9 /* NextCell.swift */; };
 		286F86DF269D9DD80079C7C9 /* NextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86DD269D9DD80079C7C9 /* NextCell.xib */; };
 		28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0831C269C26A100EF63BF /* ThankYouVC.swift */; };
+		28B8AEBC269DFC0E00F85C77 /* ServiceLineReportVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8AEBA269DFC0E00F85C77 /* ServiceLineReportVC2.swift */; };
+		28B8AEBD269DFC0E00F85C77 /* ServiceLineReportVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8AEBB269DFC0E00F85C77 /* ServiceLineReportVC3.swift */; };
+		28B8AEC0269E088300F85C77 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8AEBE269E088300F85C77 /* TitleCell.swift */; };
+		28B8AEC1269E088300F85C77 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B8AEBF269E088300F85C77 /* TitleCell.xib */; };
 		28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */; };
 		28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */; };
 		28F035F4269AF0160014C600 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035F3269AF0160014C600 /* HomeModel.swift */; };
@@ -147,6 +151,10 @@
 		286F86DC269D9DD80079C7C9 /* NextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
 		286F86DD269D9DD80079C7C9 /* NextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextCell.xib; sourceTree = "<group>"; };
 		28A0831C269C26A100EF63BF /* ThankYouVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouVC.swift; sourceTree = "<group>"; };
+		28B8AEBA269DFC0E00F85C77 /* ServiceLineReportVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLineReportVC2.swift; sourceTree = "<group>"; };
+		28B8AEBB269DFC0E00F85C77 /* ServiceLineReportVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLineReportVC3.swift; sourceTree = "<group>"; };
+		28B8AEBE269E088300F85C77 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		28B8AEBF269E088300F85C77 /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleCollectionViewCell.xib; sourceTree = "<group>"; };
 		28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F035F3269AF0160014C600 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -246,6 +254,8 @@
 				286F86D9269D9CEB0079C7C9 /* FiveRadioButtonCell.xib */,
 				286F86DC269D9DD80079C7C9 /* NextCell.swift */,
 				286F86DD269D9DD80079C7C9 /* NextCell.xib */,
+				28B8AEBE269E088300F85C77 /* TitleCell.swift */,
+				28B8AEBF269E088300F85C77 /* TitleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +547,8 @@
 			isa = PBXGroup;
 			children = (
 				282407C1269B256D0066AEED /* ServiceLineReportVC.swift */,
+				28B8AEBA269DFC0E00F85C77 /* ServiceLineReportVC2.swift */,
+				28B8AEBB269DFC0E00F85C77 /* ServiceLineReportVC3.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -676,6 +688,7 @@
 				286F86D7269D9C9D0079C7C9 /* FourRadioButtonCell.xib in Resources */,
 				189EA80A26909F0E0050BDA7 /* LaunchScreen.storyboard in Resources */,
 				189EA80726909F0E0050BDA7 /* Assets.xcassets in Resources */,
+				28B8AEC1269E088300F85C77 /* TitleCell.xib in Resources */,
 				18585D932696BD250066B464 /* SearchDetailsCell.xib in Resources */,
 				189EA80226909F0D0050BDA7 /* Main.storyboard in Resources */,
 				184F6FA92693852400F5769E /* SearchBarCell.xib in Resources */,
@@ -746,6 +759,7 @@
 				18CB7614269C55B500DB5E33 /* UItextFeildExtension.swift in Sources */,
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
+				28B8AEBC269DFC0E00F85C77 /* ServiceLineReportVC2.swift in Sources */,
 				282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */,
 				28F035F4269AF0160014C600 /* HomeModel.swift in Sources */,
 				2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */,
@@ -758,6 +772,7 @@
 				189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */,
 				28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */,
 				18585D9D2696C3C50066B464 /* SearchDetailsModal.swift in Sources */,
+				28B8AEC0269E088300F85C77 /* TitleCell.swift in Sources */,
 				18585DA22696CC590066B464 /* SearchDetailsController.swift in Sources */,
 				18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */,
 				186BF6132698913A000729A4 /* ThreeRadioButtonCell.swift in Sources */,
@@ -771,6 +786,7 @@
 				282407BC269B212F0066AEED /* PVRadioButtonView.swift in Sources */,
 				28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */,
 				189EA81426909F890050BDA7 /* HomePageVC.swift in Sources */,
+				28B8AEBD269DFC0E00F85C77 /* ServiceLineReportVC3.swift in Sources */,
 				189EA81F2690A30E0050BDA7 /* ViewControllerFactory.swift in Sources */,
 				186BF62F2699FBD0000729A4 /* Constant.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
