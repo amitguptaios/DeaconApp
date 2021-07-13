@@ -9,7 +9,10 @@ import UIKit
 
 class TopSoilSeedVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
-
+    var params:[String:Any] = [:]
+    var imageData:[Data?] = []
+    var topSoilFeedModal:TopSoilFeedModal?
+    var imageType:[ImageTpe]? = []
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -40,7 +43,24 @@ class TopSoilSeedVC: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
     }
+    
+    func prepareCellData(){
+        params["Datetime"] = ""
+        params["Remarks"] = ""
+        params["GrassSize"] = "45sq"
+        params["Note"] = "test"
 
+        print(imageType)
+       
+
+        let url = WebServiceNames.EndPoints.topSoilSeed.url
+        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType ?? [], imageParameter: "Photos", modalType:TopSoilFeedModal.self) {(result, message, status ) in
+        if status {
+            self.topSoilFeedModal = result
+            print("sucess....",self.topSoilFeedModal)
+    }
+    }
+    }
 }
 extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,55 +75,88 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Crew Leader*"
+            cell.crewLeaderTextfield?.text = params["CrewLeader"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["CrewLeader"] = newText
+            }
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell") as? DatePickerCell  else { return UITableViewCell()}
-                cell.dateTextfield?.placeholder = "Date*"
+            cell.dateTextfield?.placeholder = "Date*"
+            cell.dateTextfield?.text = params["Date"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["Date"] = newText
+            }
              return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-                cell.crewLeaderTextfield?.placeholder = "Work Address*"
+            cell.crewLeaderTextfield?.placeholder = "Work Address*"
+            cell.crewLeaderTextfield?.text = params["WorkAddress"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["WorkAddress"] = newText
+            }
             return cell
             
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TwoRadioButtonCell") as? TwoRadioButtonCell  else { return UITableViewCell()}
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["Town_job"] = newText
+            }
             return cell
             
         case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckBoxCell") as? CheckBoxCell  else { return UITableViewCell()}
-           
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["WorkPerformed"] = newText
+            }
             return cell
         case 5:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
-            
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["WorkComplete"] = newText
+            }
             return cell
         case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
-            
             cell.attachmentTitleLabel.text = "Photo 1*"
+            cell.didEndEditAction = { [weak self](newdata,imageType) in
+                self?.imageData.append(newdata)
+                self?.imageType?.append(imageType)
+            }
            
             return cell
         case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
-            
             cell.attachmentTitleLabel.text = "Photo 2"
+            cell.didEndEditAction = { [weak self](newdata,imageType) in
+            self?.imageData.append(newdata)
+            self?.imageType?.append(imageType)
+            }
             return cell
 
         case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
-            
             cell.attachmentTitleLabel.text = "Photo 3"
+            cell.didEndEditAction = { [weak self](newdata,imageType) in
+            self?.imageData.append(newdata)
+            self?.imageType?.append(imageType)
+            }
             return cell
 
         case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Notes / Comments"
-
+            cell.crewLeaderTextfield?.text = params["Note"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["Note"] = newText
+            }
             return cell
             
         case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
-
+            cell.didEndEditAction = {[weak self]() in
+            self?.prepareCellData()
+            }
             return cell
         default:
             return UITableViewCell()

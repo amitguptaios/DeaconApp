@@ -8,6 +8,7 @@
 import UIKit
 
 class SubmitCell: UITableViewCell {
+    var didEndEditAction : (()->())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,6 +19,9 @@ class SubmitCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func clickOnSubmitButton(_ sender:Any){
+        didEndEditAction?()
     }
     
 }
