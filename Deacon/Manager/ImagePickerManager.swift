@@ -14,7 +14,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     var picker = UIImagePickerController();
     var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
     var viewController: UIViewController?
-    var pickImageCallback : ((Data,ImageTpe) -> ())?;
+    var pickImageCallback : ((Data,ImageType) -> ())?;
     
     override init(){
         super.init()
@@ -37,7 +37,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         alert.addAction(cancelAction)
     }
 
-    func pickImage(_ viewController: UIViewController, _ callback: @escaping ((Data,ImageTpe) -> ())) {
+    func pickImage(_ viewController: UIViewController, _ callback: @escaping ((Data,ImageType) -> ())) {
         pickImageCallback = callback;
         self.viewController = viewController;
 
@@ -86,11 +86,11 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
        
         let assetPath = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
             if (assetPath.absoluteString?.hasSuffix("JPG"))! {
-                pickImageCallback?(image.jpegData(compressionQuality: 0.5)!, ImageTpe.jpeg)
+                pickImageCallback?(image.jpegData(compressionQuality: 0.5)!, ImageType.jpeg)
 
             }
             else if (assetPath.absoluteString?.hasSuffix("PNG"))! {
-                pickImageCallback?(image.pngData()!, ImageTpe.png)
+                pickImageCallback?(image.pngData()!, ImageType.png)
             }
             
             else if (assetPath.absoluteString?.hasSuffix("GIF"))! {
