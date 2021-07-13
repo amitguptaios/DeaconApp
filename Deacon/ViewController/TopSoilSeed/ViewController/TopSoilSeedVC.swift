@@ -12,7 +12,14 @@ class TopSoilSeedVC: UIViewController {
     var params:[String:Any] = [:]
     var imageData:[Data?] = []
     var topSoilFeedModal:TopSoilFeedModal?
-    var imageType:[ImageTpe]? = []
+    var imageType:[ImageType?] = []
+    var imageData1:Data?
+    var imageData2:Data?
+    var imageData3:Data?
+    var imageType1:ImageType?
+    var imageType2:ImageType?
+    var imageType3:ImageType?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -49,15 +56,32 @@ class TopSoilSeedVC: UIViewController {
         params["Remarks"] = ""
         params["GrassSize"] = "45sq"
         params["Note"] = "test"
-
-        print(imageType)
-       
-
+        if imageData1 != nil {
+            imageData.append(imageData1)
+            imageType.append(imageType1 ?? nil)
+        }else{
+            imageData.append(nil)
+            imageType.append(nil)
+        }
+        if imageData2 != nil {
+            imageData.append(imageData2)
+            imageType.append(imageType2 ?? nil)
+        }else{
+            imageData.append(nil)
+            imageType.append(nil)
+        }
+        if imageData3 != nil {
+            imageData.append(imageData3)
+            imageType.append(imageType3 ?? nil)
+        }else{
+            imageData.append(nil)
+            imageType.append(nil)
+        }
+        
         let url = WebServiceNames.EndPoints.topSoilSeed.url
-        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType ?? [], imageParameter: "Photos", modalType:TopSoilFeedModal.self) {(result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType , imageParameter: "Photos", modalType:TopSoilFeedModal.self) {(result, message, status ) in
         if status {
             self.topSoilFeedModal = result
-            print("sucess....",self.topSoilFeedModal)
     }
     }
     }
@@ -120,8 +144,8 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 1*"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData.append(newdata)
-                self?.imageType?.append(imageType)
+                self?.imageData1 = newdata
+                self?.imageType1 = imageType
             }
            
             return cell
@@ -129,8 +153,8 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 2"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-            self?.imageData.append(newdata)
-            self?.imageType?.append(imageType)
+            self?.imageData2 = newdata
+            self?.imageType2 = imageType
             }
             return cell
 
@@ -138,8 +162,8 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 3"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-            self?.imageData.append(newdata)
-            self?.imageType?.append(imageType)
+            self?.imageData3 = newdata
+            self?.imageType3 = imageType
             }
             return cell
 

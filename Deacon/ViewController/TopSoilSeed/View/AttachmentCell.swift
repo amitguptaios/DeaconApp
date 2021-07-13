@@ -11,7 +11,7 @@ class AttachmentCell: UITableViewCell {
     @IBOutlet weak var attachmentImageView:UIImageView!
     @IBOutlet weak var clickButton:UIButton!
     @IBOutlet weak var attachmentTitleLabel:UILabel!
-    var didEndEditAction : ((Data,ImageTpe)->())?
+    var didEndEditAction : ((Data,ImageType)->())?
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,7 +15,7 @@ enum PickerStyle {
     case Time
 }
 
-enum ImageTpe{
+enum ImageType{
     case jpeg
     case png
 }
