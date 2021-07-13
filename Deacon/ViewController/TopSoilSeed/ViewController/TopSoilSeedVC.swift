@@ -64,7 +64,7 @@ class TopSoilSeedVC: UIViewController {
 }
 extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        11
+        12
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -110,13 +110,19 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             self?.params["WorkPerformed"] = newText
             }
             return cell
+            
         case 5:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
+            cell.crewLeaderTextfield?.placeholder = "Grass Size*"
+            return cell
+            
+        case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self] (newText) in
             self?.params["WorkComplete"] = newText
             }
             return cell
-        case 6:
+        case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 1*"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -125,7 +131,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             }
            
             return cell
-        case 7:
+        case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 2"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -134,7 +140,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
 
-        case 8:
+        case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 3"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -143,7 +149,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
 
-        case 9:
+        case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Notes / Comments"
             cell.crewLeaderTextfield?.text = params["Note"] as? String ??  ""
@@ -152,7 +158,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 10:
+        case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
             self?.prepareCellData()
@@ -165,13 +171,13 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 3 || indexPath.section == 4{
+        if indexPath.section == 3 ||  indexPath.section == 4{
             return 100
         }
-        else if indexPath.section == 5{
+        else if indexPath.section == 6{
             return 120
         }
-        else if indexPath.section == 6 ||  indexPath.section == 7 || indexPath.section == 8{
+        else if indexPath.section == 7 ||  indexPath.section == 8 || indexPath.section == 9{
             return 40
         }
         

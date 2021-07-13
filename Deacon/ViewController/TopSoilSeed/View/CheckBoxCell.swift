@@ -10,6 +10,8 @@ import UIKit
 class CheckBoxCell: UITableViewCell {
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var clickButton:UIButton!
+    @IBOutlet var checkBoxImageView: UIImageView!
+    
     var didEndEditAction : ((String)->())?
     var flag = false
     override func awakeFromNib() {

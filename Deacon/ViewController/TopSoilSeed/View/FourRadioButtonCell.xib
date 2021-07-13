@@ -157,6 +157,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="option1" destination="1r2-9n-gm5" id="yVy-jn-sfA"/>
+                <outlet property="option2" destination="kfn-dw-AYA" id="F78-Dm-pIF"/>
+                <outlet property="option3" destination="aR1-4w-Q5b" id="JLW-AW-Np8"/>
+                <outlet property="option4" destination="0DI-DD-MHk" id="7HW-QR-stl"/>
                 <outlet property="threeRadioView" destination="OPN-SO-BSU" id="Oob-Px-QcV"/>
             </connections>
             <point key="canvasLocation" x="110.14492753623189" y="105.13392857142857"/>

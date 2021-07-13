@@ -9,6 +9,10 @@ import UIKit
 
 class FourRadioButtonCell: UITableViewCell {
     @IBOutlet weak var threeRadioView:UIView!
+    @IBOutlet weak var option1: PVRadioButton!
+    @IBOutlet weak var option2: PVRadioButton!
+    @IBOutlet weak var option3: PVRadioButton!
+    @IBOutlet weak var option4: PVRadioButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

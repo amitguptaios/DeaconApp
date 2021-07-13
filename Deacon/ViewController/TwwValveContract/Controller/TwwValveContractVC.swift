@@ -64,6 +64,12 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SixRadioButtonCell") as? SixRadioButtonCell  else { return UITableViewCell()}
+            cell.option1.setTitle("6", for: .normal)
+            cell.option2.setTitle("12", for: .normal)
+            cell.option3.setTitle("8", for: .normal)
+            cell.option4.setTitle("16", for: .normal)
+            cell.option5.setTitle("10", for: .normal)
+            cell.option6.setTitle("Others", for: .normal)
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
@@ -71,6 +77,10 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             return cell
         case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
+            cell.optionA.setTitle("Open", for: .normal)
+            cell.optionB.setTitle("Closed", for: .normal)
+            cell.optionC.setTitle("Others", for: .normal)
+
             return cell
         case 5:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
@@ -79,9 +89,15 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             
         case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
+            cell.optionA.setTitle("10", for: .normal)
+            cell.optionB.setTitle("15", for: .normal)
+            cell.optionC.setTitle("Could Not Find", for: .normal)
             return cell
         case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
+            cell.optionA.setTitle("Yes", for: .normal)
+            cell.optionB.setTitle("No", for: .normal)
+            cell.optionC.setTitle("Others", for: .normal)
             return cell
         case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell") as? DatePickerCell  else { return UITableViewCell()}

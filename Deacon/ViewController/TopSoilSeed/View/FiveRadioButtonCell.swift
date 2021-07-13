@@ -14,7 +14,6 @@ class FiveRadioButtonCell: UITableViewCell {
     @IBOutlet weak var option3: PVRadioButton!
     @IBOutlet weak var option4: PVRadioButton!
     @IBOutlet weak var option5: PVRadioButton!
-    @IBOutlet weak var option6: PVRadioButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

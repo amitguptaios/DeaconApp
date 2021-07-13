@@ -83,6 +83,10 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             
         case 5:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourRadioButtonCell") as? FourRadioButtonCell  else { return UITableViewCell()}
+            cell.option1.setTitle("GRASS", for: .normal)
+            cell.option2.setTitle("ASPHALT", for: .normal)
+            cell.option3.setTitle("CONCRETE", for: .normal)
+            cell.option4.setTitle("Others", for: .normal)
             return cell
             
         case 6:
@@ -92,9 +96,18 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             
         case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourRadioButtonCell") as? FourRadioButtonCell  else { return UITableViewCell()}
+            cell.option1.setTitle("GZ", for: .normal)
+            cell.option2.setTitle("LZ", for: .normal)
+            cell.option3.setTitle("BR", for: .normal)
+            cell.option4.setTitle("CP", for: .normal)
             return cell
         case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FiveRadioButtonCell") as? FiveRadioButtonCell  else { return UITableViewCell()}
+            cell.option1.setTitle("GZ", for: .normal)
+            cell.option2.setTitle("LZ", for: .normal)
+            cell.option3.setTitle("BR", for: .normal)
+            cell.option4.setTitle("CP", for: .normal)
+            cell.option5.setTitle("Unknown", for: .normal)
             return cell
  
         case 9:
