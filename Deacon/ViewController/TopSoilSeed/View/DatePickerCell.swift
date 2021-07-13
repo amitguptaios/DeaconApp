@@ -9,6 +9,7 @@ import UIKit
 
 class DatePickerCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet weak var dateTextfield:UITextField!
+    var didEndEditAction : ((String)->())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,13 +24,16 @@ class DatePickerCell: UITableViewCell,UITextFieldDelegate {
 
         // Configure the view for the selected state
     }
+   
     
     @objc func doneButtonPressed() {
         if let  datePicker = self.dateTextfield.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
-            dateFormatter.dateFormat = "dd-MM-YYYY"
+            dateFormatter.dateFormat = "MM-dd-YYYY"
             self.dateTextfield.text = dateFormatter.string(from: datePicker.date)
+            didEndEditAction?(self.dateTextfield.text ?? "")
+
         }
         self.dateTextfield.resignFirstResponder()
      }

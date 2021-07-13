@@ -50,6 +50,7 @@
 		189EA8482690AE9B0050BDA7 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8472690AE9B0050BDA7 /* ButtonExtension.swift */; };
 		189EA8502690AF900050BDA7 /* OtherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA84F2690AF900050BDA7 /* OtherExtension.swift */; };
 		189EA8532690B0890050BDA7 /* DependencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EA8522690B0890050BDA7 /* DependencyVC.swift */; };
+		18A41E18269DE8AD007A6491 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41E17269DE8AD007A6491 /* Enum.swift */; };
 		18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7CB26940C55003B6C95 /* Apimanager.swift */; };
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
 		18CB7614269C55B500DB5E33 /* UItextFeildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */; };
@@ -71,7 +72,6 @@
 		286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F86DC269D9DD80079C7C9 /* NextCell.swift */; };
 		286F86DF269D9DD80079C7C9 /* NextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86DD269D9DD80079C7C9 /* NextCell.xib */; };
 		28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0831C269C26A100EF63BF /* ThankYouVC.swift */; };
-		28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A08320269C275200EF63BF /* ThankYouModel.swift */; };
 		28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */; };
 		28F035F1269AEEF90014C600 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */; };
 		28F035F4269AF0160014C600 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F035F3269AF0160014C600 /* HomeModel.swift */; };
@@ -125,6 +125,7 @@
 		189EA8472690AE9B0050BDA7 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		189EA84F2690AF900050BDA7 /* OtherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherExtension.swift; sourceTree = "<group>"; };
 		189EA8522690B0890050BDA7 /* DependencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyVC.swift; sourceTree = "<group>"; };
+		18A41E17269DE8AD007A6491 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		18C9C7CB26940C55003B6C95 /* Apimanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apimanager.swift; sourceTree = "<group>"; };
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
 		18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItextFeildExtension.swift; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 		286F86DC269D9DD80079C7C9 /* NextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
 		286F86DD269D9DD80079C7C9 /* NextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextCell.xib; sourceTree = "<group>"; };
 		28A0831C269C26A100EF63BF /* ThankYouVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouVC.swift; sourceTree = "<group>"; };
-		28A08320269C275200EF63BF /* ThankYouModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouModel.swift; sourceTree = "<group>"; };
 		28F035EE269AEEF90014C600 /* ModuleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModuleCollectionViewCell.xib; sourceTree = "<group>"; };
 		28F035EF269AEEF90014C600 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F035F3269AF0160014C600 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -345,6 +345,7 @@
 		189EA7F926909F0D0050BDA7 /* Deacon */ = {
 			isa = PBXGroup;
 			children = (
+				18A41E16269DE890007A6491 /* Enum */,
 				2807A458269B008B0013B4A9 /* Colors */,
 				1885EDF72695F799008C82EB /* Utility */,
 				1885EDF62695F78E008C82EB /* Constant */,
@@ -367,9 +368,7 @@
 		189EA81226909F2F0050BDA7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				28A0831F269C273900EF63BF /* Model */,
-				28A0831E269C273500EF63BF /* View */,
-				28A0831B269C268500EF63BF /* Controller */,
+				28A0831B269C268500EF63BF /* ThankYouVC */,
 				282407BF269B25540066AEED /* ServiceLineReport */,
 				2807A45B269B09FE0013B4A9 /* TwwValveContract */,
 				186BF6262699E420000729A4 /* PoliceBackup */,
@@ -444,6 +443,14 @@
 				18585D962696C3210066B464 /* View */,
 			);
 			path = SearchDetailsVC;
+			sourceTree = "<group>";
+		};
+		18A41E16269DE890007A6491 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				18A41E17269DE8AD007A6491 /* Enum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		18C9C7CA26940C3B003B6C95 /* Manager */ = {
@@ -564,27 +571,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		28A0831B269C268500EF63BF /* Controller */ = {
+		28A0831B269C268500EF63BF /* ThankYouVC */ = {
 			isa = PBXGroup;
 			children = (
 				28A0831C269C26A100EF63BF /* ThankYouVC.swift */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		28A0831E269C273500EF63BF /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		28A0831F269C273900EF63BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				28A08320269C275200EF63BF /* ThankYouModel.swift */,
-			);
-			path = Model;
+			path = ThankYouVC;
 			sourceTree = "<group>";
 		};
 		28F035ED269AEEF90014C600 /* View */ = {
@@ -759,6 +751,7 @@
 				2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */,
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
+				18A41E18269DE8AD007A6491 /* Enum.swift in Sources */,
 				186BF60526986A3B000729A4 /* TopSoilSeedVC.swift in Sources */,
 				286F86DA269D9CEB0079C7C9 /* FiveRadioButtonCell.swift in Sources */,
 				286F86D6269D9C9D0079C7C9 /* FourRadioButtonCell.swift in Sources */,
@@ -784,7 +777,6 @@
 				282407C2269B256D0066AEED /* ServiceLineReportVC.swift in Sources */,
 				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
-				28A08321269C275200EF63BF /* ThankYouModel.swift in Sources */,
 				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
 				286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */,
 				18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */,

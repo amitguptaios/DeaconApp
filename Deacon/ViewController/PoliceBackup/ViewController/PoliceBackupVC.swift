@@ -10,6 +10,8 @@ import UIKit
 class PoliceBackupVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
 
+    var params:[String:Any] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -61,12 +63,17 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Crew Leader *"
-            
+            cell.crewLeaderTextfield?.text = params["Leader"] as? String ??  ""
+            cell.didEndEditAction = { (newText) in
+            self.params["Leader"] = newText
+            }
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell") as? DatePickerCell  else { return UITableViewCell()}
                 cell.dateTextfield?.placeholder = "Date*"
-            
+            cell.didEndEditAction = { (newText) in
+            self.params["Date"] = newText
+            }
              return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}

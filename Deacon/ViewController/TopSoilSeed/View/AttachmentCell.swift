@@ -11,6 +11,7 @@ class AttachmentCell: UITableViewCell {
     @IBOutlet weak var attachmentImageView:UIImageView!
     @IBOutlet weak var clickButton:UIButton!
     @IBOutlet weak var attachmentTitleLabel:UILabel!
+    var didEndEditAction : ((Data,ImageTpe)->())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,9 +26,9 @@ class AttachmentCell: UITableViewCell {
     }
     
     func getImageFromImagePicker(VC:UIViewController){
-        ImagePickerManager().pickImage(VC){ image in
+        ImagePickerManager().pickImage(VC){ imageData,imageType  in
             //here is the image
-            print("image",image)
+                self.didEndEditAction!(imageData, imageType)
         }
     }
 }
