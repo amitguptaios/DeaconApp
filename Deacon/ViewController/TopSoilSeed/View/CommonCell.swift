@@ -27,13 +27,17 @@ class CommonCell: UITableViewCell,UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        print("Should return")
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // call back using a closure
-        didEndEditAction?(textField.text ?? "")
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        let previousText:NSString = textField.text! as NSString
+        let updatedText = previousText.replacingCharacters(in: range, with: string)
+        didEndEditAction?(updatedText)
         
+        return true
     }
+    
+   
 }

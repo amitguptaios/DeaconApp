@@ -12,7 +12,7 @@ class CheckBoxCell: UITableViewCell {
     @IBOutlet weak var clickButton:UIButton!
     @IBOutlet var checkBoxImageView: UIImageView!
     
-    var didEndEditAction : ((String)->())?
+    var didEndEditAction : ((Bool)->())?
     var flag = false
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,12 +25,22 @@ class CheckBoxCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func SetImageCheckBox(status:Bool){
+        if status {
+        checkBoxImageView.image = UIImage(named: "check-box")
+        }else{
+        checkBoxImageView.image = UIImage(named: "uncheck_box")
+        }
+    }
+    
     @IBAction func clickOnButton(_ sender:Any){
         if flag{
-           flag = false
-            didEndEditAction?("NA")
+            flag = false
+            didEndEditAction?(flag)
         }else{
-           flag = true
+            flag = true
+            didEndEditAction?(flag)
+            
         }
     }
 

@@ -11,6 +11,15 @@ class PoliceBackupVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
 
     var params:[String:Any] = [:]
+    var imageData:[Data?] = []
+    var imageType:[ImageType?] = []
+    var imageData1:Data?
+    var imageData2:Data?
+    var imageData3:Data?
+    var imageType1:ImageType?
+    var imageType2:ImageType?
+    var imageType3:ImageType?
+    var isCheck = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +28,8 @@ class PoliceBackupVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         appNavigationWithBackButton(navigationTitle: "Police Backup")
     }
+    
+    //Mark- Nibs are loaded here
     func configureViews(){
         let nib = UINib(nibName: "CommonCell", bundle: nil)
         tableview.register(nib, forCellReuseIdentifier: "CommonCell")
@@ -47,7 +58,50 @@ class PoliceBackupVC: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
     }
-   
+    
+    //Mark:- PoliceBackup data will submit here
+    func prepareCellData(){
+        params["Datetime"] = ""
+        params["Remarks"] = ""
+        if imageData1 != nil {
+            imageData.append(imageData1)
+            imageType.append(imageType1 ?? nil)
+        }else{
+            imageData.append(nil)
+            imageType.append(nil)
+        }
+        if imageData2 != nil {
+            imageData.append(imageData2)
+            imageType.append(imageType2 ?? nil)
+        }else{
+            imageData.append(nil)
+            imageType.append(nil)
+        }
+        if imageData3 != nil {
+            imageData.append(imageData3)
+            imageType.append(imageType3 ?? nil)
+        }else{
+            imageData.append(nil)
+            imageType.append(nil)
+        }
+        
+        let url = WebServiceNames.EndPoints.policeBackup.url
+        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType , imageParameter: "UPloadImage", modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
+        if status {
+            self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+                    if result { //User has clicked on Ok
+                        self?.navigationController?.popViewController(animated: true)
+
+                    } else { //User has clicked on Cancel
+
+                    }
+                }
+        }else{
+            
+            
+        }
+    }
+ }
 
 }
 extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
@@ -63,9 +117,9 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Crew Leader *"
-            cell.crewLeaderTextfield?.text = params["Leader"] as? String ??  ""
+            cell.crewLeaderTextfield?.text = params["CrewLeader"] as? String ??  ""
             cell.didEndEditAction = { (newText) in
-            self.params["Leader"] = newText
+            self.params["CrewLeader"] = newText
             }
             return cell
         case 1:
@@ -77,56 +131,104 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
              return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-                cell.crewLeaderTextfield?.placeholder = "Work Address *"
+            cell.crewLeaderTextfield?.placeholder = "Work Address*"
+            cell.crewLeaderTextfield?.text = params["WorkAddress"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["WorkAddress"] = newText
+            }
             return cell
             
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Work Order Number"
-
+            cell.crewLeaderTextfield?.text = params["WorkOrderNumber"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["WorkOrderNumber"] = newText
+            }
             return cell
             
         case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Office Name *"
-
+            cell.crewLeaderTextfield?.text = params["OfficerName"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["OfficerName"] = newText
+            }
             return cell
         case 5:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Police Department *"
-            
+            cell.crewLeaderTextfield?.text = params["PoliceDepartment"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["PoliceDepartment"] = newText
+            }
             return cell
         case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield.placeholder = "House Worked *"
-            
+            cell.crewLeaderTextfield?.text = params["HoursWorked"] as? String ??  ""
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["HoursWorked"] = newText
+            }
             return cell
         case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TwoRadioButtonCell") as? TwoRadioButtonCell  else { return UITableViewCell()}
+            cell.setTitle(title1: "Yes", title2: "No")
             cell.titleLabel.text = "Police car used *"
-            
+            cell.didEndEditAction = {[weak self] (newText) in
+            self?.params["car"] =  newText == "Yes" ? true:false
+            }
             return cell
 
         case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Upload Police Backup Sheet Image *"
-            
+            cell.didEndEditAction = { [weak self](newdata,imageType) in
+                self?.imageData1 = newdata
+                self?.imageType1 = imageType
+                cell.checkImageView.image = UIImage.init(named: "right")
+            }
+            if imageData1 != nil{
+                cell.checkImageView.image = UIImage.init(named: "right")
+            }else{
+                cell.checkImageView.image = UIImage.init(named: "")
+            }
             return cell
 
         case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Upload Police Backup Sheet Image (Optional)"
-
+            cell.didEndEditAction = { [weak self](newdata,imageType) in
+                self?.imageData2 = newdata
+                self?.imageType2 = imageType
+                cell.checkImageView.image = UIImage.init(named: "right")
+            }
+            if imageData2 != nil{
+                cell.checkImageView.image = UIImage.init(named: "right")
+            }else{
+                cell.checkImageView.image = UIImage.init(named: "")
+            }
             return cell
         case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Upload Police Backup Sheet Image (Optional)"
-
+            cell.didEndEditAction = { [weak self](newdata,imageType) in
+                self?.imageData3 = newdata
+                self?.imageType3 = imageType
+                cell.checkImageView.image = UIImage.init(named: "right")
+            }
+            if imageData3 != nil{
+                cell.checkImageView.image = UIImage.init(named: "right")
+            }else{
+                cell.checkImageView.image = UIImage.init(named: "")
+            }
             return cell
             
         case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
-
+            cell.didEndEditAction = {[weak self]() in
+            self?.prepareCellData()
+            }
             return cell
         default:
             return UITableViewCell()
@@ -153,4 +255,14 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
            return 20.0
        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 8, 9, 10:
+            let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
+            cell?.getImageFromImagePicker(VC: self)
+        default:
+        break
+        }
+    }
 }

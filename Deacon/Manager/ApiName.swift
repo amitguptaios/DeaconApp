@@ -12,12 +12,14 @@ struct  WebServiceNames {
     enum EndPoints: String{
         case searchApi = "SearchWebapi?search="
         case topSoilSeed = "Nested"
+        case policeBackup = "PoliceBackup"
 
         var url: String {
             return WebServiceNames.baseUrl + self.rawValue
         }
     }
 }
+
 
 
 

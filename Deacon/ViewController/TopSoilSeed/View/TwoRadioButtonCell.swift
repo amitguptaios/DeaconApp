@@ -18,9 +18,14 @@ class TwoRadioButtonCell: UITableViewCell, RadioButtonGroupDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+       
         setRadioButtonTownJob()
     }
  
+    func setTitle(title1:String,title2:String){
+        optionA.buttonTitle = title1
+        optionB.buttonTitle = title2
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -9,6 +9,7 @@ import UIKit
 
 class AttachmentCell: UITableViewCell {
     @IBOutlet weak var attachmentImageView:UIImageView!
+    @IBOutlet weak var checkImageView:UIImageView!
     @IBOutlet weak var clickButton:UIButton!
     @IBOutlet weak var attachmentTitleLabel:UILabel!
     var didEndEditAction : ((Data,ImageType)->())?

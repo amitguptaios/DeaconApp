@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import  IQKeyboardManagerSwift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -14,14 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        let objMainViewController: HomePageVC = mainStoryboard.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageVC
-//
-//                self.window?.rootViewController = objMainViewController
-//
-//                self.window?.makeKeyAndVisible()
+        IQKeyboardManager.shared.enable = true
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = self.window
         guard let _ = (scene as? UIWindowScene) else { return }

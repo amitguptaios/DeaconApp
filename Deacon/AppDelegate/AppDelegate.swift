@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+import  IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

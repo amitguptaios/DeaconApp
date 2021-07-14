@@ -30,8 +30,8 @@ struct Item3: Codable {
     let photos2, photos3, dateTime: String
     let remark: JSONNull?
     let localID: JSONNull?
-    let note: JSONNull?
-    let workPerformed: JSONNull?
+    let note: String?
+    let workPerformed: String?
 
     enum CodingKeys: String, CodingKey {
         case nestedID = "Nested_Id"
