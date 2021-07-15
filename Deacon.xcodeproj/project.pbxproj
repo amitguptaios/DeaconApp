@@ -36,6 +36,12 @@
 		186BF6292699E4D7000729A4 /* PoliceBackupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF6282699E4D7000729A4 /* PoliceBackupVC.swift */; };
 		186BF62F2699FBD0000729A4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF62E2699FBD0000729A4 /* Constant.swift */; };
 		186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BF6312699FBFE000729A4 /* TopSoilSeedModal.swift */; };
+		1879BB0226A0B37F0089FBBE /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB0126A0B37F0089FBBE /* PersistentStorage.swift */; };
+		1879BB0826A0B55A0089FBBE /* DataReository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB0726A0B55A0089FBBE /* DataReository.swift */; };
+		1879BB0C26A0B6410089FBBE /* CoreDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB0B26A0B6410089FBBE /* CoreDataModal.swift */; };
+		1879BB3526A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB3326A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift */; };
+		1879BB3626A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB3426A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift */; };
+		1879BB3A26A0C19F0089FBBE /* coreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB3926A0C19F0089FBBE /* coreDataManager.swift */; };
 		1885EDF92695F7B0008C82EB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDF82695F7B0008C82EB /* Utility.swift */; };
 		1885EE00269603D0008C82EB /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDFF269603D0008C82EB /* Modal.swift */; };
 		1893A72B269F05ED000308B7 /* UIViewControllerExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893A72A269F05ED000308B7 /* UIViewControllerExtn.swift */; };
@@ -114,6 +120,12 @@
 		186BF6282699E4D7000729A4 /* PoliceBackupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceBackupVC.swift; sourceTree = "<group>"; };
 		186BF62E2699FBD0000729A4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		186BF6312699FBFE000729A4 /* TopSoilSeedModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSoilSeedModal.swift; sourceTree = "<group>"; };
+		1879BB0126A0B37F0089FBBE /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		1879BB0726A0B55A0089FBBE /* DataReository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReository.swift; sourceTree = "<group>"; };
+		1879BB0B26A0B6410089FBBE /* CoreDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModal.swift; sourceTree = "<group>"; };
+		1879BB3326A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDeacon+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1879BB3426A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDeacon+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1879BB3926A0C19F0089FBBE /* coreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataManager.swift; sourceTree = "<group>"; };
 		18827E504A7CED593A03F9A7 /* Pods-Deacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.debug.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.debug.xcconfig"; sourceTree = "<group>"; };
 		1885EDF82695F7B0008C82EB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		1885EDFF269603D0008C82EB /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
@@ -307,6 +319,25 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		1879BB0026A0B3440089FBBE /* CoreDataSupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1879BB3326A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift */,
+				1879BB3426A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift */,
+				1879BB0126A0B37F0089FBBE /* PersistentStorage.swift */,
+			);
+			path = CoreDataSupportFiles;
+			sourceTree = "<group>";
+		};
+		1879BB0626A0B5000089FBBE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1879BB0726A0B55A0089FBBE /* DataReository.swift */,
+				1879BB0B26A0B6410089FBBE /* CoreDataModal.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		1885EDF62695F78E008C82EB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +407,8 @@
 		189EA7F926909F0D0050BDA7 /* Deacon */ = {
 			isa = PBXGroup;
 			children = (
+				1879BB0626A0B5000089FBBE /* Repository */,
+				1879BB0026A0B3440089FBBE /* CoreDataSupportFiles */,
 				18A41E16269DE890007A6491 /* Enum */,
 				2807A458269B008B0013B4A9 /* Colors */,
 				1885EDF72695F799008C82EB /* Utility */,
@@ -491,6 +524,7 @@
 				18C9C7CB26940C55003B6C95 /* Apimanager.swift */,
 				18C9C7D52694168C003B6C95 /* ApiName.swift */,
 				18CB7616269C657700DB5E33 /* ImagePickerManager.swift */,
+				1879BB3926A0C19F0089FBBE /* coreDataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -782,7 +816,9 @@
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
 				28B8AEBC269DFC0E00F85C77 /* ServiceLineReportVC2.swift in Sources */,
+				1879BB0C26A0B6410089FBBE /* CoreDataModal.swift in Sources */,
 				282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */,
+				1879BB3A26A0C19F0089FBBE /* coreDataManager.swift in Sources */,
 				28F035F4269AF0160014C600 /* HomeModel.swift in Sources */,
 				2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */,
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
@@ -810,11 +846,13 @@
 				282407BC269B212F0066AEED /* PVRadioButtonView.swift in Sources */,
 				28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */,
 				189EA81426909F890050BDA7 /* HomePageVC.swift in Sources */,
+				1879BB0826A0B55A0089FBBE /* DataReository.swift in Sources */,
 				28B8AEBD269DFC0E00F85C77 /* ServiceLineReportVC3.swift in Sources */,
 				189EA81F2690A30E0050BDA7 /* ViewControllerFactory.swift in Sources */,
 				186BF62F2699FBD0000729A4 /* Constant.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
 				282407C2269B256D0066AEED /* ServiceLineReportVC.swift in Sources */,
+				1879BB3626A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift in Sources */,
 				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
 				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
@@ -822,6 +860,7 @@
 				18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,
+				1879BB3526A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift in Sources */,
 				282407CA269B25C10066AEED /* TwwValveContractModel.swift in Sources */,
 				189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */,
 				1885EDF92695F7B0008C82EB /* Utility.swift in Sources */,
@@ -831,6 +870,7 @@
 				189EA7FD26909F0D0050BDA7 /* SceneDelegate.swift in Sources */,
 				282407BE269B212F0066AEED /* PVRadioButtonGroup.swift in Sources */,
 				186BF5FE26986813000729A4 /* TimePickerCell.swift in Sources */,
+				1879BB0226A0B37F0089FBBE /* PersistentStorage.swift in Sources */,
 				186BF5F9269867FC000729A4 /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
