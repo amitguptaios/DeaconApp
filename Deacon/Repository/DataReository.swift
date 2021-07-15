@@ -17,7 +17,6 @@ protocol Repository {
 struct DataRepository : Repository
 {
     
-   
     func create(dataModal: DataModal) {
 
         let cdDeacon = CDDeacon(context: PersistentStorage.shared.context)

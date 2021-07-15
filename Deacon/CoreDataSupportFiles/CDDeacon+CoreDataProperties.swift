@@ -20,7 +20,7 @@ extension CDDeacon {
     @NSManaged public var uuID: UUID?
     func convertToData() -> DataModal
     {
-        return DataModal(params: params, id: uuID!)
+        return DataModal(params: params, iD: uuID!)
     }
 }
 
