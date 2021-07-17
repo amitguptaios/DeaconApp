@@ -13,7 +13,7 @@ class WebServices: NSObject {
     // MARK: -  Api Request
    
 
-    class func requestApiWithDictParam<T:Decodable>(url:String,requestType:RequestType,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:String = "",modalType:T.Type, completion : @escaping (_ response : T?, _ message: String?, _ success : Bool)-> ()) {
+    class func requestApiWithDictParam<T:Decodable>(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:String = "",modalType:T.Type? = nil, completion : @escaping (_ response : T?, _ message: String?, _ success : Bool)-> ()) {
        
         Utility.showLoader()
         WebServices.postWebService(urlString: url, requestType: requestType, params: params, imageData:imageData, imageType: imageType, imageParameter: imageParameter) { (response, message, status) in
@@ -27,10 +27,23 @@ class WebServices: NSObject {
             completion(responseModel , "Success", true)
         }
     }
+   
+    class func requestApiWithDictParamforDatabase(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:String = "", completion : @escaping ( _ message: String?, _ success : Bool)-> ()) {
+       
+        Utility.showLoader()
+        WebServices.postWebService(urlString: url, requestType: requestType, params: params, imageData:imageData, imageType: imageType, imageParameter: imageParameter) { (response, message, status) in
+            print(response ?? "Error")
+            Utility.hideLoader()
+            guard response != nil else {return  completion("Failed", false)}
+           
+            completion( "Success", true)
+        }
+    }
+   
     
-    class func postWebService(urlString: String,requestType:RequestType, params: [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:String, completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void) {
+    class func postWebService(urlString: String,requestType:String, params: [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:String, completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void) {
         var httpMethod:HTTPMethod!
-        if requestType == .Get{
+        if requestType == "GET"{
             httpMethod =  .get
         }else{
             httpMethod =  .post
@@ -97,6 +110,8 @@ class WebServices: NSObject {
             if let data = imageData[index]{
                 if let getImageType = imageType[index]{
                     multipartFormData.append(data, withName: "\(imageParameter)\(index+1)", fileName: "\(Date.init().timeIntervalSince1970).\(getImageType)", mimeType: "image/\(getImageType)")
+                }else{
+               multipartFormData.append(imageData[index] ?? Data(), withName: "\(imageParameter)\(index+1)", fileName: "", mimeType: "image/png")
                 }
             }else{
                 

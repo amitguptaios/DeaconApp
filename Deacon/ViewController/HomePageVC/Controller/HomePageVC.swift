@@ -15,6 +15,8 @@ class HomePageVC: UIViewController {
     
     var arrModules = NSMutableArray()
     var arrModuleImages = NSMutableArray()
+    var timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,12 +24,23 @@ class HomePageVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
+        timer.invalidate() // just in case this button is tapped multiple times
+
+               // start the timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    @objc func timerAction() {
+        if Reachability.isConnectedToNetwork(){
+            print("avaialble......")
+            DataBaseManager.shared.uploadOfflineData()
+        }
+        }
     // MARK: Setup Display
     func setupDisplay()  {
         registerNib()

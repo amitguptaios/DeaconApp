@@ -9,6 +9,11 @@ import Foundation
 
 struct DataModal
 {
-    var params : [String:Any]?
-    let iD: UUID
+    var imageData: [Data]?
+    var imageParameter: String?
+    var imageType: [String]?
+    var params: [String:Any]?
+    var requestType: String?
+    var url: String?
+    var uuID: UUID?
 }

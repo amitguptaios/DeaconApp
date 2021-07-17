@@ -86,7 +86,7 @@ class PoliceBackupVC: UIViewController {
         }
         
         let url = WebServiceNames.EndPoints.policeBackup.url
-        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType , imageParameter: "UPloadImage", modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "UPloadImage", modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
         if status {
             self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
                     if result { //User has clicked on Ok

@@ -30,7 +30,7 @@ class SearchBarController: UIViewController ,NibLoaded, UISearchBarDelegate{
     func callSearchData(searchText:String){
         
         let url = WebServiceNames.EndPoints.searchApi.url + searchText
-        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Get, params:[:], imageData: [], modalType:[SearchModal].self) {(result, message, status )in
+        WebServices.requestApiWithDictParam(url: url, requestType:"GET", params:[:], imageData: [], modalType:[SearchModal].self) {(result, message, status )in
         if status {
             self.filtered.removeAll()
             guard let getresult  = result  else {return}

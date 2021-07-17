@@ -21,7 +21,12 @@ struct DataRepository : Repository
 
         let cdDeacon = CDDeacon(context: PersistentStorage.shared.context)
         cdDeacon.params = dataModal.params
-        cdDeacon.uuID = dataModal.iD
+        cdDeacon.uuID = dataModal.uuID
+        cdDeacon.imageData = dataModal.imageData
+        cdDeacon.imageParameter = dataModal.imageParameter
+        cdDeacon.imageType = dataModal.imageType
+        cdDeacon.requestType = dataModal.requestType
+        cdDeacon.url = dataModal.url
         PersistentStorage.shared.saveContext()
 
     }
@@ -71,7 +76,7 @@ struct DataRepository : Repository
      func getData(byIdentifier id: UUID) -> CDDeacon?
     {
         let fetchRequest = NSFetchRequest<CDDeacon>(entityName: "CDDeacon")
-        let predicate = NSPredicate(format: "iD==%@", id as CVarArg)
+        let predicate = NSPredicate(format: "uuID==%@", id as CVarArg)
 
         fetchRequest.predicate = predicate
         do {

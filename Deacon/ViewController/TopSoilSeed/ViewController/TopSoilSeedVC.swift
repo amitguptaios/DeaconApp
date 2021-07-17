@@ -10,7 +10,7 @@ import UIKit
 class TopSoilSeedVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
     var params:[String:Any] = [:]
-    var imageData:[Data?] = []
+    var imageData:[Data] = []
     var topSoilFeedModal:TopSoilFeedModal?
     var imageType:[ImageType?] = []
     var imageData1:Data?
@@ -59,29 +59,33 @@ class TopSoilSeedVC: UIViewController {
         params["WorkPerformed"]  =  result
         
         if imageData1 != nil {
-            imageData.append(imageData1)
+            imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
         }else{
-            imageData.append(nil)
+            imageData.append(Data())
             imageType.append(nil)
         }
         if imageData2 != nil {
-            imageData.append(imageData2)
+            imageData.append(imageData2!)
             imageType.append(imageType2 ?? nil)
         }else{
-            imageData.append(nil)
+            imageData.append(Data())
             imageType.append(nil)
         }
         if imageData3 != nil {
-            imageData.append(imageData3)
+            imageData.append(imageData3!)
             imageType.append(imageType3 ?? nil)
         }else{
-            imageData.append(nil)
+            imageData.append(Data())
             imageType.append(nil)
+        }
+        if !Reachability.isConnectedToNetwork(){
+            saveOfflineData()
+            return
         }
         
         let url = WebServiceNames.EndPoints.topSoilSeed.url
-        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType , imageParameter: "Photos", modalType:TopSoilFeedModal.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType:"Post", params:params, imageData: imageData, imageType: imageType , imageParameter: "Photos", modalType:TopSoilFeedModal.self) {[weak self ](result, message, status ) in
         if status {
             self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
                     if result { //User has clicked on Ok
@@ -92,12 +96,39 @@ class TopSoilSeedVC: UIViewController {
                     }
                 }
         }else{
-            
-            
+
+
         }
     }
  }
+    
+    
+    func saveOfflineData(){
+        let url = WebServiceNames.EndPoints.topSoilSeed.url
+        var imageTypeValue:[String] = []
+        imageType.forEach({ (data) in
+            switch data{
+            case.jpeg :
+            imageTypeValue.append("jpeg")
+            case .none:
+                imageTypeValue.append("")
+            case .some(.png):
+            imageTypeValue.append("png")
+            }
+        })
+        
+       let getdataModal =  DataModal(imageData: imageData, imageParameter:"Photos", imageType: imageTypeValue, params: params, requestType:"Post", url: url, uuID: UUID())
+        let manager = DataManager()
+        manager.createData(data: getdataModal)
+        
+        self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+                if result { //User has clicked on Ok
+                    self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
 }
+
 extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         12

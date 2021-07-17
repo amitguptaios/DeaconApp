@@ -39,8 +39,6 @@
 		1879BB0226A0B37F0089FBBE /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB0126A0B37F0089FBBE /* PersistentStorage.swift */; };
 		1879BB0826A0B55A0089FBBE /* DataReository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB0726A0B55A0089FBBE /* DataReository.swift */; };
 		1879BB0C26A0B6410089FBBE /* CoreDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB0B26A0B6410089FBBE /* CoreDataModal.swift */; };
-		1879BB3526A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB3326A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift */; };
-		1879BB3626A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB3426A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift */; };
 		1879BB3A26A0C19F0089FBBE /* coreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879BB3926A0C19F0089FBBE /* coreDataManager.swift */; };
 		1885EDF92695F7B0008C82EB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDF82695F7B0008C82EB /* Utility.swift */; };
 		1885EE00269603D0008C82EB /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885EDFF269603D0008C82EB /* Modal.swift */; };
@@ -63,6 +61,10 @@
 		18C9C7D62694168C003B6C95 /* ApiName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9C7D52694168C003B6C95 /* ApiName.swift */; };
 		18CB7614269C55B500DB5E33 /* UItextFeildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */; };
 		18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7616269C657700DB5E33 /* ImagePickerManager.swift */; };
+		18D82AA226A2BB1E00519D90 /* CDDeacon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D82AA026A2BB1E00519D90 /* CDDeacon+CoreDataClass.swift */; };
+		18D82AA326A2BB1E00519D90 /* CDDeacon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D82AA126A2BB1E00519D90 /* CDDeacon+CoreDataProperties.swift */; };
+		18D82AA626A2E88600519D90 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D82AA526A2E88600519D90 /* Reachability.swift */; };
+		18D82AA926A2F48C00519D90 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D82AA826A2F48C00519D90 /* DatabaseManager.swift */; };
 		2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A459269B00A20013B4A9 /* AppColor.swift */; };
 		2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */; };
 		282407BC269B212F0066AEED /* PVRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282407B8269B212F0066AEED /* PVRadioButtonView.swift */; };
@@ -123,8 +125,6 @@
 		1879BB0126A0B37F0089FBBE /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		1879BB0726A0B55A0089FBBE /* DataReository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReository.swift; sourceTree = "<group>"; };
 		1879BB0B26A0B6410089FBBE /* CoreDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModal.swift; sourceTree = "<group>"; };
-		1879BB3326A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDeacon+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1879BB3426A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDeacon+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1879BB3926A0C19F0089FBBE /* coreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataManager.swift; sourceTree = "<group>"; };
 		18827E504A7CED593A03F9A7 /* Pods-Deacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deacon.debug.xcconfig"; path = "Target Support Files/Pods-Deacon/Pods-Deacon.debug.xcconfig"; sourceTree = "<group>"; };
 		1885EDF82695F7B0008C82EB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -150,6 +150,10 @@
 		18C9C7D52694168C003B6C95 /* ApiName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiName.swift; sourceTree = "<group>"; };
 		18CB7613269C55B500DB5E33 /* UItextFeildExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItextFeildExtension.swift; sourceTree = "<group>"; };
 		18CB7616269C657700DB5E33 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		18D82AA026A2BB1E00519D90 /* CDDeacon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDeacon+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		18D82AA126A2BB1E00519D90 /* CDDeacon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDDeacon+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		18D82AA526A2E88600519D90 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		18D82AA826A2F48C00519D90 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2807A459269B00A20013B4A9 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		2807A45D269B0A170013B4A9 /* TwwValveContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwwValveContractVC.swift; sourceTree = "<group>"; };
 		282407B8269B212F0066AEED /* PVRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonView.swift; sourceTree = "<group>"; };
@@ -322,8 +326,8 @@
 		1879BB0026A0B3440089FBBE /* CoreDataSupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				1879BB3326A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift */,
-				1879BB3426A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift */,
+				18D82AA026A2BB1E00519D90 /* CDDeacon+CoreDataClass.swift */,
+				18D82AA126A2BB1E00519D90 /* CDDeacon+CoreDataProperties.swift */,
 				1879BB0126A0B37F0089FBBE /* PersistentStorage.swift */,
 			);
 			path = CoreDataSupportFiles;
@@ -522,9 +526,11 @@
 			isa = PBXGroup;
 			children = (
 				18C9C7CB26940C55003B6C95 /* Apimanager.swift */,
+				18D82AA526A2E88600519D90 /* Reachability.swift */,
 				18C9C7D52694168C003B6C95 /* ApiName.swift */,
 				18CB7616269C657700DB5E33 /* ImagePickerManager.swift */,
 				1879BB3926A0C19F0089FBBE /* coreDataManager.swift */,
+				18D82AA826A2F48C00519D90 /* DatabaseManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -815,11 +821,13 @@
 				18CB7614269C55B500DB5E33 /* UItextFeildExtension.swift in Sources */,
 				186BF62226989BC6000729A4 /* CheckBoxCell.swift in Sources */,
 				18C9C7CC26940C55003B6C95 /* Apimanager.swift in Sources */,
+				18D82AA626A2E88600519D90 /* Reachability.swift in Sources */,
 				28B8AEBC269DFC0E00F85C77 /* ServiceLineReportVC2.swift in Sources */,
 				1879BB0C26A0B6410089FBBE /* CoreDataModal.swift in Sources */,
 				282407D0269B3BCB0066AEED /* SixRadioButtonCell.swift in Sources */,
 				1879BB3A26A0C19F0089FBBE /* coreDataManager.swift in Sources */,
 				28F035F4269AF0160014C600 /* HomeModel.swift in Sources */,
+				18D82AA326A2BB1E00519D90 /* CDDeacon+CoreDataProperties.swift in Sources */,
 				2807A45E269B0A170013B4A9 /* TwwValveContractVC.swift in Sources */,
 				186BF61D26989A01000729A4 /* SubmitCell.swift in Sources */,
 				184F6FA82693852400F5769E /* SearchBarCell.swift in Sources */,
@@ -852,7 +860,6 @@
 				186BF62F2699FBD0000729A4 /* Constant.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
 				282407C2269B256D0066AEED /* ServiceLineReportVC.swift in Sources */,
-				1879BB3626A0BC6E0089FBBE /* CDDeacon+CoreDataProperties.swift in Sources */,
 				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
 				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
@@ -860,7 +867,6 @@
 				18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,
-				1879BB3526A0BC6E0089FBBE /* CDDeacon+CoreDataClass.swift in Sources */,
 				282407CA269B25C10066AEED /* TwwValveContractModel.swift in Sources */,
 				189EA7FB26909F0D0050BDA7 /* AppDelegate.swift in Sources */,
 				1885EDF92695F7B0008C82EB /* Utility.swift in Sources */,
@@ -868,7 +874,9 @@
 				189EA8502690AF900050BDA7 /* OtherExtension.swift in Sources */,
 				186BF61826989460000729A4 /* AttachmentCell.swift in Sources */,
 				189EA7FD26909F0D0050BDA7 /* SceneDelegate.swift in Sources */,
+				18D82AA226A2BB1E00519D90 /* CDDeacon+CoreDataClass.swift in Sources */,
 				282407BE269B212F0066AEED /* PVRadioButtonGroup.swift in Sources */,
+				18D82AA926A2F48C00519D90 /* DatabaseManager.swift in Sources */,
 				186BF5FE26986813000729A4 /* TimePickerCell.swift in Sources */,
 				1879BB0226A0B37F0089FBBE /* PersistentStorage.swift in Sources */,
 				186BF5F9269867FC000729A4 /* DatePickerCell.swift in Sources */,
