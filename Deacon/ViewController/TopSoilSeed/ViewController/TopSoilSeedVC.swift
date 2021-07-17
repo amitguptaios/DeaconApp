@@ -180,7 +180,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             if imageData1 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
-                cell.checkImageView.image = UIImage.init(named: "")
+                cell.checkImageView.image = UIImage()
             }
             return cell
         case 8:
@@ -194,7 +194,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             if imageData2 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
-                cell.checkImageView.image = UIImage.init(named: "")
+                cell.checkImageView.image = UIImage()
             }
             return cell
 
@@ -209,7 +209,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             if imageData3 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
-                cell.checkImageView.image = UIImage.init(named: "")
+                cell.checkImageView.image = UIImage()
             }
             return cell
 

@@ -191,7 +191,7 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
             if imageData1 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
-                cell.checkImageView.image = UIImage.init(named: "")
+                cell.checkImageView.image = UIImage()
             }
             return cell
 
@@ -206,7 +206,7 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
             if imageData2 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
-                cell.checkImageView.image = UIImage.init(named: "")
+                cell.checkImageView.image = UIImage()
             }
             return cell
         case 10:
@@ -220,7 +220,7 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
             if imageData3 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
-                cell.checkImageView.image = UIImage.init(named: "")
+                cell.checkImageView.image = UIImage()
             }
             return cell
             
