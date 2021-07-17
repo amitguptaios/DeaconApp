@@ -13,12 +13,10 @@ class TwoRadioButtonCell: UITableViewCell, RadioButtonGroupDelegate {
     @IBOutlet weak var optionA: PVRadioButton!
     @IBOutlet weak var optionB: PVRadioButton!
     var didEndEditAction : ((String)->())?
-
     var radioButtonGroup: PVRadioButtonGroup!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-       
         setRadioButtonTownJob()
     }
  
@@ -37,6 +35,12 @@ class TwoRadioButtonCell: UITableViewCell, RadioButtonGroupDelegate {
         radioButtonGroup.delegate =  self
     }
     func radioButtonClicked(button: PVRadioButton) {
+        setRadioButtonColor() 
         didEndEditAction?(button.titleLabel?.text ?? "")
+        button.radioButtoncolor = AppColor.appGreenColor
+    }
+    func setRadioButtonColor()  {
+        optionA.radioButtoncolor = UIColor.gray
+        optionB.radioButtoncolor = UIColor.gray
     }
 }

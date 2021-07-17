@@ -30,11 +30,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ps-SM-I1p">
-                        <rect key="frame" x="20" y="34" width="217" height="65"/>
+                        <rect key="frame" x="20" y="34" width="314" height="65"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4X-57-WZr" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
-                                <state key="normal" title="Yes">
+                                <rect key="frame" x="0.0" y="0.0" width="154.5" height="30"/>
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -54,8 +54,8 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAj-KE-8WS" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="108.5" y="0.0" width="103.5" height="30"/>
-                                <state key="normal" title="No">
+                                <rect key="frame" x="159.5" y="0.0" width="154.5" height="30"/>
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -72,8 +72,8 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-ED-7n6" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="35" width="106.5" height="30"/>
-                                <state key="normal" title="Need to Retake">
+                                <rect key="frame" x="0.0" y="35" width="154.5" height="30"/>
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -90,8 +90,8 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRe-ZA-5No" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
-                                <rect key="frame" x="112" y="35" width="106" height="30"/>
-                                <state key="normal" title="Need to Retake">
+                                <rect key="frame" x="159.5" y="35" width="154.5" height="30"/>
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -110,25 +110,23 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eAj-KE-8WS" firstAttribute="height" secondItem="Q4X-57-WZr" secondAttribute="height" id="1Qk-WI-N9g"/>
-                            <constraint firstItem="Q4X-57-WZr" firstAttribute="leading" secondItem="9ps-SM-I1p" secondAttribute="leading" id="64Y-pd-VMq"/>
-                            <constraint firstItem="6S6-ED-7n6" firstAttribute="top" secondItem="Q4X-57-WZr" secondAttribute="bottom" constant="5" id="DqJ-6o-Z07"/>
-                            <constraint firstItem="eAj-KE-8WS" firstAttribute="top" secondItem="9ps-SM-I1p" secondAttribute="top" id="GOc-RJ-9q8"/>
-                            <constraint firstItem="aRe-ZA-5No" firstAttribute="top" secondItem="eAj-KE-8WS" secondAttribute="bottom" constant="5" id="GOs-eX-H5c"/>
-                            <constraint firstItem="6S6-ED-7n6" firstAttribute="leading" secondItem="9ps-SM-I1p" secondAttribute="leading" id="Ir8-fa-N3L"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="height" secondItem="Q4X-57-WZr" secondAttribute="height" id="239-yO-7oO"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="leading" secondItem="Q4X-57-WZr" secondAttribute="trailing" constant="5" id="BgG-j1-aek"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="leading" secondItem="6S6-ED-7n6" secondAttribute="trailing" constant="5" id="Ehz-MS-7PK"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="top" secondItem="9ps-SM-I1p" secondAttribute="top" id="H40-GF-OxX"/>
                             <constraint firstAttribute="height" constant="65" id="KGd-3P-mXV"/>
-                            <constraint firstItem="6S6-ED-7n6" firstAttribute="height" secondItem="Q4X-57-WZr" secondAttribute="height" id="Of2-Nl-SLZ"/>
-                            <constraint firstItem="6S6-ED-7n6" firstAttribute="width" secondItem="Q4X-57-WZr" secondAttribute="width" multiplier="0.951456" constant="8" id="QbE-oo-TZy"/>
-                            <constraint firstItem="aRe-ZA-5No" firstAttribute="width" secondItem="6S6-ED-7n6" secondAttribute="width" constant="-0.5" id="R3U-Zf-XQ1"/>
-                            <constraint firstItem="aRe-ZA-5No" firstAttribute="height" secondItem="6S6-ED-7n6" secondAttribute="height" id="Rtg-d7-s6R"/>
-                            <constraint firstAttribute="bottom" secondItem="aRe-ZA-5No" secondAttribute="bottom" id="X0j-Nc-8Sc"/>
-                            <constraint firstItem="eAj-KE-8WS" firstAttribute="width" secondItem="Q4X-57-WZr" secondAttribute="width" id="fWz-qh-SqB"/>
-                            <constraint firstItem="Q4X-57-WZr" firstAttribute="top" secondItem="9ps-SM-I1p" secondAttribute="top" id="fvU-f7-aR7"/>
-                            <constraint firstItem="eAj-KE-8WS" firstAttribute="leading" secondItem="Q4X-57-WZr" secondAttribute="trailing" constant="5" id="iFb-cJ-Oz8"/>
-                            <constraint firstItem="aRe-ZA-5No" firstAttribute="leading" secondItem="6S6-ED-7n6" secondAttribute="trailing" constant="5.5" id="kVi-ve-V7L"/>
-                            <constraint firstAttribute="trailing" secondItem="aRe-ZA-5No" secondAttribute="trailing" constant="-1" id="qMg-KK-9Xb"/>
-                            <constraint firstAttribute="bottom" secondItem="6S6-ED-7n6" secondAttribute="bottom" id="wAl-vb-TWj"/>
-                            <constraint firstAttribute="trailing" secondItem="eAj-KE-8WS" secondAttribute="trailing" id="zHa-FW-XFn"/>
+                            <constraint firstItem="Q4X-57-WZr" firstAttribute="leading" secondItem="9ps-SM-I1p" secondAttribute="leading" id="KTO-rU-zr8"/>
+                            <constraint firstAttribute="bottom" secondItem="aRe-ZA-5No" secondAttribute="bottom" id="MOM-VM-BKm"/>
+                            <constraint firstAttribute="bottom" secondItem="6S6-ED-7n6" secondAttribute="bottom" id="MVd-DH-PsF"/>
+                            <constraint firstAttribute="trailing" secondItem="eAj-KE-8WS" secondAttribute="trailing" id="R92-Jy-kmo"/>
+                            <constraint firstAttribute="trailing" secondItem="aRe-ZA-5No" secondAttribute="trailing" id="ZRy-jg-mop"/>
+                            <constraint firstItem="6S6-ED-7n6" firstAttribute="top" secondItem="Q4X-57-WZr" secondAttribute="bottom" constant="5" id="bon-r1-sYH"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="height" secondItem="6S6-ED-7n6" secondAttribute="height" id="d42-Si-1qY"/>
+                            <constraint firstItem="eAj-KE-8WS" firstAttribute="width" secondItem="Q4X-57-WZr" secondAttribute="width" id="dmc-hD-JRR"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="width" secondItem="6S6-ED-7n6" secondAttribute="width" id="du6-MF-6sj"/>
+                            <constraint firstItem="aRe-ZA-5No" firstAttribute="top" secondItem="Q4X-57-WZr" secondAttribute="bottom" constant="5" id="lfk-sC-Bs7"/>
+                            <constraint firstItem="Q4X-57-WZr" firstAttribute="top" secondItem="9ps-SM-I1p" secondAttribute="top" id="npB-ev-BU7"/>
+                            <constraint firstItem="6S6-ED-7n6" firstAttribute="leading" secondItem="9ps-SM-I1p" secondAttribute="leading" id="p54-pa-gKl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="ViewCornerRadius">
@@ -150,7 +148,7 @@
                     <constraint firstItem="qUV-AW-yMy" firstAttribute="leading" secondItem="PiK-lc-kLp" secondAttribute="leading" constant="20" id="3HW-1s-hCc"/>
                     <constraint firstItem="9ps-SM-I1p" firstAttribute="leading" secondItem="PiK-lc-kLp" secondAttribute="leading" constant="20" symbolic="YES" id="DEm-Vy-eD7"/>
                     <constraint firstItem="9ps-SM-I1p" firstAttribute="top" secondItem="qUV-AW-yMy" secondAttribute="bottom" constant="5" id="UiA-Tz-d2s"/>
-                    <constraint firstAttribute="trailing" secondItem="9ps-SM-I1p" secondAttribute="trailing" constant="20" symbolic="YES" id="e97-19-g2k"/>
+                    <constraint firstAttribute="trailing" secondItem="9ps-SM-I1p" secondAttribute="trailing" constant="20" id="e97-19-g2k"/>
                     <constraint firstAttribute="bottom" secondItem="9ps-SM-I1p" secondAttribute="bottom" constant="11" id="keu-C2-s9O"/>
                     <constraint firstItem="qUV-AW-yMy" firstAttribute="top" secondItem="PiK-lc-kLp" secondAttribute="top" constant="10" id="zIL-s3-Knh"/>
                 </constraints>
@@ -161,19 +159,20 @@
                 <outlet property="optionB" destination="eAj-KE-8WS" id="rQY-uZ-EJX"/>
                 <outlet property="optionC" destination="6S6-ED-7n6" id="W1J-SH-swe"/>
                 <outlet property="threeRadioView" destination="9ps-SM-I1p" id="rUY-0J-km6"/>
+                <outlet property="titleLabel" destination="qUV-AW-yMy" id="Vgu-IU-O5c"/>
             </connections>
             <point key="canvasLocation" x="110.14492753623189" y="105.13392857142857"/>
         </tableViewCell>
     </objects>
     <designables>
         <designable name="6S6-ED-7n6">
-            <size key="intrinsicContentSize" width="106" height="30"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="Q4X-57-WZr">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="aRe-ZA-5No">
-            <size key="intrinsicContentSize" width="106" height="30"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="eAj-KE-8WS">
             <size key="intrinsicContentSize" width="30" height="30"/>
