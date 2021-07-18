@@ -114,7 +114,7 @@ class ServiceLineReportVC3: UIViewController {
         }
         
         let url = WebServiceNames.EndPoints.ServiceLine.url
-        WebServices.requestApiWithDictParam(url: url, requestType: RequestType.Post, params:params, imageData: imageData, imageType: imageType , imageParameter: "ExtraPhoto", modalType:ServiceLineReportModel.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "ExtraPhoto", modalType:ServiceLineReportModel.self) {[weak self ](result, message, status ) in
         if status {
             self?.GoToThankYouVC()
             self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in

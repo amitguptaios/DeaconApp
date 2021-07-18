@@ -10,12 +10,13 @@ protocol Repository {
 
     func create(dataModal: DataModal)
     func getAll() -> [DataModal]?
-    func get(byIdentifier id: UUID) -> DataModal?
+    func get(byIdentifier id: UUID) -> CDDeacon?
     func delete(id: UUID) -> Bool
 }
 
 struct DataRepository : Repository
 {
+  
     
     func create(dataModal: DataModal) {
 
@@ -43,6 +44,7 @@ struct DataRepository : Repository
 
         return dataModal
     }
+    /*
 
     func get(byIdentifier id: UUID) -> DataModal? {
 
@@ -63,17 +65,18 @@ struct DataRepository : Repository
 
         return nil
     }
+    */
     
     func delete(id: UUID) -> Bool {
 
-         let cdData = getData(byIdentifier: id)
+         let cdData = get(byIdentifier: id)
          guard cdData != nil else {return false}
          PersistentStorage.shared.context.delete(cdData!)
          PersistentStorage.shared.saveContext()
          return true
      }
-    
-     func getData(byIdentifier id: UUID) -> CDDeacon?
+
+     func get(byIdentifier id: UUID) -> CDDeacon?
     {
         let fetchRequest = NSFetchRequest<CDDeacon>(entityName: "CDDeacon")
         let predicate = NSPredicate(format: "uuID==%@", id as CVarArg)
