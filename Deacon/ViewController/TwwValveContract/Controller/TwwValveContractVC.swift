@@ -348,9 +348,12 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
            return 20.0
        }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("indexPath.row:\(indexPath.row)")
-        if indexPath.row  == 18{
-            Router.goToThankYouVC(target: self)
+        switch indexPath.section {
+        case 13, 14, 15, 16, 17:
+            let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
+            cell?.getImageFromImagePicker(VC: self)
+        default:
+        break
         }
     }
 }

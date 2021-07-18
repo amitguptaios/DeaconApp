@@ -340,6 +340,15 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
            return 20.0
        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11:
+            let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
+            cell?.getImageFromImagePicker(VC: self)
+        default:
+        break
+        }
+    }
 }
 extension ServiceLineReportVC3:SubmitCellDelegate{
     func didSubmitButton(_ indexPath: IndexPath) {
