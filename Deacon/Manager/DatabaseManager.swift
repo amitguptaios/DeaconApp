@@ -39,13 +39,14 @@ class DataBaseManager{
         WebServices.requestApiWithDictParamforDatabase(url: url, requestType:requestType, params:params, imageData: imageData, imageType: self.imageType , imageParameter: imageParameter) {( message, status ) in
                 if status {
                     if self.manager.deleteData(id: uuid){
-                        print("success")
+                        print("success....................................................................")
                         indexValue += 1
                         if indexValue < self.getValues?.count ?? 0{
                             self.apiRequest(url: self.getValues?[indexValue].url ?? "", requestType: self.getValues?[indexValue].requestType ?? "", params: self.getValues?[indexValue].params ?? [:], imageData: self.getValues?[indexValue].imageData ?? [], imageType: self.getValues?[0].imageType ?? [], imageParameter: self.getValues![0].imageParameter ?? "", uuid: (self.getValues?[indexValue].uuID!)!, index: indexValue)
                         }
                     }
                 }else{
+                    print("as....")
             }
         }
     }

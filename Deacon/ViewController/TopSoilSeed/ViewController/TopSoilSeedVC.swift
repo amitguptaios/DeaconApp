@@ -79,13 +79,13 @@ class TopSoilSeedVC: UIViewController {
             imageData.append(Data())
             imageType.append(nil)
         }
-        if !Reachability.isConnectedToNetwork(){
+        if Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }
         
         let url = WebServiceNames.EndPoints.topSoilSeed.url
-        WebServices.requestApiWithDictParam(url: url, requestType:"Post", params:params, imageData: imageData, imageType: imageType , imageParameter: "Photos", modalType:TopSoilFeedModal.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "Photos", modalType:TopSoilFeedModal.self) {[weak self ](result, message, status ) in
         if status {
             self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
                     if result { //User has clicked on Ok
@@ -117,7 +117,7 @@ class TopSoilSeedVC: UIViewController {
             }
         })
         
-       let getdataModal =  DataModal(imageData: imageData, imageParameter:"Photos", imageType: imageTypeValue, params: params, requestType:"Post", url: url, uuID: UUID())
+       let getdataModal =  DataModal(imageData: imageData, imageParameter:"Photos", imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
         let manager = DataManager()
         manager.createData(data: getdataModal)
         

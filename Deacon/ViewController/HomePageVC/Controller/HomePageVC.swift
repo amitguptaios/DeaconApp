@@ -27,7 +27,7 @@ class HomePageVC: UIViewController {
         timer.invalidate() // just in case this button is tapped multiple times
 
                // start the timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -11,7 +11,7 @@ class PoliceBackupVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
 
     var params:[String:Any] = [:]
-    var imageData:[Data?] = []
+    var imageData:[Data] = []
     var imageType:[ImageType?] = []
     var imageData1:Data?
     var imageData2:Data?
@@ -58,31 +58,62 @@ class PoliceBackupVC: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
     }
+    //Mark:-  save offline PoliceBackup data here
+
+    func saveOfflineData(){
+        let url = WebServiceNames.EndPoints.policeBackup.url
+        var imageTypeValue:[String] = []
+        imageType.forEach({ (data) in
+            switch data{
+            case.jpeg :
+            imageTypeValue.append("jpeg")
+            case .none:
+                imageTypeValue.append("")
+            case .some(.png):
+            imageTypeValue.append("png")
+            }
+        })
+        
+       let getdataModal =  DataModal(imageData: imageData, imageParameter:"UPloadImage", imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+        let manager = DataManager()
+        manager.createData(data: getdataModal)
+        
+        self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+                if result { //User has clicked on Ok
+                    self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
     
     //Mark:- PoliceBackup data will submit here
     func prepareCellData(){
         params["Datetime"] = ""
         params["Remarks"] = ""
         if imageData1 != nil {
-            imageData.append(imageData1)
+            imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
         }else{
-            imageData.append(nil)
+            imageData.append(Data())
             imageType.append(nil)
         }
         if imageData2 != nil {
-            imageData.append(imageData2)
+            imageData.append(imageData2!)
             imageType.append(imageType2 ?? nil)
         }else{
-            imageData.append(nil)
+            imageData.append(Data())
             imageType.append(nil)
         }
         if imageData3 != nil {
-            imageData.append(imageData3)
+            imageData.append(imageData3!)
             imageType.append(imageType3 ?? nil)
         }else{
-            imageData.append(nil)
+            imageData.append(Data())
             imageType.append(nil)
+        }
+        
+        if Reachability.isConnectedToNetwork(){
+            saveOfflineData()
+            return
         }
         
         let url = WebServiceNames.EndPoints.policeBackup.url

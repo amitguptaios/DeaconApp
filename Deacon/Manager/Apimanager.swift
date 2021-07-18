@@ -30,10 +30,8 @@ class WebServices: NSObject {
    
     class func requestApiWithDictParamforDatabase(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:String = "", completion : @escaping ( _ message: String?, _ success : Bool)-> ()) {
        
-        Utility.showLoader()
         WebServices.postWebService(urlString: url, requestType: requestType, params: params, imageData:imageData, imageType: imageType, imageParameter: imageParameter) { (response, message, status) in
             print(response ?? "Error")
-            Utility.hideLoader()
             guard response != nil else {return  completion("Failed", false)}
            
             completion( "Success", true)
@@ -43,7 +41,8 @@ class WebServices: NSObject {
     
     class func postWebService(urlString: String,requestType:String, params: [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:String, completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void) {
         var httpMethod:HTTPMethod!
-        if requestType == "GET"{
+        let  type = requestType
+        if type == "GET"{
             httpMethod =  .get
         }else{
             httpMethod =  .post
@@ -58,13 +57,13 @@ class WebServices: NSObject {
     }
 
     class func alamofireFunction(urlString : String, method : Alamofire.HTTPMethod, paramters : [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:String, completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void){
-
+        var paramter = paramters
+        paramter["car"] = true
         if method == Alamofire.HTTPMethod.post {
             //ONLY FOR POST REQUEST
             if imageData.count == 0{
-            AF.request(urlString, method: .post, parameters: paramters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            AF.request(urlString, method: .post, parameters: paramter, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
 
-                print(urlString)
                 switch response.result
                 {
                 case .success( _):
@@ -122,21 +121,28 @@ class WebServices: NSObject {
             to: urlString, method: .post , headers: headers)
             .responseJSON(completionHandler: { (response) in
                 
-                print(response)
-                
                 if let err = response.error{
                     print("ERROR..",err)
                     // onError?(err)
                     return
                 }
-                print("Succesfully uploaded")
-                
-                let json = response.data
-                
-                if (json != nil)
+                switch response.result
                 {
-                    completion(response.data, "", true)
+                case .success(let json):
+                    let jsonData = json as? [String:Any]
+                    print(jsonData)
+                    if let data = jsonData?["Message"] as? String {
+                        if data ==  "An error has occurred."{
+                            completion(nil, "error", false)
+                        }
+                    }else{
+                        completion(response.data, "", true)
+                    }
+
+                case .failure(let error):
+                    completion(nil, "\(error)", false)
                 }
+                
             })
 
         }else {
