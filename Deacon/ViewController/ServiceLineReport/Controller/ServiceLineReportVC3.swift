@@ -112,7 +112,10 @@ class ServiceLineReportVC3: UIViewController {
             imageData.append(Data())
             imageType.append(nil)
         }
-        
+        if Reachability.isConnectedToNetwork(){
+            saveOfflineData()
+            return
+        }
         let url = WebServiceNames.EndPoints.ServiceLine.url
         WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "ExtraPhoto", modalType:ServiceLineReportModel.self) {[weak self ](result, message, status ) in
         if status {
@@ -134,6 +137,31 @@ class ServiceLineReportVC3: UIViewController {
     func GoToThankYouVC()  {
         Router.goToThankYouVC(target: self)
     }
+    func saveOfflineData(){
+        let url = WebServiceNames.EndPoints.ServiceLine.url
+        var imageTypeValue:[String] = []
+        imageType.forEach({ (data) in
+            switch data{
+            case.jpeg :
+            imageTypeValue.append("jpeg")
+            case .none:
+                imageTypeValue.append("")
+            case .some(.png):
+            imageTypeValue.append("png")
+            }
+        })
+        
+       let getdataModal =  DataModal(imageData: imageData, imageParameter:"ExtraPhoto", imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+        let manager = DataManager()
+        manager.createData(data: getdataModal)
+        
+        self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+                if result { //User has clicked on Ok
+                    self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
 }
 
 extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
@@ -176,7 +204,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType2 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData2 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -190,7 +218,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType3 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData3 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -204,7 +232,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType4 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData4 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -218,7 +246,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType5 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData5 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -232,7 +260,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType6 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData6 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -246,7 +274,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType7 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData7 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -261,7 +289,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType8 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData8 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -276,7 +304,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType9 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData9 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -290,7 +318,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType10 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData10 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -304,7 +332,7 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
                 self?.imageType11 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if imageData11 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
