@@ -207,11 +207,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="option1" destination="Nm5-yW-IIZ" id="TWL-zq-2bM"/>
-                <outlet property="option2" destination="pyz-te-vs1" id="Ymf-o4-4sE"/>
-                <outlet property="option3" destination="2OC-M5-umo" id="ZhI-Uz-Zpv"/>
-                <outlet property="option4" destination="WJE-uA-ZkY" id="ehD-VK-Ree"/>
-                <outlet property="option5" destination="WmX-2o-L97" id="ALV-Ux-5lw"/>
+                <outlet property="optionA" destination="Nm5-yW-IIZ" id="JUu-yp-qcI"/>
+                <outlet property="optionB" destination="pyz-te-vs1" id="gnv-kd-m75"/>
+                <outlet property="optionC" destination="2OC-M5-umo" id="ndj-N6-98Y"/>
+                <outlet property="optionD" destination="WJE-uA-ZkY" id="SGp-1I-xeu"/>
+                <outlet property="optionE" destination="WmX-2o-L97" id="0dT-Bl-tox"/>
+                <outlet property="selectedBackgroundView" destination="6uF-cY-ova" id="lRT-7e-Sa6"/>
                 <outlet property="titleLabel" destination="TLL-kj-uTT" id="Bnv-Wx-bSb"/>
             </connections>
             <point key="canvasLocation" x="31.884057971014496" y="113.83928571428571"/>

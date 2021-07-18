@@ -12,6 +12,8 @@ class HomePageVC: UIViewController {
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var moduleCollectionView: UICollectionView!
     @IBOutlet weak var scrlView: UIScrollView!
+    @IBOutlet var settingsView: UIView!
+    @IBOutlet var settingsPopUpView: UIView!
     
     var arrModules = NSMutableArray()
     var arrModuleImages = NSMutableArray()
@@ -54,12 +56,53 @@ class HomePageVC: UIViewController {
     // MARK: Setup Display
     
     @IBAction func didPressedSettingButton(){
-        Router.goTosearchVC(target: self)
+       // Router.goTosearchVC(target: self)
+        settingsView.frame = CGRect.init(x: 0, y: 0, width: ScreenSize.SCREEN_WIDTH, height: ScreenSize.SCREEN_HEIGHT)
+        UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(settingsView)
         
     }
     @IBAction func didPressedSearchButton(){
         Router.goTosearchVC(target: self)
     }
+    
+    @IBAction func RatingButtonAction(_ sender: Any) {
+        goToGoogle()
+    }
+    
+    @IBAction func ShareButtonAction(_ sender: Any) {
+        shareApp()
+    }
+    @IBAction func removeSettingViewButton(){
+        settingsView.removeFromSuperview()
+    }
+    
+    func rateApp() {
+        let appUrl = "itms-apps://itunes.apple.com/app/apple-store/id375380948?mt=8"
+        let urlStr = appUrl
+           if #available(iOS 10.0, *) {
+               UIApplication.shared.open(URL(string: urlStr)!, options: [:], completionHandler: nil)
+           } else {
+               UIApplication.shared.openURL(URL(string: urlStr)!)
+           }
+    }
+    func shareApp() {
+        let text = "Please download Deacon App app link:https://www.google.co.in/"
+           let textShare = [ text ]
+           let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+           activityViewController.popoverPresentationController?.sourceView = self.view
+           self.present(activityViewController, animated: true, completion: nil)
+    }
+    func goToGoogle() {
+        let urlString = "https://www.google.co.in/"
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+           if #available(iOS 10.0, *) {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+           } else {
+              UIApplication.shared.openURL(url)
+           }
+        }
+    }
+    
 }
 
 extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource {

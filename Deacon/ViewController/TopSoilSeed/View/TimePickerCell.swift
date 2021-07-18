@@ -9,7 +9,7 @@ import UIKit
 
 class TimePickerCell: UITableViewCell ,UITextFieldDelegate{
     @IBOutlet weak var timeTextfield:UITextField!
-
+    var didEndEditAction : ((String)->())?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

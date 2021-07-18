@@ -13,6 +13,8 @@ struct  WebServiceNames {
         case searchApi = "SearchWebapi?search="
         case topSoilSeed = "Nested"
         case policeBackup = "PoliceBackup"
+        case TwwValve = "TwwValve"
+        case ServiceLine = "ServiceLine"
 
         var url: String {
             return WebServiceNames.baseUrl + self.rawValue

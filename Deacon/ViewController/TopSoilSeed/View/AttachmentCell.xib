@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,9 +68,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="attachmentImageView" destination="Hna-By-l1B" id="7hs-nU-mUZ"/>
-                <outlet property="attachmentTitleLabel" destination="cUj-wc-GDe" id="5QC-Ve-nJS"/>
-                <outlet property="checkImageView" destination="qxK-Rp-psa" id="1JV-nr-PWZ"/>
+                <outlet property="attachmentImageView" destination="Hna-By-l1B" id="4bw-Pg-qZH"/>
+                <outlet property="attachmentTitleLabel" destination="cUj-wc-GDe" id="MaI-iQ-OjV"/>
+                <outlet property="checkImageView" destination="qxK-Rp-psa" id="Ikl-00-woZ"/>
             </connections>
             <point key="canvasLocation" x="-197.10144927536234" y="86.383928571428569"/>
         </tableViewCell>
