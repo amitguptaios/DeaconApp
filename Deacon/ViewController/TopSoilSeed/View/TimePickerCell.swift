@@ -29,6 +29,7 @@ class TimePickerCell: UITableViewCell ,UITextFieldDelegate{
             dateFormatter.timeStyle = .short
             dateFormatter.dateFormat = "HH:mm"
             self.timeTextfield.text = dateFormatter.string(from: datePicker.date)
+            didEndEditAction!(self.timeTextfield.text ?? "")
         }
         self.timeTextfield.resignFirstResponder()
      }

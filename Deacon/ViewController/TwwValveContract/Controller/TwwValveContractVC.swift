@@ -234,7 +234,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
         case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimePickerCell") as? TimePickerCell  else { return UITableViewCell()}
                 cell.timeTextfield?.placeholder = "Time Start Exercise*"
-            cell.timeTextfield?.text = params["Date"] as? String ??  ""
+            cell.timeTextfield?.text = params["TimeStart_Exercise"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
             self?.params["TimeStart_Exercise"] = newText
             }
@@ -242,7 +242,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
         case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimePickerCell") as? TimePickerCell  else { return UITableViewCell()}
                 cell.timeTextfield?.placeholder = "Time Start Exercise*"
-            cell.timeTextfield?.text = params["Date"] as? String ??  ""
+            cell.timeTextfield?.text = params["TimeEnd_Exercise"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
             self?.params["TimeEnd_Exercise"] = newText
             }
