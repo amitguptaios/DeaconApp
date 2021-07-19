@@ -44,28 +44,7 @@ struct DataRepository : Repository
 
         return dataModal
     }
-    /*
-
-    func get(byIdentifier id: UUID) -> DataModal? {
-
-        let fetchRequest = NSFetchRequest<CDDeacon>(entityName: "CDDeacon")
-        let predicate = NSPredicate(format: "id==%@", id as CVarArg)
-
-        fetchRequest.predicate = predicate
-        do {
-            let result = try PersistentStorage.shared.context.fetch(fetchRequest).first
-
-            guard result != nil else {return nil}
-
-            return result?.convertToData()
-
-        } catch let error {
-            debugPrint(error)
-        }
-
-        return nil
-    }
-    */
+    
     
     func delete(id: UUID) -> Bool {
 
