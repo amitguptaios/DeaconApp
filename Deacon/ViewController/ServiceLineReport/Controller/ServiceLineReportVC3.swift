@@ -341,8 +341,6 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
             
         case 12:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
-            cell.delegateSubmitCell = self
-            cell.indexPath = indexPath
             cell.didEndEditAction = {[weak self]() in
             self?.prepareCellData()
             }
@@ -376,11 +374,5 @@ extension ServiceLineReportVC3:UITableViewDelegate,UITableViewDataSource{
         default:
         break
         }
-    }
-}
-extension ServiceLineReportVC3:SubmitCellDelegate{
-    func didSubmitButton(_ indexPath: IndexPath) {
-        print("didSubmitButton")
-      //  Router.goToThankYouVC(target: self)
     }
 }

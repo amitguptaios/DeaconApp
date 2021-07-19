@@ -146,6 +146,22 @@ class TwwValveContractVC: UIViewController {
             }
         }
     }
+    //MARK:- Check Validations
+    @objc func checkValidation() {
+        print("checkValidation:\(params)")
+        if params["CrewLeader"] == nil || params["ValveID"] == nil ||
+            params["ValveSize"] == nil ||  params["ValveStartPosition"]  == nil ||
+            params["No_Of_Turns"]  == nil || params["TimeStart_Exercise"]  == nil ||
+            params["TimeEnd_Exercise"]  == nil || params["WasValveBox"]  == nil ||
+            params["ValveImageBefore"]  == nil || params["ValveImageAfter"]  == nil || params["closestAddress"]  == nil{
+            print("validation not success")
+            self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
+            }
+        }else{
+            prepareCellData()
+            print("validation  success")
+        }
+    }
     
 }
 extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
@@ -343,7 +359,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
         case 19:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
-            self?.prepareCellData()
+                self?.checkValidation()
             }
             return cell
         default:

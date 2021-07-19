@@ -127,6 +127,20 @@ class TopSoilSeedVC: UIViewController {
             }
         }
     }
+    //MARK:- Check Validations
+    @objc func checkValidation() {
+        print("checkValidation:\(params)")
+        if params["CrewLeader"] == nil || params["Date"] == nil ||
+            params["WorkAddress"] == nil ||  params["Town_job"]  == nil ||
+            params["WorkPerformed"]  == nil || params["WorkComplete"]  == nil ||
+            params["Photos1"]  == nil {
+            print("validation not success")
+            self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
+            }
+        }else{
+            self.prepareCellData()
+        }
+    }
 }
 
 extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
@@ -256,7 +270,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
         case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
-            self?.prepareCellData()
+            self?.checkValidation()
             }
             return cell
         default:

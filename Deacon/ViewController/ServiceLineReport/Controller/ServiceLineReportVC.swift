@@ -61,7 +61,22 @@ class ServiceLineReportVC: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
     }
-
+    //MARK:- Check Validations
+    @objc func checkValidation() {
+        print("checkValidation:\(params)")
+        if params["Crew_leader"] == nil || params["WorkAddress"] == nil {
+            print("validation not success")
+            self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
+            }
+        }else{
+            //  Router.goToServiceLineReportVC2(target: self)
+              let vc = storyboard?.instantiateViewController(identifier: "ServiceLineReportVC2") as! ServiceLineReportVC2
+              vc.params = params
+              self.navigationController?.pushViewController(vc, animated: true)
+              print("params:\(params)")
+            print("validation  success")
+        }
+    }
 }
 extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -144,8 +159,9 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
  
         case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NextCell") as? NextCell  else { return UITableViewCell()}
-            cell.delegateNextCell = self
-            cell.indexPath = indexPath
+            cell.didEndEditAction = {[weak self]() in
+                self?.checkValidation()
+            }
             return cell
         default:
             return UITableViewCell()
@@ -171,14 +187,4 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
            return 20.0
        }
-}
-extension ServiceLineReportVC:NextCellDelegate{
-    func didNextButton(_ indexPath: IndexPath) {
-        print("didNextButton")
-      //  Router.goToServiceLineReportVC2(target: self)
-        let vc = storyboard?.instantiateViewController(identifier: "ServiceLineReportVC2") as! ServiceLineReportVC2
-        vc.params = params
-        self.navigationController?.pushViewController(vc, animated: true)
-        print("params:\(params)")
-    }
 }

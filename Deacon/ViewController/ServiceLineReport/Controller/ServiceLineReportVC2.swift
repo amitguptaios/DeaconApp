@@ -66,6 +66,24 @@ class ServiceLineReportVC2: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
     }
+    //MARK:- Check Validations
+    @objc func checkValidation() {
+        print("checkValidation:\(params)")
+        if params["ServiceLength"] == nil || params["LeadRemove"] == nil ||
+            params["ServiceDepth"] == nil ||  params["MainSize"]  == nil ||
+            params["MainDepth"]  == nil || params["MainCurbDis"]  == nil {
+            print("validation not success")
+            self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
+            }
+        }else{
+            //Router.goToServiceLineReportVC3(target: self)
+            let vc = storyboard?.instantiateViewController(identifier: "ServiceLineReportVC3") as! ServiceLineReportVC3
+            vc.params = params
+            self.navigationController?.pushViewController(vc, animated: true)
+            print("params:\(params)")
+            print("validation  success")
+        }
+    }
 }
 extension ServiceLineReportVC2:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -176,8 +194,9 @@ extension ServiceLineReportVC2:UITableViewDelegate,UITableViewDataSource{
             
         case 13:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NextCell") as? NextCell  else { return UITableViewCell()}
-            cell.delegateNextCell = self
-            cell.indexPath = indexPath
+            cell.didEndEditAction = {[weak self]() in
+                self?.checkValidation()
+            }
             return cell
         default:
             return UITableViewCell()
@@ -200,14 +219,4 @@ extension ServiceLineReportVC2:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
            return 20.0
        }
-}
-extension ServiceLineReportVC2:NextCellDelegate{
-    func didNextButton(_ indexPath: IndexPath) {
-        print("didNextButton")
-        //Router.goToServiceLineReportVC3(target: self)
-        let vc = storyboard?.instantiateViewController(identifier: "ServiceLineReportVC3") as! ServiceLineReportVC3
-        vc.params = params
-        self.navigationController?.pushViewController(vc, animated: true)
-        print("params:\(params)")
-    }
 }
