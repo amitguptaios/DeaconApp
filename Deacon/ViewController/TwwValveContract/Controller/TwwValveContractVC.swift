@@ -24,6 +24,7 @@ class TwwValveContractVC: UIViewController {
     var imageType3:ImageType?
     var imageType4:ImageType?
     var imageType5:ImageType?
+    var imageParameter:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,49 +61,59 @@ class TwwValveContractVC: UIViewController {
     func prepareCellData(){
 
         params["Datetime"] = ""
-       // params["Remarks"] = ""
+        params["Remarks"] = ""
  
          if imageData1 != nil {
             imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
+            imageParameter.append("ValveImageBefore")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("ValveImageBefore")
         }
         if imageData2 != nil {
             imageData.append(imageData2!)
             imageType.append(imageType2 ?? nil)
+            imageParameter.append("ValveImageAfter")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("ValveImageAfter")
         }
         if imageData3 != nil {
             imageData.append(imageData3!)
             imageType.append(imageType3 ?? nil)
+            imageParameter.append("OptionalImage1")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("OptionalImage1")
         }
         if imageData4 != nil {
             imageData.append(imageData4!)
             imageType.append(imageType4 ?? nil)
+            imageParameter.append("OptionalImage2")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("OptionalImage2")
         }
         if imageData5 != nil {
             imageData.append(imageData5!)
             imageType.append(imageType5 ?? nil)
+            imageParameter.append("OptionalImage3")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("OptionalImage3")
         }
-        if Reachability.isConnectedToNetwork(){
+        if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }
         let url = WebServiceNames.EndPoints.TwwValve.url
-        WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "OptionalImage", modalType:TwwValveContractModel.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:TwwValveContractModel.self) {[weak self ](result, message, status ) in
         if status {
             self?.GoToThankYouVC()
             self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
@@ -136,7 +147,7 @@ class TwwValveContractVC: UIViewController {
             }
         })
         
-       let getdataModal =  DataModal(imageData: imageData, imageParameter:"OptionalImage", imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+       let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
         let manager = DataManager()
         manager.createData(data: getdataModal)
         
@@ -153,7 +164,7 @@ class TwwValveContractVC: UIViewController {
             params["ValveSize"] == nil ||  params["ValveStartPosition"]  == nil ||
             params["No_Of_Turns"]  == nil || params["TimeStart_Exercise"]  == nil ||
             params["TimeEnd_Exercise"]  == nil || params["WasValveBox"]  == nil ||
-            params["ValveImageBefore"]  == nil || params["ValveImageAfter"]  == nil || params["closestAddress"]  == nil{
+            params["closestAddress"]  == nil{
             print("validation not success")
             self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
             }
@@ -351,8 +362,9 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
         case 18:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
                 cell.crewLeaderTextfield?.placeholder = "Closest Address / Notes*"
+            cell.crewLeaderTextfield?.text = params["closestAddress"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["Remarks"] = newText
+            self?.params["closestAddress"] = newText
             }
             return cell
 

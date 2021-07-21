@@ -36,7 +36,8 @@ class ServiceLineReportVC3: UIViewController {
     var imageType10:ImageType?
     var imageType11:ImageType?
     var imageType12:ImageType?
-    
+    var imageParameter:[String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -112,7 +113,7 @@ class ServiceLineReportVC3: UIViewController {
             imageData.append(Data())
             imageType.append(nil)
         }
-        if Reachability.isConnectedToNetwork(){
+        if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }

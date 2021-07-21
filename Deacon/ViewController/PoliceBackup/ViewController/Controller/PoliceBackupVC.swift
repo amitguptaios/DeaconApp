@@ -20,7 +20,8 @@ class PoliceBackupVC: UIViewController {
     var imageType2:ImageType?
     var imageType3:ImageType?
     var isCheck = false
-    
+    var imageParameter:[String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -74,7 +75,7 @@ class PoliceBackupVC: UIViewController {
             }
         })
         
-        let getdataModal =  DataModal(imageData: imageData, imageParameter:"UPloadImage", imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+        let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
         let manager = DataManager()
         manager.createData(data: getdataModal)
         
@@ -92,32 +93,38 @@ class PoliceBackupVC: UIViewController {
         if imageData1 != nil {
             imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
+            imageParameter.append("UPloadImage1")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("UPloadImage1")
         }
         if imageData2 != nil {
             imageData.append(imageData2!)
             imageType.append(imageType2 ?? nil)
+            imageParameter.append("UPloadImage2")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("UPloadImage2")
         }
         if imageData3 != nil {
             imageData.append(imageData3!)
             imageType.append(imageType3 ?? nil)
+            imageParameter.append("UPloadImage3")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("UPloadImage3")
         }
         
-        if Reachability.isConnectedToNetwork(){
+        if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }
         
         let url = WebServiceNames.EndPoints.policeBackup.url
-        WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "UPloadImage", modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter:imageParameter, modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
             if status {
                 self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
                     if result { //User has clicked on Ok

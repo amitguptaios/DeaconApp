@@ -17,7 +17,7 @@ extension CDDeacon {
     }
 
         @NSManaged public var imageData: [Data]?
-        @NSManaged public var imageParameter: String?
+        @NSManaged public var imageParameter: [String]?
         @NSManaged public var imageType: [String]?
         @NSManaged public var params: [String:Any]?
         @NSManaged public var requestType: String?
@@ -25,7 +25,7 @@ extension CDDeacon {
         @NSManaged public var uuID: UUID?
     
     func convertToData()->DataModal{
-        return DataModal(imageData: imageData ?? [], imageParameter: imageParameter ?? "", imageType: imageType, params: params, requestType: requestType ?? "", url: url ?? "", uuID: uuID!)
+        return DataModal(imageData: imageData ?? [], imageParameter: imageParameter ?? [], imageType: imageType, params: params, requestType: requestType ?? "", url: url ?? "", uuID: uuID!)
        }
 }
 

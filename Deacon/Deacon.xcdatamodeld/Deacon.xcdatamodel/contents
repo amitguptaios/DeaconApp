@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDDeacon" representedClassName="CDDeacon" syncable="YES">
         <attribute name="imageData" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
-        <attribute name="imageParameter" optional="YES" attributeType="String"/>
+        <attribute name="imageParameter" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="imageType" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="params" optional="YES" attributeType="Transformable" customClassName="[String:Any]"/>
         <attribute name="requestType" optional="YES" attributeType="String"/>

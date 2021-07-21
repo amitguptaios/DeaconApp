@@ -10,7 +10,7 @@ import Foundation
 struct DataModal
 {
     var imageData: [Data]?
-    var imageParameter: String?
+    var imageParameter: [String]?
     var imageType: [String]?
     var params: [String:Any]?
     var requestType: String?

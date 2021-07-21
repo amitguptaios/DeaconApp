@@ -13,7 +13,7 @@ class WebServices: NSObject {
     // MARK: -  Api Request
    
 
-    class func requestApiWithDictParam<T:Decodable>(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:String = "",modalType:T.Type? = nil, completion : @escaping (_ response : T?, _ message: String?, _ success : Bool)-> ()) {
+    class func requestApiWithDictParam<T:Decodable>(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:[String?] = [],modalType:T.Type? = nil, completion : @escaping (_ response : T?, _ message: String?, _ success : Bool)-> ()) {
        
         Utility.showLoader()
         WebServices.postWebService(urlString: url, requestType: requestType, params: params, imageData:imageData, imageType: imageType, imageParameter: imageParameter) { (response, message, status) in
@@ -28,7 +28,7 @@ class WebServices: NSObject {
         }
     }
    
-    class func requestApiWithDictParamforDatabase(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:String = "", completion : @escaping ( _ message: String?, _ success : Bool)-> ()) {
+    class func requestApiWithDictParamforDatabase(url:String,requestType:String,params:[String : Any],imageData:[Data?] = [],imageType:[ImageType?] = [],imageParameter:[String?] = [], completion : @escaping ( _ message: String?, _ success : Bool)-> ()) {
        
         WebServices.postWebService(urlString: url, requestType: requestType, params: params, imageData:imageData, imageType: imageType, imageParameter: imageParameter) { (response, message, status) in
             print(response ?? "Error")
@@ -39,7 +39,7 @@ class WebServices: NSObject {
     }
    
     
-    class func postWebService(urlString: String,requestType:String, params: [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:String, completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void) {
+    class func postWebService(urlString: String,requestType:String, params: [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:[String?], completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void) {
         var httpMethod:HTTPMethod!
         let  type = requestType
         if type == "GET"{
@@ -56,7 +56,7 @@ class WebServices: NSObject {
         }
     }
 
-    class func alamofireFunction(urlString : String, method : Alamofire.HTTPMethod, paramters : [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:String, completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void){
+    class func alamofireFunction(urlString : String, method : Alamofire.HTTPMethod, paramters : [String : Any],imageData:[Data?],imageType:[ImageType?],imageParameter:[String?], completion : @escaping (_ response : Data?, _ message: String?, _ success : Bool)-> Void){
         var paramter = paramters
         paramter["car"] = true
         if method == Alamofire.HTTPMethod.post {
@@ -108,13 +108,13 @@ class WebServices: NSObject {
         for index  in 0..<imageData.count{
             if let data = imageData[index]{
                 if let getImageType = imageType[index]{
-                    multipartFormData.append(data, withName: "\(imageParameter)\(index+1)", fileName: "\(Date.init().timeIntervalSince1970).\(getImageType)", mimeType: "image/\(getImageType)")
+                    multipartFormData.append(data, withName: "\(imageParameter[index] ?? "")", fileName: "\(Date.init().timeIntervalSince1970).\(getImageType)", mimeType: "image/\(getImageType)")
                 }else{
-               multipartFormData.append(imageData[index] ?? Data(), withName: "\(imageParameter)\(index+1)", fileName: "", mimeType: "image/png")
+               multipartFormData.append(imageData[index] ?? Data(), withName: "\(imageParameter[index] ?? "")", fileName: "", mimeType: "image/png")
                 }
             }else{
                 
-                multipartFormData.append(imageData[index] ?? Data(), withName: "\(imageParameter)\(index+1)", fileName: "", mimeType: "image/png")
+                multipartFormData.append(imageData[index] ?? Data(), withName: "\(imageParameter[index] ?? "")", fileName: "", mimeType: "image/png")
             }
         }
             },
