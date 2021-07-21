@@ -21,7 +21,7 @@ class PoliceBackupVC: UIViewController {
     var imageType3:ImageType?
     var isCheck = false
     var imageParameter:[String] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -117,36 +117,36 @@ class PoliceBackupVC: UIViewController {
             imageType.append(nil)
             imageParameter.append("UPloadImage3")
         }
-        
-        if !Reachability.isConnectedToNetwork(){
-            saveOfflineData()
-            return
-        }
-        
+        /*
+         if !Reachability.isConnectedToNetwork(){
+         saveOfflineData()
+         return
+         }
+         */
         let url = WebServiceNames.EndPoints.policeBackup.url
         WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter:imageParameter, modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
             if status {
-                self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+                self?.GoToThankYouVC()
+            }else{
+                self?.AskConfirmation(title: "", message: "Something went wrong", isCancel: false) { (result) in
                     if result { //User has clicked on Ok
                         self?.navigationController?.popViewController(animated: true)
-                        
                     } else { //User has clicked on Cancel
                         
                     }
                 }
-            }else{
-                
-                
             }
         }
     }
-    
+    func GoToThankYouVC()  {
+        Router.goToThankYouVC(target: self)
+    }
     //MARK:- Check Validations
     @objc func checkValidation() {
         print("checkValidation:\(params)")
         if params["CrewLeader"] == nil || params["WorkAddress"] == nil ||
             params["OfficerName"] == nil ||  params["PoliceDepartment"]  == nil ||
-            params["HoursWorked"]  == nil || params["car"]  == nil || params["UPloadImage1"]  == nil {
+            params["HoursWorked"]  == nil || params["car"]  == nil{
             print("validation not success")
             self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
             }
@@ -154,6 +154,8 @@ class PoliceBackupVC: UIViewController {
             self.prepareCellData()
         }
     }
+    
+    
 }
 extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {

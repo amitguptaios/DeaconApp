@@ -25,7 +25,7 @@ class TwwValveContractVC: UIViewController {
     var imageType4:ImageType?
     var imageType5:ImageType?
     var imageParameter:[String] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -59,11 +59,11 @@ class TwwValveContractVC: UIViewController {
         tableview.delegate = self
     }
     func prepareCellData(){
-
+        
         params["Datetime"] = ""
         params["Remarks"] = ""
- 
-         if imageData1 != nil {
+        
+        if imageData1 != nil {
             imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
             imageParameter.append("ValveImageBefore")
@@ -109,28 +109,26 @@ class TwwValveContractVC: UIViewController {
             imageParameter.append("OptionalImage3")
         }
         /*
-        if !Reachability.isConnectedToNetwork(){
-            saveOfflineData()
-            return
-        }
+         if !Reachability.isConnectedToNetwork(){
+         saveOfflineData()
+         return
+         }
          */
         let url = WebServiceNames.EndPoints.TwwValve.url
         WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:TwwValveContractModel.self) {[weak self ](result, message, status ) in
-        if status {
-            self?.GoToThankYouVC()
-            self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+            if status {
+                self?.GoToThankYouVC()
+            }else{
+                self?.AskConfirmation(title: "", message: "Something went wrong", isCancel: false) { (result) in
                     if result { //User has clicked on Ok
-                       // self?.navigationController?.popViewController(animated: true)
+                        self?.navigationController?.popViewController(animated: true)
                     } else { //User has clicked on Cancel
-
+                        
                     }
                 }
-        }else{
-            
-            
+            }
         }
     }
- }
     func GoToThankYouVC()  {
         Router.goToThankYouVC(target: self)
     }
@@ -141,21 +139,21 @@ class TwwValveContractVC: UIViewController {
         imageType.forEach({ (data) in
             switch data{
             case.jpeg :
-            imageTypeValue.append("jpeg")
+                imageTypeValue.append("jpeg")
             case .none:
                 imageTypeValue.append("")
             case .some(.png):
-            imageTypeValue.append("png")
+                imageTypeValue.append("png")
             }
         })
         
-       let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+        let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
         let manager = DataManager()
         manager.createData(data: getdataModal)
         
         self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
-                if result { //User has clicked on Ok
-                    self.navigationController?.popViewController(animated: true)
+            if result { //User has clicked on Ok
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -192,7 +190,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             cell.crewLeaderTextfield?.placeholder = "Crew Leader*"
             cell.crewLeaderTextfield?.text = params["CrewLeader"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["CrewLeader"] = newText
+                self?.params["CrewLeader"] = newText
             }
             return cell
         case 1:
@@ -200,7 +198,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             cell.crewLeaderTextfield?.placeholder = "Valve ID*"
             cell.crewLeaderTextfield?.text = params["ValveID"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["ValveID"] = newText
+                self?.params["ValveID"] = newText
             }
             return cell
         case 2:
@@ -208,7 +206,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             cell.titleLabel.text = "Valve Size*"
             cell.setTitle(title1: "6", title2: "12", title3: "8", title4: "16", title5: "10", title6: "Others")
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["ValveSize"] = newText
+                self?.params["ValveSize"] = newText
             }
             return cell
         case 3:
@@ -220,7 +218,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             cell.titleLabel.text = "Valve Start Position*"
             cell.setTitle(title1: "Open", title2: "Closed", title3: "Others")
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["ValveStartPosition"] = newText
+                self?.params["ValveStartPosition"] = newText
             }
             return cell
         case 5:
@@ -234,7 +232,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             cell.titleLabel.text = "Number Of Turns*"
             cell.setTitle(title1: "10", title2: "15", title3: "Could Not Find")
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["No_Of_Turns"] = newText
+                self?.params["No_Of_Turns"] = newText
             }
             return cell
         case 7:
@@ -242,7 +240,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             cell.titleLabel.text = "Is Packing Leaking?"
             cell.setTitle(title1: "Yes", title2: "No", title3: "Others")
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["IsPacking_Leaking"] = newText
+                self?.params["IsPacking_Leaking"] = newText
             }
             return cell
             
@@ -254,34 +252,34 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             
         case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell") as? DatePickerCell  else { return UITableViewCell()}
-                cell.dateTextfield?.placeholder = "Date*"
+            cell.dateTextfield?.placeholder = "Date*"
             cell.dateTextfield?.text = params["Date"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["Date"] = newText
+                self?.params["Date"] = newText
             }
-             return cell
+            return cell
         case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimePickerCell") as? TimePickerCell  else { return UITableViewCell()}
-                cell.timeTextfield?.placeholder = "Time Start Exercise*"
+            cell.timeTextfield?.placeholder = "Time Start Exercise*"
             cell.timeTextfield?.text = params["TimeStart_Exercise"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["TimeStart_Exercise"] = newText
+                self?.params["TimeStart_Exercise"] = newText
             }
-             return cell
+            return cell
         case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimePickerCell") as? TimePickerCell  else { return UITableViewCell()}
-                cell.timeTextfield?.placeholder = "Time Start Exercise*"
+            cell.timeTextfield?.placeholder = "Time Start Exercise*"
             cell.timeTextfield?.text = params["TimeEnd_Exercise"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["TimeEnd_Exercise"] = newText
+                self?.params["TimeEnd_Exercise"] = newText
             }
-             return cell
+            return cell
         case 12:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TwoRadioButtonCell") as? TwoRadioButtonCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Was Valve Box Raised*"
             cell.setTitle(title1: "Yes", title2: "No")
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["WasValveBox"] = newText
+                self?.params["WasValveBox"] = newText
             }
             return cell
             
@@ -330,7 +328,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
                 cell.checkImageView.image = UIImage()
             }
             return cell
-     
+            
         case 16:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Optional Image"
@@ -345,7 +343,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
                 cell.checkImageView.image = UIImage()
             }
             return cell
-     
+            
         case 17:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Optional Image"
@@ -360,16 +358,16 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
                 cell.checkImageView.image = UIImage()
             }
             return cell
-     
+            
         case 18:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-                cell.crewLeaderTextfield?.placeholder = "Closest Address / Notes*"
+            cell.crewLeaderTextfield?.placeholder = "Closest Address / Notes*"
             cell.crewLeaderTextfield?.text = params["closestAddress"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["closestAddress"] = newText
+                self?.params["closestAddress"] = newText
             }
             return cell
-
+            
         case 19:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
@@ -396,22 +394,22 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
         }
         return 70
     }
-
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-            let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 20))
-            view.backgroundColor = .clear
-            return view
-        }
+        let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 20))
+        view.backgroundColor = .clear
+        return view
+    }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-           return 20.0
-       }
+        return 20.0
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 13, 14, 15, 16, 17:
             let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
             cell?.getImageFromImagePicker(VC: self)
         default:
-        break
+            break
         }
     }
 }

@@ -92,21 +92,19 @@ class TopSoilSeedVC: UIViewController {
         
         let url = WebServiceNames.EndPoints.topSoilSeed.url
         WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter:imageParameter, modalType:TopSoilFeedModal.self) {[weak self ](result, message, status ) in
-        if status {
-            self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
+            if status {
+                self?.GoToThankYouVC()
+            }else{
+                self?.AskConfirmation(title: "", message: "Something went wrong", isCancel: false) { (result) in
                     if result { //User has clicked on Ok
                         self?.navigationController?.popViewController(animated: true)
-
                     } else { //User has clicked on Cancel
-
+                        
                     }
                 }
-        }else{
-
-
+            }
         }
     }
- }
     
     
     func saveOfflineData(){
@@ -115,21 +113,21 @@ class TopSoilSeedVC: UIViewController {
         imageType.forEach({ (data) in
             switch data{
             case.jpeg :
-            imageTypeValue.append("jpeg")
+                imageTypeValue.append("jpeg")
             case .none:
                 imageTypeValue.append("")
             case .some(.png):
-            imageTypeValue.append("png")
+                imageTypeValue.append("png")
             }
         })
         
-       let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+        let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
         let manager = DataManager()
         manager.createData(data: getdataModal)
         
         self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
-                if result { //User has clicked on Ok
-                    self.navigationController?.popViewController(animated: true)
+            if result { //User has clicked on Ok
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -138,14 +136,16 @@ class TopSoilSeedVC: UIViewController {
         print("checkValidation:\(params)")
         if params["CrewLeader"] == nil || params["Date"] == nil ||
             params["WorkAddress"] == nil ||  params["Town_job"]  == nil ||
-            params["WorkPerformed"]  == nil || params["WorkComplete"]  == nil ||
-            params["Photos1"]  == nil {
+            params["WorkComplete"]  == nil{
             print("validation not success")
             self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
             }
         }else{
             self.prepareCellData()
         }
+    }
+    func GoToThankYouVC()  {
+        Router.goToThankYouVC(target: self)
     }
 }
 
@@ -164,7 +164,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             cell.crewLeaderTextfield?.placeholder = "Crew Leader*"
             cell.crewLeaderTextfield?.text = params["CrewLeader"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["CrewLeader"] = newText
+                self?.params["CrewLeader"] = newText
             }
             return cell
         case 1:
@@ -172,15 +172,15 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             cell.dateTextfield?.placeholder = "Date*"
             cell.dateTextfield?.text = params["Date"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["Date"] = newText
+                self?.params["Date"] = newText
             }
-             return cell
+            return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Work Address*"
             cell.crewLeaderTextfield?.text = params["WorkAddress"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["WorkAddress"] = newText
+                self?.params["WorkAddress"] = newText
             }
             return cell
             
@@ -188,7 +188,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TwoRadioButtonCell") as? TwoRadioButtonCell  else { return UITableViewCell()}
             cell.setTitle(title1: "North B", title2: "Rutheford")
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["Town_job"] = newText
+                self?.params["Town_job"] = newText
             }
             return cell
             
@@ -196,7 +196,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckBoxCell") as? CheckBoxCell  else { return UITableViewCell()}
             cell.SetImageCheckBox(status:isCheck)
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.isCheck = newText
+                self?.isCheck = newText
                 if newText {
                     cell.checkBoxImageView.image = UIImage(named: "check-box")
                 }else{
@@ -210,14 +210,14 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             cell.crewLeaderTextfield?.placeholder = "Grass Size*"
             cell.crewLeaderTextfield?.text = params["GrassSize"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["GrassSize"] = newText
+                self?.params["GrassSize"] = newText
             }
             return cell
             
         case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["WorkComplete"] = newText
+                self?.params["WorkComplete"] = newText
             }
             return cell
         case 7:
@@ -238,8 +238,8 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 2"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-            self?.imageData2 = newdata
-            self?.imageType2 = imageType
+                self?.imageData2 = newdata
+                self?.imageType2 = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
             if imageData2 != nil{
@@ -248,14 +248,14 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
                 cell.checkImageView.image = UIImage()
             }
             return cell
-
+            
         case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 3"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-            self?.imageData3 = newdata
-            self?.imageType3 = imageType
-            cell.checkImageView.image = UIImage.init(named: "right")
+                self?.imageData3 = newdata
+                self?.imageType3 = imageType
+                cell.checkImageView.image = UIImage.init(named: "right")
             }
             if imageData3 != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
@@ -263,20 +263,20 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
                 cell.checkImageView.image = UIImage()
             }
             return cell
-
+            
         case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Notes / Comments"
             cell.crewLeaderTextfield?.text = params["Note"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["Note"] = newText
+                self?.params["Note"] = newText
             }
             return cell
             
         case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
-            self?.checkValidation()
+                self?.checkValidation()
             }
             return cell
         default:
@@ -284,7 +284,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
         }
         
     }
-        
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 3 ||  indexPath.section == 4{
             return 100
@@ -299,13 +299,13 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
         return 70
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-            let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 20))
-            view.backgroundColor = .clear
-            return view
-        }
+        let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 20))
+        view.backgroundColor = .clear
+        return view
+    }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-           return 20.0
-       }
+        return 20.0
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
@@ -313,7 +313,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
             cell?.getImageFromImagePicker(VC: self)
         default:
-        break
+            break
         }
     }
 }

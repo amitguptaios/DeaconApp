@@ -130,7 +130,7 @@ class WebServices: NSObject {
                 {
                 case .success(let json):
                     let jsonData = json as? [String:Any]
-                    print(jsonData)
+                    print("jsonData:\(jsonData)")
                     if let data = jsonData?["Message"] as? String {
                         if data ==  "An error has occurred."{
                             completion(nil, "error", false)
