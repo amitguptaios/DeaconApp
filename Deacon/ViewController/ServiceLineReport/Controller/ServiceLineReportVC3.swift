@@ -81,44 +81,110 @@ class ServiceLineReportVC3: UIViewController {
         if imageData1 != nil {
             imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
+            imageParameter.append("PreconPhoto")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("PreconPhoto")
         }
         if imageData2 != nil {
             imageData.append(imageData2!)
             imageType.append(imageType2 ?? nil)
+            imageParameter.append("MarkoutPhoto")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("MarkoutPhoto")
         }
         if imageData3 != nil {
             imageData.append(imageData3!)
             imageType.append(imageType3 ?? nil)
+            imageParameter.append("CurbStopPhoto")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("CurbStopPhoto")
         }
         if imageData4 != nil {
             imageData.append(imageData4!)
             imageType.append(imageType4 ?? nil)
+            imageParameter.append("Oldtap")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("Oldtap")
         }
         if imageData5 != nil {
             imageData.append(imageData5!)
             imageType.append(imageType5 ?? nil)
+            imageParameter.append("Newtap")
         }else{
             imageData.append(Data())
             imageType.append(nil)
+            imageParameter.append("Newtap")
         }
+        if imageData6 != nil {
+            imageData.append(imageData6!)
+            imageType.append(imageType6 ?? nil)
+            imageParameter.append("ServiceLine")
+        }else{
+            imageData.append(Data())
+            imageType.append(nil)
+            imageParameter.append("ServiceLine")
+        }
+        if imageData7 != nil {
+            imageData.append(imageData7!)
+            imageType.append(imageType7 ?? nil)
+            imageParameter.append("ConcreteThick")
+        }else{
+            imageData.append(Data())
+            imageType.append(nil)
+            imageParameter.append("ConcreteThick")
+        }
+        if imageData8 != nil {
+            imageData.append(imageData8!)
+            imageType.append(imageType8 ?? nil)
+            imageParameter.append("worksheet")
+        }else{
+            imageData.append(Data())
+            imageType.append(nil)
+            imageParameter.append("worksheet")
+        }
+        if imageData5 != nil {
+            imageData.append(imageData9!)
+            imageType.append(imageType9 ?? nil)
+            imageParameter.append("EndDayPhoto1")
+        }else{
+            imageData.append(Data())
+            imageType.append(nil)
+            imageParameter.append("EndDayPhoto1")
+        }
+        if imageData10 != nil {
+            imageData.append(imageData10!)
+            imageType.append(imageType10 ?? nil)
+            imageParameter.append("ExtraPhoto1")
+        }else{
+            imageData.append(Data())
+            imageType.append(nil)
+            imageParameter.append("ExtraPhoto1")
+        }
+        if imageData11 != nil {
+            imageData.append(imageData11!)
+            imageType.append(imageType11 ?? nil)
+            imageParameter.append("ExtraPhoto2")
+        }else{
+            imageData.append(Data())
+            imageType.append(nil)
+            imageParameter.append("ExtraPhoto2")
+        }
+        /*
         if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }
+        */
         let url = WebServiceNames.EndPoints.ServiceLine.url
-        WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: "ExtraPhoto", modalType:ServiceLineReportModel.self) {[weak self ](result, message, status ) in
+        WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:ServiceLineReportModel.self) {[weak self ](result, message, status ) in
         if status {
             self?.GoToThankYouVC()
             self?.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
@@ -152,7 +218,7 @@ class ServiceLineReportVC3: UIViewController {
             }
         })
         
-       let getdataModal =  DataModal(imageData: imageData, imageParameter:"ExtraPhoto", imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
+       let getdataModal =  DataModal(imageData: imageData, imageParameter:imageParameter, imageType: imageTypeValue, params: params, requestType:"POST", url: url, uuID: UUID())
         let manager = DataManager()
         manager.createData(data: getdataModal)
         

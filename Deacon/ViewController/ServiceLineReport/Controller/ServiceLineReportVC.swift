@@ -64,7 +64,7 @@ class ServiceLineReportVC: UIViewController {
     //MARK:- Check Validations
     @objc func checkValidation() {
         print("checkValidation:\(params)")
-        if params["Crew_leader"] == nil || params["WorkAddress"] == nil {
+        if params["Crew_leader"] == nil || params["Date"] == nil || params["WorkAddress"] == nil || params["WorkOrderNumber"] == nil{
             print("validation not success")
             self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
             }
@@ -91,9 +91,9 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Crew Leader*"
-            cell.crewLeaderTextfield?.text = params["CrewLeader"] as? String ??  ""
+            cell.crewLeaderTextfield?.text = params["Crew_leader"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["CrewLeader"] = newText
+            self?.params["Crew_leader"] = newText
             }
             return cell
         case 1:
@@ -133,7 +133,7 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             
         case 5:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-                cell.crewLeaderTextfield?.placeholder = "Others*"
+                cell.crewLeaderTextfield?.placeholder = "Others"
             cell.crewLeaderTextfield?.text = params["GrassSize"] as? String ??  ""
             cell.didEndEditAction = {[weak self] (newText) in
             self?.params["GrassSize"] = newText

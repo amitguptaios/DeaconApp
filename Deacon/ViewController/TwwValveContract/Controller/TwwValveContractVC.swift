@@ -108,10 +108,12 @@ class TwwValveContractVC: UIViewController {
             imageType.append(nil)
             imageParameter.append("OptionalImage3")
         }
+        /*
         if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }
+         */
         let url = WebServiceNames.EndPoints.TwwValve.url
         WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:TwwValveContractModel.self) {[weak self ](result, message, status ) in
         if status {
