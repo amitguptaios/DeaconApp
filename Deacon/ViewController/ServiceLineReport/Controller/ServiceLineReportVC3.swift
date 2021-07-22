@@ -177,12 +177,12 @@ class ServiceLineReportVC3: UIViewController {
             imageType.append(nil)
             imageParameter.append("ExtraPhoto2")
         }
-        /*
+        
         if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
             return
         }
-        */
+        
         let url = WebServiceNames.EndPoints.ServiceLine.url
         WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:ServiceLineReportModel.self) {[weak self ](result, message, status ) in
         if status {
@@ -190,7 +190,6 @@ class ServiceLineReportVC3: UIViewController {
         }else{
             self?.AskConfirmation(title: "", message: "Something went wrong", isCancel: false) { (result) in
                     if result { //User has clicked on Ok
-                        self?.navigationController?.popViewController(animated: true)
                     } else { //User has clicked on Cancel
 
                     }
@@ -222,7 +221,7 @@ class ServiceLineReportVC3: UIViewController {
         
         self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
                 if result { //User has clicked on Ok
-                    self.navigationController?.popViewController(animated: true)
+                    self.GoToThankYouVC()
             }
         }
     }

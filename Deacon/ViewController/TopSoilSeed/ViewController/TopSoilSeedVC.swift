@@ -127,7 +127,7 @@ class TopSoilSeedVC: UIViewController {
         
         self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
             if result { //User has clicked on Ok
-                self.navigationController?.popViewController(animated: true)
+                self.GoToThankYouVC()
             }
         }
     }

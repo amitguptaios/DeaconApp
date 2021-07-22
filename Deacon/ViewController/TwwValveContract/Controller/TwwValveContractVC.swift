@@ -25,7 +25,7 @@ class TwwValveContractVC: UIViewController {
     var imageType4:ImageType?
     var imageType5:ImageType?
     var imageParameter:[String] = []
-    
+    var flag = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -62,7 +62,8 @@ class TwwValveContractVC: UIViewController {
         
         params["Datetime"] = ""
         params["Remarks"] = ""
-        
+       let rsult  =  params["WasValveBox"] as! String == "Yes" ? true:false
+        params["WasValveBox"] = rsult
         if imageData1 != nil {
             imageData.append(imageData1!)
             imageType.append(imageType1 ?? nil)
@@ -108,12 +109,12 @@ class TwwValveContractVC: UIViewController {
             imageType.append(nil)
             imageParameter.append("OptionalImage3")
         }
-        /*
+        
          if !Reachability.isConnectedToNetwork(){
          saveOfflineData()
          return
          }
-         */
+         
         let url = WebServiceNames.EndPoints.TwwValve.url
         WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:TwwValveContractModel.self) {[weak self ](result, message, status ) in
             if status {
@@ -153,7 +154,7 @@ class TwwValveContractVC: UIViewController {
         
         self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
             if result { //User has clicked on Ok
-                self.navigationController?.popViewController(animated: true)
+                self.GoToThankYouVC()
             }
         }
     }

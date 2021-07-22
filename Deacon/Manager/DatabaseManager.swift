@@ -35,8 +35,21 @@ class DataBaseManager{
                 self.imageType.append(nil)
             }
         })
-        
-        WebServices.requestApiWithDictParamforDatabase(url: url, requestType:requestType, params:params, imageData: imageData, imageType: self.imageType , imageParameter: imageParameter) {( message, status ) in
+        var param:[String:Any] = [:]
+        param = params
+        if param["WasValveBox"]  as? Int == 1{
+            param["WasValveBox"]  = true
+        }
+        if param["WasValveBox"]  as? Int == 0{
+           param["WasValveBox"]  = false
+        }
+        if param["car"]  as? Int == 1{
+           param["car"]  = true
+        }
+        if param["car"]  as? Int == 0{
+           param["car"]  = false
+        }
+        WebServices.requestApiWithDictParamforDatabase(url: url, requestType:requestType, params:param, imageData: imageData, imageType: self.imageType , imageParameter: imageParameter) {( message, status ) in
                 if status {
                     if self.manager.deleteData(id: uuid){
                         print("success....................................................................")

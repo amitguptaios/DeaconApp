@@ -81,7 +81,7 @@ class PoliceBackupVC: UIViewController {
         
         self.AskConfirmation(title: "", message: "Data Submitted Successfully", isCancel: false) { (result) in
             if result { //User has clicked on Ok
-                self.navigationController?.popViewController(animated: true)
+                self.GoToThankYouVC()
             }
         }
     }
@@ -117,12 +117,12 @@ class PoliceBackupVC: UIViewController {
             imageType.append(nil)
             imageParameter.append("UPloadImage3")
         }
-        /*
+        
          if !Reachability.isConnectedToNetwork(){
          saveOfflineData()
          return
          }
-         */
+         
         let url = WebServiceNames.EndPoints.policeBackup.url
         WebServices.requestApiWithDictParam(url: url, requestType:"POST", params:params, imageData: imageData, imageType: imageType , imageParameter:imageParameter, modalType:PoliceBackUpModal.self) {[weak self ](result, message, status ) in
             if status {
