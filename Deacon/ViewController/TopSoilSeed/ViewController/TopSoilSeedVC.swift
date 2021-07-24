@@ -53,16 +53,14 @@ class TopSoilSeedVC: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
         
-        for i in 0..<3{
-            imageObject.append(ImageModal(imageData: Data(), imageType: nil, imageParameter: ("Photos\(i+1)")))
+        for i in 1..<4{
+            imageObject.append(ImageModal(imageData: Data(), imageType: nil, imageParameter: ("Photos\(i)")))
         }
     }
     
     func prepareCellData(){
-        let result =  isCheck ? "TopSoil": ""
         params["Datetime"] = ""
         params["Remarks"] = ""
-        params["WorkPerformed"]  =  result
         for i in 0..<imageObject.count{
             imageData.append(imageObject[i].imageData!)
             imageType.append(imageObject[i].imageType ?? nil)
@@ -117,9 +115,12 @@ class TopSoilSeedVC: UIViewController {
     //MARK:- Check Validations
     @objc func checkValidation() {
         print("checkValidation:\(params)")
+        let result =  isCheck ? "TopSoil": ""
+        params["WorkPerformed"]  =  result
+        
         if params["CrewLeader"] == nil || params["Date"] == nil ||
             params["WorkAddress"] == nil ||  params["Town_job"]  == nil ||
-            params["WorkComplete"]  == nil{
+            params["WorkComplete"]  == nil || params["WorkPerformed"]  == nil || params["GrassSize"]  == nil || imageObject[0].imageType  == nil{
             print("validation not success")
             self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
             }
@@ -177,6 +178,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             
         case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckBoxCell") as? CheckBoxCell  else { return UITableViewCell()}
+            cell.titleLabel.text = "Work Performed*"
             cell.SetImageCheckBox(status:isCheck)
             cell.didEndEditAction = {[weak self] (newText) in
                 self?.isCheck = newText
@@ -211,7 +213,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
                 self?.imageObject[0].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if self.imageObject[0].imageData != nil{
+            if self.imageObject[0].imageType != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -225,7 +227,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
                 self?.imageObject[1].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if self.imageObject[1].imageData != nil{
+            if self.imageObject[1].imageType != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -240,7 +242,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
                 self?.imageObject[2].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if self.imageObject[2].imageData != nil{
+            if self.imageObject[2].imageType != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()

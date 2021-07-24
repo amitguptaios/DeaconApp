@@ -21,7 +21,8 @@ class PoliceBackupVC: UIViewController {
     var imageType3:ImageType?
     var isCheck = false
     var imageParameter:[String] = []
-    
+    var imageObject:[ImageModal] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -58,6 +59,10 @@ class PoliceBackupVC: UIViewController {
         tableview.register(nib12, forCellReuseIdentifier: "SubmitCell")
         tableview.dataSource = self
         tableview.delegate = self
+        
+        for i in 1..<4{
+            imageObject.append(ImageModal(imageData: Data(), imageType: nil, imageParameter: ("UPloadImage\(i)")))
+        }
     }
     //Mark:-  save offline PoliceBackup data here
     
@@ -90,34 +95,13 @@ class PoliceBackupVC: UIViewController {
     func prepareCellData(){
         params["Datetime"] = ""
         params["Remarks"] = ""
-        if imageData1 != nil {
-            imageData.append(imageData1!)
-            imageType.append(imageType1 ?? nil)
-            imageParameter.append("UPloadImage1")
-        }else{
-            imageData.append(Data())
-            imageType.append(nil)
-            imageParameter.append("UPloadImage1")
-        }
-        if imageData2 != nil {
-            imageData.append(imageData2!)
-            imageType.append(imageType2 ?? nil)
-            imageParameter.append("UPloadImage2")
-        }else{
-            imageData.append(Data())
-            imageType.append(nil)
-            imageParameter.append("UPloadImage2")
-        }
-        if imageData3 != nil {
-            imageData.append(imageData3!)
-            imageType.append(imageType3 ?? nil)
-            imageParameter.append("UPloadImage3")
-        }else{
-            imageData.append(Data())
-            imageType.append(nil)
-            imageParameter.append("UPloadImage3")
-        }
         
+        for i in 0..<imageObject.count{
+            imageData.append(imageObject[i].imageData!)
+            imageType.append(imageObject[i].imageType ?? nil)
+            imageParameter.append(imageObject[i].imageParameter)
+        }
+       
          if !Reachability.isConnectedToNetwork(){
          saveOfflineData()
          return
@@ -146,7 +130,7 @@ class PoliceBackupVC: UIViewController {
         print("checkValidation:\(params)")
         if params["CrewLeader"] == nil || params["WorkAddress"] == nil ||
             params["OfficerName"] == nil ||  params["PoliceDepartment"]  == nil ||
-            params["HoursWorked"]  == nil || params["car"]  == nil{
+            params["HoursWorked"]  == nil || params["car"]  == nil || imageObject[0].imageType  == nil{
             print("validation not success")
             self.AskConfirmation(title: "", message: "Please fill all required field", isCancel: false) { (result) in
             }
