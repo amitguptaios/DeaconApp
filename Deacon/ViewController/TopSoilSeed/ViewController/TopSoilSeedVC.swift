@@ -201,6 +201,7 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             
         case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
+            cell.titleLabel.text = "Is Work Complete*"
             cell.didEndEditAction = {[weak self] (newText) in
                 self?.params["WorkComplete"] = newText
             }

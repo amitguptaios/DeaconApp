@@ -221,11 +221,11 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Upload Police Backup Sheet Image *"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData1 = newdata
-                self?.imageType1 = imageType
+                self?.imageObject[0].imageData = newdata
+                self?.imageObject[0].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if self.imageObject[0].imageType != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -236,11 +236,11 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Upload Police Backup Sheet Image (Optional)"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData2 = newdata
-                self?.imageType2 = imageType
+                self?.imageObject[1].imageData = newdata
+                self?.imageObject[1].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData2 != nil{
+            if self.imageObject[1].imageType != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -250,11 +250,11 @@ extension PoliceBackupVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Upload Police Backup Sheet Image (Optional)"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData3 = newdata
-                self?.imageType3 = imageType
+                self?.imageObject[2].imageData = newdata
+                self?.imageObject[2].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData3 != nil{
+            if self.imageObject[2].imageType != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
