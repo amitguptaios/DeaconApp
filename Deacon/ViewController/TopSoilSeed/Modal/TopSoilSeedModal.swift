@@ -78,3 +78,10 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
+
+struct ImageModal {
+    var imageData:Data?
+    var imageType:ImageType?
+    var imageParameter:String
+
+}

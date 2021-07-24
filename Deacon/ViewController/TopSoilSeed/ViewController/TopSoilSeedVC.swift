@@ -21,6 +21,8 @@ class TopSoilSeedVC: UIViewController {
     var imageType3:ImageType?
     var isCheck = false
     var imageParameter:[String] = []
+    var imageObject:[ImageModal] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -50,6 +52,10 @@ class TopSoilSeedVC: UIViewController {
         tableview.register(nib9, forCellReuseIdentifier: "CheckBoxCell")
         tableview.dataSource = self
         tableview.delegate = self
+        
+        for i in 0..<3{
+            imageObject.append(ImageModal(imageData: Data(), imageType: nil, imageParameter: ("Photos\(i+1)")))
+        }
     }
     
     func prepareCellData(){
@@ -57,33 +63,10 @@ class TopSoilSeedVC: UIViewController {
         params["Datetime"] = ""
         params["Remarks"] = ""
         params["WorkPerformed"]  =  result
-        
-        if imageData1 != nil {
-            imageData.append(imageData1!)
-            imageType.append(imageType1 ?? nil)
-            imageParameter.append("Photos1")
-        }else{
-            imageData.append(Data())
-            imageType.append(nil)
-            imageParameter.append("Photos1")
-        }
-        if imageData2 != nil {
-            imageData.append(imageData2!)
-            imageType.append(imageType2 ?? nil)
-            imageParameter.append("Photos2")
-        }else{
-            imageData.append(Data())
-            imageType.append(nil)
-            imageParameter.append("Photos2")
-        }
-        if imageData3 != nil {
-            imageData.append(imageData3!)
-            imageType.append(imageType3 ?? nil)
-            imageParameter.append("Photos3")
-        }else{
-            imageData.append(Data())
-            imageType.append(nil)
-            imageParameter.append("Photos3")
+        for i in 0..<imageObject.count{
+            imageData.append(imageObject[i].imageData!)
+            imageType.append(imageObject[i].imageType ?? nil)
+            imageParameter.append(imageObject[i].imageParameter)
         }
         if !Reachability.isConnectedToNetwork(){
             saveOfflineData()
@@ -224,11 +207,11 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 1*"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData1 = newdata
-                self?.imageType1 = imageType
+                self?.imageObject[0].imageData = newdata
+                self?.imageObject[0].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData1 != nil{
+            if self.imageObject[0].imageData != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -238,11 +221,11 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 2"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData2 = newdata
-                self?.imageType2 = imageType
+                self?.imageObject[1].imageData = newdata
+                self?.imageObject[1].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData2 != nil{
+            if self.imageObject[1].imageData != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
@@ -253,11 +236,11 @@ extension TopSoilSeedVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Photo 3"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
-                self?.imageData3 = newdata
-                self?.imageType3 = imageType
+                self?.imageObject[2].imageData = newdata
+                self?.imageObject[2].imageType = imageType
                 cell.checkImageView.image = UIImage.init(named: "right")
             }
-            if imageData3 != nil{
+            if self.imageObject[2].imageData != nil{
                 cell.checkImageView.image = UIImage.init(named: "right")
             }else{
                 cell.checkImageView.image = UIImage()
