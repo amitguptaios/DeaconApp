@@ -25,6 +25,9 @@ class TwwValveContractVC: UIViewController {
     var imageType4:ImageType?
     var imageType5:ImageType?
     var imageParameter:[String] = []
+    var isOtherValue1 = false
+    var isOtherValue2 = false
+    var isOtherValue3 = false
     var flag = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,9 @@ class TwwValveContractVC: UIViewController {
         tableview.register(nib8, forCellReuseIdentifier: "SubmitCell")
         let nib9 = UINib(nibName: "CheckBoxCell", bundle: nil)
         tableview.register(nib9, forCellReuseIdentifier: "CheckBoxCell")
+        let nib10 = UINib(nibName: "ThreeOtherCell", bundle: nil)
+        tableview.register(nib10, forCellReuseIdentifier: "ThreeOtherCell")
+        
         tableview.dataSource = self
         tableview.delegate = self
     }
@@ -62,7 +68,7 @@ class TwwValveContractVC: UIViewController {
         
         params["Datetime"] = ""
         params["Remarks"] = ""
-       let rsult  =  params["WasValveBox"] as! String == "Yes" ? true:false
+        let rsult  =  params["WasValveBox"] as! String == "Yes" ? true:false
         params["WasValveBox"] = rsult
         if imageData1 != nil {
             imageData.append(imageData1!)
@@ -110,11 +116,11 @@ class TwwValveContractVC: UIViewController {
             imageParameter.append("OptionalImage3")
         }
         
-         if !Reachability.isConnectedToNetwork(){
-         saveOfflineData()
-         return
-         }
-         
+        if !Reachability.isConnectedToNetwork(){
+            saveOfflineData()
+            return
+        }
+        
         let url = WebServiceNames.EndPoints.TwwValve.url
         WebServices.requestApiWithDictParam(url: url, requestType: "POST", params:params, imageData: imageData, imageType: imageType , imageParameter: imageParameter, modalType:TwwValveContractModel.self) {[weak self ](result, message, status ) in
             if status {
@@ -178,7 +184,7 @@ class TwwValveContractVC: UIViewController {
 }
 extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return 17
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -206,52 +212,85 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SixRadioButtonCell") as? SixRadioButtonCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Valve Size*"
             cell.setTitle(title1: "6", title2: "12", title3: "8", title4: "16", title5: "10", title6: "Others")
+            cell.othersTextfield?.placeholder = "Others"
             cell.didEndEditAction = {[weak self] (newText) in
-                self?.params["ValveSize"] = newText
+                if newText == "Others"{
+                    self?.isOtherValue1 = true
+                    self?.tableview.reloadData()
+                    self?.params["ValveSize"] = ""
+                    cell.didEndOtherAction = {[weak self] (newText1) in
+                        self?.params["ValveSize"] = newText1
+                    }
+                }else{
+                    self?.isOtherValue1 = false
+                    self?.tableview.reloadData()
+                    self?.params["ValveSize"] = newText
+                    cell.othersTextfield.text = ""
+                }
             }
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-            cell.crewLeaderTextfield?.placeholder = "Others"
-            return cell
-        case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
-            cell.titleLabel.text = "Valve Start Position*"
-            cell.setTitle(title1: "Open", title2: "Closed", title3: "Others")
-            cell.didEndEditAction = {[weak self] (newText) in
-                self?.params["ValveStartPosition"] = newText
-            }
-            return cell
-        case 5:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-            cell.crewLeaderTextfield?.placeholder = "Others"
-            cell.crewLeaderTextfield?.text = ""
+            
             return cell
             
-        case 6:
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeOtherCell") as? ThreeOtherCell  else { return UITableViewCell()}
+            cell.titleLabel.text = "Valve Start Position*"
+            cell.setTitle(title1: "Open", title2: "Closed", title3: "Others")
+            cell.othersTextfield?.placeholder = "Others"
+            cell.stringTextField = "start_position"
+            cell.didEndEditAction = {[weak self] (newText) in
+                //self?.params["ValveSize"] = newText
+              
+                if newText == "Others"{
+                    self?.isOtherValue2 = true
+                    self?.tableview.reloadData()
+                    self?.params["ValveStartPosition"] = ""
+                    cell.didStartPositionAction = {[weak self] (newText1) in
+                        self?.params["ValveStartPosition"] = newText1
+                    }
+                }else{
+                    self?.isOtherValue2 = false
+                    self?.tableview.reloadData()
+                    self?.params["ValveStartPosition"] = newText
+                    cell.othersTextfield.text = ""
+                }
+            }
+            return cell
+            
+        case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Number Of Turns*"
             cell.setTitle(title1: "10", title2: "15", title3: "Could Not Find")
             cell.didEndEditAction = {[weak self] (newText) in
                 self?.params["No_Of_Turns"] = newText
             }
+            
             return cell
-        case 7:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeRadioButtonCell") as? ThreeRadioButtonCell  else { return UITableViewCell()}
+        case 5:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeOtherCell") as? ThreeOtherCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Is Packing Leaking?"
             cell.setTitle(title1: "Yes", title2: "No", title3: "Others")
+            cell.othersTextfield?.placeholder = "Others"
+            cell.stringTextField = "packing"
+
             cell.didEndEditAction = {[weak self] (newText) in
-                self?.params["IsPacking_Leaking"] = newText
-            }
+                if newText == "Others"{
+                    self?.isOtherValue3 = true
+                    self?.tableview.reloadData()
+                    self?.params["IsPacking_Leaking"] = ""
+                    cell.didPackingsAction = {[weak self] (newText1) in
+                        self?.params["IsPacking_Leaking"] = newText1
+                    }
+                }else{
+                    self?.isOtherValue3 = false
+                    self?.tableview.reloadData()
+                    self?.params["IsPacking_Leaking"] = newText
+                    cell.othersTextfield.text = ""
+                }
+                }
+            
             return cell
             
-        case 8:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-            cell.crewLeaderTextfield?.placeholder = "Others"
-            cell.crewLeaderTextfield?.text = ""
-            return cell
-            
-        case 9:
+        case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DatePickerCell") as? DatePickerCell  else { return UITableViewCell()}
             cell.dateTextfield?.placeholder = "Date*"
             cell.dateTextfield?.text = params["Date"] as? String ??  ""
@@ -259,7 +298,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
                 self?.params["Date"] = newText
             }
             return cell
-        case 10:
+        case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimePickerCell") as? TimePickerCell  else { return UITableViewCell()}
             cell.timeTextfield?.placeholder = "Time Start Exercise*"
             cell.timeTextfield?.text = params["TimeStart_Exercise"] as? String ??  ""
@@ -267,7 +306,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
                 self?.params["TimeStart_Exercise"] = newText
             }
             return cell
-        case 11:
+        case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimePickerCell") as? TimePickerCell  else { return UITableViewCell()}
             cell.timeTextfield?.placeholder = "Time Start Exercise*"
             cell.timeTextfield?.text = params["TimeEnd_Exercise"] as? String ??  ""
@@ -275,7 +314,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
                 self?.params["TimeEnd_Exercise"] = newText
             }
             return cell
-        case 12:
+        case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TwoRadioButtonCell") as? TwoRadioButtonCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Was Valve Box Raised*"
             cell.setTitle(title1: "Yes", title2: "No")
@@ -284,7 +323,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 13:
+        case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Valve Image Before*"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -299,7 +338,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 14:
+        case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Valve Image After*"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -315,7 +354,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             return cell
             
             
-        case 15:
+        case 12:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Optional Image"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -330,7 +369,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 16:
+        case 13:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Optional Image"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -345,7 +384,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 17:
+        case 14:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell") as? AttachmentCell  else { return UITableViewCell()}
             cell.attachmentTitleLabel.text = "Optional Image"
             cell.didEndEditAction = { [weak self](newdata,imageType) in
@@ -360,7 +399,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 18:
+        case 15:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
             cell.crewLeaderTextfield?.placeholder = "Closest Address / Notes*"
             cell.crewLeaderTextfield?.text = params["closestAddress"] as? String ??  ""
@@ -369,7 +408,7 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
             
-        case 19:
+        case 16:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitCell") as? SubmitCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
                 self?.checkValidation()
@@ -382,15 +421,34 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 {
-            return 150
+            if isOtherValue1{
+                return 230
+            }else {
+                return 150
+            }
         }
-        else if indexPath.section == 4 || indexPath.section == 6  || indexPath.section == 7 {
-            return 120
+        else if indexPath.section == 3  {
+            if isOtherValue2{
+                return 190
+            }else {
+                return 110
+            }
         }
-        else if indexPath.section == 12 {
+        else if  indexPath.section == 5 {
+            if isOtherValue3{
+                return 190
+            }else {
+                return 110
+            }
+        }
+        
+        else if indexPath.section == 4  {
+                return 110
+        }
+        else if indexPath.section == 9 {
             return 100
         }
-        else if indexPath.section == 13 || indexPath.section == 14 || indexPath.section == 15  || indexPath.section == 16 || indexPath.section == 17  {
+        else if indexPath.section == 10 || indexPath.section == 11 || indexPath.section == 12  || indexPath.section == 13 || indexPath.section == 14  {
             return 40
         }
         return 70
@@ -405,8 +463,9 @@ extension TwwValveContractVC:UITableViewDelegate,UITableViewDataSource{
         return 20.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt")
         switch indexPath.section {
-        case 13, 14, 15, 16, 17:
+        case 10, 11, 12, 13, 14:
             let cell  = tableview.cellForRow(at: indexPath) as? AttachmentCell
             cell?.getImageFromImagePicker(VC: self)
         default:

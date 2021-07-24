@@ -7,25 +7,27 @@
 
 import UIKit
 
-class FourRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate{
+class FourOtherCell: UITableViewCell ,RadioButtonGroupDelegate, UITextFieldDelegate{
     @IBOutlet weak var threeRadioView:UIView!
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var optionA: PVRadioButton!
     @IBOutlet weak var optionB: PVRadioButton!
     @IBOutlet weak var optionC: PVRadioButton!
     @IBOutlet weak var optionD: PVRadioButton!
+    @IBOutlet weak var othersTextfield:UITextField!
     var didEndEditAction : ((String)->())?
+    var didEndOtherAction : ((String)->())?
     var radioButtonGroup: PVRadioButtonGroup!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         setConfigRadioButton()
+        othersTextfield.delegate =  self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+       // Configure the view for the selected state
     }
     func setTitle(title1:String,title2:String,title3:String,title4:String){
         optionA.buttonTitle = title1
@@ -40,7 +42,7 @@ class FourRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate{
     }
     
     func radioButtonClicked(button: PVRadioButton) {
-        setRadioButtonColor() 
+        setRadioButtonColor()
         didEndEditAction?(button.titleLabel?.text ?? "")
         button.radioButtoncolor = AppColor.appGreenColor
     }
@@ -50,5 +52,18 @@ class FourRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate{
         optionC.radioButtoncolor = UIColor.gray
         optionD.radioButtoncolor = UIColor.gray
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        let previousText:NSString = textField.text! as NSString
+        let updatedText = previousText.replacingCharacters(in: range, with: string)
+        didEndOtherAction?(updatedText)
+        return true
+    }
+    
 }
 

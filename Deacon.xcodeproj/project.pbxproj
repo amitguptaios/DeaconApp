@@ -81,6 +81,10 @@
 		286F86DB269D9CEB0079C7C9 /* FiveRadioButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86D9269D9CEB0079C7C9 /* FiveRadioButtonCell.xib */; };
 		286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F86DC269D9DD80079C7C9 /* NextCell.swift */; };
 		286F86DF269D9DD80079C7C9 /* NextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286F86DD269D9DD80079C7C9 /* NextCell.xib */; };
+		28701A9826AC6FAE00DFF66D /* ThreeOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28701A9426AC6FAE00DFF66D /* ThreeOtherCell.xib */; };
+		28701A9926AC6FAE00DFF66D /* FourOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28701A9526AC6FAE00DFF66D /* FourOtherCell.xib */; };
+		28701A9A26AC6FAE00DFF66D /* FourOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28701A9626AC6FAE00DFF66D /* FourOtherCell.swift */; };
+		28701A9B26AC6FAE00DFF66D /* ThreeOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28701A9726AC6FAE00DFF66D /* ThreeOtherCell.swift */; };
 		28A0831D269C26A100EF63BF /* ThankYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0831C269C26A100EF63BF /* ThankYouVC.swift */; };
 		28B8AEBC269DFC0E00F85C77 /* ServiceLineReportVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8AEBA269DFC0E00F85C77 /* ServiceLineReportVC2.swift */; };
 		28B8AEBD269DFC0E00F85C77 /* ServiceLineReportVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8AEBB269DFC0E00F85C77 /* ServiceLineReportVC3.swift */; };
@@ -170,6 +174,10 @@
 		286F86D9269D9CEB0079C7C9 /* FiveRadioButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiveRadioButtonCell.xib; sourceTree = "<group>"; };
 		286F86DC269D9DD80079C7C9 /* NextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCell.swift; sourceTree = "<group>"; };
 		286F86DD269D9DD80079C7C9 /* NextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextCell.xib; sourceTree = "<group>"; };
+		28701A9426AC6FAE00DFF66D /* ThreeOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeOtherCell.xib; sourceTree = "<group>"; };
+		28701A9526AC6FAE00DFF66D /* FourOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourOtherCell.xib; sourceTree = "<group>"; };
+		28701A9626AC6FAE00DFF66D /* FourOtherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourOtherCell.swift; sourceTree = "<group>"; };
+		28701A9726AC6FAE00DFF66D /* ThreeOtherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeOtherCell.swift; sourceTree = "<group>"; };
 		28A0831C269C26A100EF63BF /* ThankYouVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouVC.swift; sourceTree = "<group>"; };
 		28B8AEBA269DFC0E00F85C77 /* ServiceLineReportVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLineReportVC2.swift; sourceTree = "<group>"; };
 		28B8AEBB269DFC0E00F85C77 /* ServiceLineReportVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLineReportVC3.swift; sourceTree = "<group>"; };
@@ -276,6 +284,10 @@
 				286F86DD269D9DD80079C7C9 /* NextCell.xib */,
 				28B8AEBE269E088300F85C77 /* TitleCell.swift */,
 				28B8AEBF269E088300F85C77 /* TitleCell.xib */,
+				28701A9626AC6FAE00DFF66D /* FourOtherCell.swift */,
+				28701A9526AC6FAE00DFF66D /* FourOtherCell.xib */,
+				28701A9726AC6FAE00DFF66D /* ThreeOtherCell.swift */,
+				28701A9426AC6FAE00DFF66D /* ThreeOtherCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -747,6 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186BF5FF26986813000729A4 /* TimePickerCell.xib in Resources */,
+				28701A9826AC6FAE00DFF66D /* ThreeOtherCell.xib in Resources */,
 				286F86D7269D9C9D0079C7C9 /* FourRadioButtonCell.xib in Resources */,
 				189EA80A26909F0E0050BDA7 /* LaunchScreen.storyboard in Resources */,
 				189EA80726909F0E0050BDA7 /* Assets.xcassets in Resources */,
@@ -757,6 +770,7 @@
 				282407D1269B3BCB0066AEED /* SixRadioButtonCell.xib in Resources */,
 				186BF5F5269867DB000729A4 /* CommonCell.xib in Resources */,
 				28F035F0269AEEF90014C600 /* ModuleCollectionViewCell.xib in Resources */,
+				28701A9926AC6FAE00DFF66D /* FourOtherCell.xib in Resources */,
 				186BF61E26989A01000729A4 /* SubmitCell.xib in Resources */,
 				186BF6142698913A000729A4 /* ThreeRadioButtonCell.xib in Resources */,
 				186BF61926989460000729A4 /* AttachmentCell.xib in Resources */,
@@ -859,11 +873,13 @@
 				189EA81F2690A30E0050BDA7 /* ViewControllerFactory.swift in Sources */,
 				186BF62F2699FBD0000729A4 /* Constant.swift in Sources */,
 				189EA80526909F0D0050BDA7 /* Deacon.xcdatamodeld in Sources */,
+				28701A9B26AC6FAE00DFF66D /* ThreeOtherCell.swift in Sources */,
 				282407C2269B256D0066AEED /* ServiceLineReportVC.swift in Sources */,
 				1885EE00269603D0008C82EB /* Modal.swift in Sources */,
 				186BF6322699FBFE000729A4 /* TopSoilSeedModal.swift in Sources */,
 				2807A45A269B00A20013B4A9 /* AppColor.swift in Sources */,
 				286F86DE269D9DD80079C7C9 /* NextCell.swift in Sources */,
+				28701A9A26AC6FAE00DFF66D /* FourOtherCell.swift in Sources */,
 				18CB7617269C657700DB5E33 /* ImagePickerManager.swift in Sources */,
 				1868806C26917FB6007A07BC /* ViewExtension.swift in Sources */,
 				184F6FA3269384AC00F5769E /* SearchBarController.swift in Sources */,

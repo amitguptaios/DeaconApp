@@ -16,11 +16,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="KGk-i7-Jjw" customClass="FourRadioButtonCell" customModule="Deacon" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="354" height="110"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FourOtherCell" rowHeight="101" id="KGk-i7-Jjw" customClass="FourOtherCell" customModule="Deacon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="354" height="110"/>
+                <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Work Complete ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIJ-MG-A6f">
@@ -86,7 +86,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-DD-MHk" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-DD-MHk" customClass="PVRadioButton" customModule="Deacon" customModuleProvider="target">
                                 <rect key="frame" x="161" y="35" width="153" height="30"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,7 +106,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="0DI-DD-MHk" secondAttribute="bottom" id="1zS-5F-wph"/>
                             <constraint firstItem="aR1-4w-Q5b" firstAttribute="top" secondItem="1r2-9n-gm5" secondAttribute="bottom" constant="5" id="7BC-bG-4vF"/>
                             <constraint firstItem="0DI-DD-MHk" firstAttribute="height" secondItem="aR1-4w-Q5b" secondAttribute="height" id="8HL-MG-1Qs"/>
                             <constraint firstAttribute="trailing" secondItem="kfn-dw-AYA" secondAttribute="trailing" id="BF9-aV-IAg"/>
@@ -116,7 +115,6 @@
                             <constraint firstAttribute="height" constant="65" id="Laa-Hd-9gs"/>
                             <constraint firstItem="1r2-9n-gm5" firstAttribute="top" secondItem="OPN-SO-BSU" secondAttribute="top" id="Y8a-pJ-gog"/>
                             <constraint firstItem="kfn-dw-AYA" firstAttribute="height" secondItem="1r2-9n-gm5" secondAttribute="height" id="Yhl-fu-fWI"/>
-                            <constraint firstAttribute="bottom" secondItem="aR1-4w-Q5b" secondAttribute="bottom" id="dyu-xk-By5"/>
                             <constraint firstItem="0DI-DD-MHk" firstAttribute="top" secondItem="kfn-dw-AYA" secondAttribute="bottom" constant="5" id="hj8-Hc-m4f"/>
                             <constraint firstItem="0DI-DD-MHk" firstAttribute="width" secondItem="aR1-4w-Q5b" secondAttribute="width" id="hzl-5b-Qju"/>
                             <constraint firstItem="kfn-dw-AYA" firstAttribute="leading" secondItem="1r2-9n-gm5" secondAttribute="trailing" constant="8" symbolic="YES" id="lla-KO-waI"/>
@@ -139,24 +137,68 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Es-vu-PVm">
+                        <rect key="frame" x="20" y="120" width="314" height="60"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGK-RM-H1f">
+                                <rect key="frame" x="8" y="0.0" width="298" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ViewShadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ViewBorderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="2I2-64-6M6"/>
+                            <constraint firstItem="CGK-RM-H1f" firstAttribute="leading" secondItem="2Es-vu-PVm" secondAttribute="leadingMargin" id="2ko-6y-gmh"/>
+                            <constraint firstItem="CGK-RM-H1f" firstAttribute="centerY" secondItem="2Es-vu-PVm" secondAttribute="centerY" id="Lws-D6-bWc"/>
+                            <constraint firstItem="CGK-RM-H1f" firstAttribute="trailing" secondItem="2Es-vu-PVm" secondAttribute="trailingMargin" id="MTF-eb-FcC"/>
+                            <constraint firstItem="CGK-RM-H1f" firstAttribute="top" secondItem="2Es-vu-PVm" secondAttribute="top" id="xBr-rX-U25"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ViewCornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ViewBorderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="ViewBorderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="ViewShadowColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="OPN-SO-BSU" secondAttribute="trailing" constant="20" symbolic="YES" id="1ef-Vt-8KO"/>
-                    <constraint firstAttribute="bottom" secondItem="OPN-SO-BSU" secondAttribute="bottom" constant="11" id="Iar-SJ-IXg"/>
                     <constraint firstItem="OPN-SO-BSU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="IeO-Ke-8Ii"/>
                     <constraint firstItem="XIJ-MG-A6f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="J7N-LB-dXN"/>
                     <constraint firstItem="XIJ-MG-A6f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Pnt-26-Krd"/>
+                    <constraint firstItem="2Es-vu-PVm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="a2j-oC-Zuc"/>
                     <constraint firstItem="OPN-SO-BSU" firstAttribute="top" secondItem="XIJ-MG-A6f" secondAttribute="bottom" constant="5" id="coP-GX-2Rn"/>
+                    <constraint firstItem="2Es-vu-PVm" firstAttribute="top" secondItem="OPN-SO-BSU" secondAttribute="bottom" constant="21" id="odb-fy-wM9"/>
+                    <constraint firstItem="2Es-vu-PVm" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zzk-Na-hfk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="optionA" destination="1r2-9n-gm5" id="IOt-il-Id9"/>
-                <outlet property="optionB" destination="kfn-dw-AYA" id="n42-9O-hYO"/>
-                <outlet property="optionC" destination="aR1-4w-Q5b" id="2sN-rz-6YH"/>
-                <outlet property="optionD" destination="0DI-DD-MHk" id="weF-uC-QJj"/>
-                <outlet property="threeRadioView" destination="OPN-SO-BSU" id="Oob-Px-QcV"/>
-                <outlet property="titleLabel" destination="XIJ-MG-A6f" id="Wsu-U8-ug3"/>
+                <outlet property="optionA" destination="1r2-9n-gm5" id="EWO-r7-PPh"/>
+                <outlet property="optionB" destination="kfn-dw-AYA" id="k4O-dc-mR6"/>
+                <outlet property="optionC" destination="aR1-4w-Q5b" id="DPR-r2-hlk"/>
+                <outlet property="optionD" destination="0DI-DD-MHk" id="4KK-7z-De3"/>
+                <outlet property="othersTextfield" destination="CGK-RM-H1f" id="iP3-yZ-Vpl"/>
+                <outlet property="threeRadioView" destination="CGK-RM-H1f" id="jps-zm-Vp6"/>
+                <outlet property="titleLabel" destination="XIJ-MG-A6f" id="EJL-RQ-avu"/>
             </connections>
             <point key="canvasLocation" x="110.14492753623189" y="105.13392857142857"/>
         </tableViewCell>

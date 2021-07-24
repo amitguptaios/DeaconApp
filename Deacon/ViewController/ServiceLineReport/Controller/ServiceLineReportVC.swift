@@ -25,6 +25,8 @@ class ServiceLineReportVC: UIViewController {
     var imageType3:ImageType?
     var imageType4:ImageType?
     var imageType5:ImageType?
+    var isOtherValue = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -58,6 +60,8 @@ class ServiceLineReportVC: UIViewController {
         tableview.register(nib11, forCellReuseIdentifier: "FiveRadioButtonCell")
         let nib12 = UINib(nibName: "NextCell", bundle: nil)
         tableview.register(nib12, forCellReuseIdentifier: "NextCell")
+        let nib13 = UINib(nibName: "FourOtherCell", bundle: nil)
+        tableview.register(nib13, forCellReuseIdentifier: "FourOtherCell")
         tableview.dataSource = self
         tableview.delegate = self
     }
@@ -80,7 +84,7 @@ class ServiceLineReportVC: UIViewController {
 }
 extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        9
+        8
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -123,24 +127,28 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             return cell
             
         case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourRadioButtonCell") as? FourRadioButtonCell  else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourOtherCell") as? FourOtherCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Restoration Type"
             cell.setTitle(title1: "GRASS", title2: "ASPHALT", title3: "CONCRETE", title4: "Others")
+            cell.othersTextfield?.placeholder = "Others"
             cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["RestorationType"] = newText
+                if newText == "Others"{
+                    self?.isOtherValue = true
+                    self?.tableview.reloadData()
+                    self?.params["RestorationType"] = nil
+                    cell.didEndOtherAction = {[weak self] (newText1) in
+                        self?.params["RestorationType"] = newText1
+                    }
+                }else{
+                    self?.isOtherValue = false
+                    self?.tableview.reloadData()
+                    self?.params["RestorationType"] = newText
+                    cell.othersTextfield.text = ""
+                }
             }
             return cell
-            
+
         case 5:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommonCell") as? CommonCell  else { return UITableViewCell()}
-                cell.crewLeaderTextfield?.placeholder = "Others"
-            cell.crewLeaderTextfield?.text = params["GrassSize"] as? String ??  ""
-            cell.didEndEditAction = {[weak self] (newText) in
-            self?.params["GrassSize"] = newText
-            }
-            return cell
-            
-        case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FourRadioButtonCell") as? FourRadioButtonCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Service Material Type(Suez Side)"
             cell.setTitle(title1: "GZ", title2: "LZ", title3: "BR", title4: "CP")
@@ -148,7 +156,7 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             self?.params["SuezSide"] = newText
             }
             return cell
-        case 7:
+        case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FiveRadioButtonCell") as? FiveRadioButtonCell  else { return UITableViewCell()}
             cell.titleLabel.text = "Service Material Type(Customer Side)"
             cell.setTitle(title1: "GZ", title2: "LZ", title3: "BR", title4: "CP" , title5: "Unknown")
@@ -157,7 +165,7 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
             }
             return cell
  
-        case 8:
+        case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NextCell") as? NextCell  else { return UITableViewCell()}
             cell.didEndEditAction = {[weak self]() in
                 self?.checkValidation()
@@ -170,10 +178,18 @@ extension ServiceLineReportVC:UITableViewDelegate,UITableViewDataSource{
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 4 || indexPath.section == 6{
+        if indexPath.section == 4 {
+            if isOtherValue{
+                return 190
+            }else{
+                return 110
+            }
+           // return 190
+        }
+        if  indexPath.section == 5{
             return 130
         }
-        else if indexPath.section == 7{
+        else if indexPath.section == 6{
             return 150
         }
         

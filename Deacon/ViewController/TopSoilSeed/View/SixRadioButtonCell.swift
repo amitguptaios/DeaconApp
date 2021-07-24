@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SixRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate{
+class SixRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate,UITextFieldDelegate{
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var optionA: PVRadioButton!
     @IBOutlet weak var optionB: PVRadioButton!
@@ -15,12 +15,15 @@ class SixRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate{
     @IBOutlet weak var optionD: PVRadioButton!
     @IBOutlet weak var optionE: PVRadioButton!
     @IBOutlet weak var optionF: PVRadioButton!
+    @IBOutlet weak var othersTextfield:UITextField!
     var didEndEditAction : ((String)->())?
+    var didEndOtherAction : ((String)->())?
     var radioButtonGroup: PVRadioButtonGroup!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         setConfigRadioButton()
+        othersTextfield.delegate =  self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,4 +58,17 @@ class SixRadioButtonCell: UITableViewCell ,RadioButtonGroupDelegate{
         optionE.radioButtoncolor = UIColor.gray
         optionF.radioButtoncolor = UIColor.gray
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let previousText:NSString = textField.text! as NSString
+        let updatedText = previousText.replacingCharacters(in: range, with: string)
+        didEndOtherAction?(updatedText)
+        return true
+    }
+    
 }
