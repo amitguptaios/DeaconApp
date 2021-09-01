@@ -8,7 +8,8 @@
 import Foundation
 struct  WebServiceNames {
     
-    static var baseUrl = "http://chavi4hld-001-site1.htempurl.com/api/"
+    //static var baseUrl = "http://chavi4hld-001-site1.htempurl.com/api/"\
+    static var baseUrl = "http://chandini-001-site1.btempurl.com/api/"
     enum EndPoints: String{
         case searchApi = "SearchWebapi?search="
         case topSoilSeed = "Nested"
